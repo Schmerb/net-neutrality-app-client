@@ -1,0 +1,47 @@
+// // // // // // // // // //
+//
+//  Confirm Message    
+//
+// // // // // // // // // //
+
+.confirmation {
+    @extend %transition;
+    @extend %cover;
+    position: fixed;
+    background-color: rgba(black, 0.3);
+    z-index: 2000;
+    opacity: 0;
+    &.fadeIn {
+        opacity: 1;
+    }
+}
+
+.confirmation-modal {
+    @extend %center;
+    position: fixed;
+    top: 20%;
+    color: $offwhite;
+    background-color: rgba($secondary, 0.9);
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+    border-radius: 8px;
+    &.redirect-modal {
+        height: 250px;
+    }
+    .btn-group {
+        @extend %center;
+        width: 90%;
+        bottom: 30px;
+    }
+    button {
+        background-color: $offwhite;
+        width: 45%;
+        height: 40px;
+        border: none;
+        float: left;
+        &:last-of-type {
+            float: right;
+        }
+    }
+}

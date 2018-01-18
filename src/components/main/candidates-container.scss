@@ -1,0 +1,35 @@
+// // // // // // // // // //
+//
+//   Candidates Container
+//
+// // // // // // // // // //
+
+.candidates-container {
+    color: white;
+    overflow: hidden;
+    border: 1px solid white;
+    > h2 {
+        width: 400px;
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 1px solid white;
+    }
+    ul {
+        height: 300px;
+        margin: 50px 0;
+        border: 1px solid yellow;
+        overflow: scroll;
+        li {
+            float: left;
+            width: 33.3%;
+            height: 200px;
+            border: 1px solid red;
+        }
+        .candidate-wrap {
+            width: 70%;
+            height: 100%;
+            margin: 0 auto;
+            border: 1px solid yellowgreen;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+// // // // // // // // // //
+//
+//       States Map
+//
+// // // // // // // // // //
+.usa-map-container {
+    overflow: auto;
+    border: 1px solid blue;
+}
+
+.us-state-map {
+    float: left;
+    border: 1px solid white;
+    path {
+        pointer-events: all;
+        border: 1px solid white;
+        &:not(.DC1) {
+            stroke: white;
+        }
+        &:hover {
+            opacity: 0.50;
+            fill: lightgrey;
+            cursor: pointer;
+        }
+    }
+}

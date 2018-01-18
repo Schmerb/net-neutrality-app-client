@@ -1,0 +1,58 @@
+// // // // // // // // // //
+//
+//      Base
+//
+// // // // // // // // // //
+
+html {
+    box-sizing: border-box;
+    body {
+        .hidden {
+            display: none;
+        }
+    }
+}
+
+*, 
+*:before, 
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-weight: lighter;
+    position: relative;
+    margin: 0; 
+    min-height: 100vh;
+    min-width: 320px;
+    padding-bottom: 200px; // Sticky Footer height
+    overflow-x: hidden;
+}
+
+
+.no-scroll {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+.no-scroll-html {
+    position: relative;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+// * * * * * * * * * * * * * * * * * * * *
+// Form errors
+// * * * * * * * * * * * * * * * * * * * *
+.form-error {
+    background: lightgrey;
+    color: #E22626;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 20px;
+}

@@ -1,0 +1,22 @@
+// // // // // // // // // // // // 
+//
+//	Dim - dim's background
+//
+// // // // // // // // // // // // 
+
+.dim {
+    @include transition(0.5s);
+    background: rgba(0,0,0,0.3);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: -4;
+
+    &.fadeIn {
+        opacity: 1;
+        z-index: 4;
+    }
+}
