@@ -14,7 +14,7 @@
         overflow-x: hidden;
         &::-webkit-scrollbar { // background of bar itself
             background-color: transparent;
-            width: 10px;
+            width: 7px;
         }
         &::-webkit-scrollbar-thumb { // addresses the draggable scrolling element that resizes depending on the size of the scrollable element
             background-color: grey;

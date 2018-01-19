@@ -16,6 +16,7 @@
         left: 0;
         width: 10px;
         height: 10px;
+        z-index: 1;
         // border: 1px solid white;
     }
     // // // // // // //
@@ -73,14 +74,17 @@
         height: 20px;
         fill: white;
         &.check-mark {
+            position: relative;
             fill: lawngreen;
         }
         &.x-mark {
+            position: relative;
             fill: red;
         }
         &.prohibited-icon {
             @extend %abs-middle;
             fill: red;
+            fill: blue;
             width: 135%;
             height: 135%;
         }
