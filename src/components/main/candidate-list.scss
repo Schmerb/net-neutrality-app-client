@@ -1,0 +1,33 @@
+// // // // // // // // // //
+//
+//   Candidate List
+//
+// // // // // // // // // //
+
+.candidate-list {
+
+    ul {
+        height: 300px;
+        // border: 1px solid yellow;
+        margin-right: 10px;
+        overflow: scroll;
+        &::-webkit-scrollbar { // background of bar itself
+            background-color: transparent;
+            width: 10px;
+        }
+        &::-webkit-scrollbar-thumb { // addresses the draggable scrolling element that resizes depending on the size of the scrollable element
+            background-color: grey;
+            border-radius: 20px;
+        }
+        &::-webkit-scrollbar-corner { // addresses the (usually) bottom corner of the scrollable element, where two scrollbars might meet
+            background-color: transparent;
+        }
+        li {
+            position: relative;
+            float: left;
+            width: 33.3%;
+            height: 100%;
+            // border: 1px solid red;
+        }
+}
+}

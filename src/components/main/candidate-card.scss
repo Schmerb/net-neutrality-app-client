@@ -1,0 +1,47 @@
+// // // // // // // // // //
+//
+//   Candidate Card
+//
+// // // // // // // // // //
+
+.candidate-wrap {
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 60px;
+    text-align: center;
+    // border: 1px solid yellowgreen;
+    > span {
+        color: #555;
+        line-height: 1.8em;
+    }
+    span {
+        display: block;
+        border-radius: 5px;
+    }
+    .support {
+        font-size: 12px;
+        width: auto;
+        height: 16px;
+        line-height: 1.1em;
+        border: 2px solid transparent;
+    }
+    .support-yes {
+        color: green;
+        border-color: green;
+    }
+    .support-no {
+        color: red;
+        border-color: red;
+    }
+    .support-unknown {
+        color: gold;
+        border-color: gold;
+    }
+    a {
+        color: #555;
+    }
+    .district {
+        color: #555;
+    }
+}
