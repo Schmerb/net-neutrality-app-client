@@ -6,9 +6,11 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
-import { scrollIt }   from 'utils/scroll';
+
+import { scrollIt } from 'utils/scroll';
+
 
 export class Footer extends Component {
     constructor(props) {
@@ -25,9 +27,7 @@ export class Footer extends Component {
     render() {
         return (
             <footer role="contentinfo">
-                <ul>
-                    <li><Link to={'/'}>home</Link></li>
-                </ul>
+
             </footer>
         );
     }

@@ -1,43 +1,75 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { getFullName } from 'utils/states';
+import { setCurrentState, getCandidates } from 'actions/map';
+import { getFullName, states } from 'utils/states';
 
 export class CandidatesContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {};
     }
+
+    handleSelect = (e) => {
+        const state = e.target.value;
+        this.props.dispatch(setCurrentState(state));
+        this.props.dispatch(getCandidates(getFullName(state)));
+    };
+
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    // Returns all candidates for house/senate 
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    getCandidates = (candidates) => {
+        return candidates.map((candidate, key) => (
+            <li key={key}>
+                <div className="candidate-wrap">
+                    <h3>{candidate.firstName} {candidate.lastName}</h3>
+                    <span>{candidate.party}</span>
+                    <span>{candidate.district}</span>
+                    <span>{candidate.supportsNetNeutrality}</span>
+                    <span><a href={candidate.campaignWebsite} target="__blank">Website</a></span>
+                    <span><a href={candidate.source} target="__blank">Source</a></span>
+                </div>
+            </li>
+        ));
+    };
+
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    // Fills dropdown menu with all states
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    getAllStates = (currentState) => {
+        return Object.entries(states)
+                     .map((state, key) => (
+                        <option key={key} value={state[1]}>{state[0]}</option>
+                    ));
+    };
+
+
+
     render() {
+        const { house, senate, currentState } = this.props;
+        const houseCandidates   = this.getCandidates(house),
+              senateCandidates  = this.getCandidates(senate);
+        const options = this.getAllStates(currentState);
         return(
-            <div class="candidates-container">
-                <h2>{getFullName(this.props.currentState)}</h2>
-                <ul>
-                    <h2>Senate</h2>
-                    {/* {candidates} */}
-                    <li>
-                        <div class="candidate-wrap">One</div>
-                    </li>
-                    <li>
-                        <div class="candidate-wrap">Two</div>
-                    </li>
-                    <li>
-                        <div class="candidate-wrap">Three</div>
-                    </li>
-                </ul>
-                <ul>
-                    <h2>House of Representatives.</h2>
-                    {/* {candidates} */}
-                    <li>
-                        <div class="candidate-wrap">One</div>
-                    </li>
-                    <li>
-                        <div class="candidate-wrap">Two</div>
-                    </li>
-                    <li>
-                        <div class="candidate-wrap">Three</div>
-                    </li>
-                </ul>
+            <div className="candidates-container">
+                <select name="" id="" value={currentState} onChange={this.handleSelect}>
+                    {options}
+                </select>
+
+                <div className="senate-wrap">
+                    <h3>Senate</h3>
+                    <ul>
+                        {senateCandidates}
+                    </ul>
+                </div>
+
+                <div className="house-wrap">
+                    <h3>House of Representatives.</h3>
+                    <ul>
+                        {houseCandidates}
+                    </ul>
+                </div>
             </div>
         );
     }
@@ -45,7 +77,9 @@ export class CandidatesContainer extends Component {
 
 const mapStateToProps = state => ({
     width: state.display.width,
-    currentState: state.map.currentState
+    currentState: state.map.currentState,
+    house: state.map.house,
+    senate: state.map.senate
 });
 
 export default connect(mapStateToProps)(CandidatesContainer);

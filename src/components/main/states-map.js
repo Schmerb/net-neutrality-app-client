@@ -4,8 +4,9 @@ import { connect } from 'react-redux';
 import USAMap from 'react-usa-map';
 import CandidatesContainer from './candidates-container';
 
-import { setCurrentState } from 'actions/map';
+import { setCurrentState, getCandidates } from 'actions/map';
 
+import { getFullName } from 'utils/states';
 
 
 export class StatesMap extends Component {
@@ -20,21 +21,21 @@ export class StatesMap extends Component {
     handleMapClick = e => {
         const state = e.target.dataset.name;
         this.props.dispatch(setCurrentState(state));
+        this.props.dispatch(getCandidates(getFullName(state)));
     };
 
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     // Custom Map Configs
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     statesCustomConfig = () => ({
-        "DC": {
-            fill: "navy",
-            clickHandler: e => alert(`This is a custom event for ${e.target.dataset.name}`)
+        [this.props.currentState]: {
+            fill: "grey"
         }
     });
 
     render() {
         return(
-            <div class="usa-map-container">
+            <div className="usa-map-container">
                 <USAMap customize={this.statesCustomConfig()} 
                         defaultFill={"transparent"}  
                         onClick={this.handleMapClick}
@@ -47,7 +48,8 @@ export class StatesMap extends Component {
 }
 
 const mapStateToProps = state => ({
-    width: state.display.width
+    width: state.display.width,
+    currentState: state.map.currentState
 });
 
 export default connect(mapStateToProps)(StatesMap);

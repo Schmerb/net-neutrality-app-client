@@ -5,10 +5,13 @@
 // // // // // // // // // //
 
 main {
-    @extend %cover;
+    // @extend %cover;
     background-color: black;
+    min-height: 100vh;
+    float: left;
     .container {
-        margin-top: 80px;
+        // margin-top: 80px;
+        padding-top: 15px;
         // border: 5px solid cornflowerblue;
     }
 }

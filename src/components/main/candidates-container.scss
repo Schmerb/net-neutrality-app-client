@@ -7,29 +7,51 @@
 .candidates-container {
     color: white;
     overflow: hidden;
-    border: 1px solid white;
-    > h2 {
-        width: 400px;
-        height: 40px;
-        line-height: 40px;
-        border-bottom: 1px solid white;
+    // border: 1px solid white;
+    > h1 {
+        margin-bottom: 10px;
     }
     ul {
         height: 300px;
-        margin: 50px 0;
-        border: 1px solid yellow;
+        // margin: 50px 0;
+        // border: 1px solid yellow;
+        margin-right: 10px;
         overflow: scroll;
+        &::-webkit-scrollbar { // background of bar itself
+            background-color: transparent;
+            width: 10px;
+        }
+        // &::-webkit-scrollbar-track { // addresses the empty space “below” the progress bar
+            
+        // }
+        &::-webkit-scrollbar-thumb { // addresses the draggable scrolling element that resizes depending on the size of the scrollable element
+            background-color: grey;
+            border-radius: 20px;
+        }
+        &::-webkit-scrollbar-corner { // addresses the (usually) bottom corner of the scrollable element, where two scrollbars might meet
+            background-color: transparent;
+        }
         li {
+            position: relative;
             float: left;
             width: 33.3%;
-            height: 200px;
-            border: 1px solid red;
+            height: 100%;
+            // border: 1px solid red;
         }
         .candidate-wrap {
             width: 70%;
             height: 100%;
             margin: 0 auto;
-            border: 1px solid yellowgreen;
+            padding-top: 60px;
+            text-align: center;
+            // border: 1px solid yellowgreen;
+            span {
+                display: block;
+                line-height: 1.8em;
+            }
         }
     }
+}
+.house-wrap {
+    margin-top: 20px;
 }

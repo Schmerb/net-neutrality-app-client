@@ -27,24 +27,24 @@ export class App extends Component {
     // 
     // * * * * * * * * * * * * * * * * * * * *
     componentDidMount() {
-        if(this.props.hasAuthToken) {
-            // Try to get a fresh auth token if we had an existing one in
-            // localStorage
-            this.props.dispatch(refreshAuthToken());
-        }
+        // if(this.props.hasAuthToken) {
+        //     // Try to get a fresh auth token if we had an existing one in
+        //     // localStorage
+        //     this.props.dispatch(refreshAuthToken());
+        // }
     };
 
     // * * * * * * * * * * * * * * * * * * * *
     // 
     // * * * * * * * * * * * * * * * * * * * *
     componentWillReceiveProps(nextProps) {
-        if (nextProps.loggedIn && !this.props.loggedIn) {
-            // When we are logged in, refresh the auth token periodically
-            this.startPeriodicRefresh();
-        } else if (!nextProps.loggedIn && this.props.loggedIn) {
-            // Stop refreshing when we log out
-            this.stopPeriodicRefresh();
-        }
+        // if (nextProps.loggedIn && !this.props.loggedIn) {
+        //     // When we are logged in, refresh the auth token periodically
+        //     this.startPeriodicRefresh();
+        // } else if (!nextProps.loggedIn && this.props.loggedIn) {
+        //     // Stop refreshing when we log out
+        //     this.stopPeriodicRefresh();
+        // }
     };
 
     // * * * * * * * * * * * * * * * * * * * *

@@ -18,7 +18,8 @@ export function clearState() {
 
 export function hydrateState() {
     store.dispatch(getUser());
-}
+};
+
 
 export default function(storeObj, authToken) {
     store = storeObj;

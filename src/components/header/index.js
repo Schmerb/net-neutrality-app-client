@@ -8,8 +8,8 @@ import React, { Component } from 'react';
 import { connect }    from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import TopNav from './top-nav';
-import Logo   from './logo';
+// import TopNav from './top-nav';
+// import Logo   from './logo';
 
 export class Header extends Component {
     constructor(props) {
@@ -20,8 +20,7 @@ export class Header extends Component {
     render() {
         return(
             <header role="banner" className="header">
-                <Logo />
-                <TopNav />
+                
             </header>
         );
     }
