@@ -1,5 +1,10 @@
+// // // // // // // // // //
+//
+//   Candidates List
+//
+// // // // // // // // // //
+
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
 
 import CandidateCard from './candidate-card';
 

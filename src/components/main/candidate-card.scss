@@ -21,22 +21,24 @@
     }
     .support {
         font-size: 12px;
-        width: auto;
-        height: 16px;
-        line-height: 1.1em;
+        line-height: 1.2em;
+        margin: 0 auto;
         border: 2px solid transparent;
     }
     .support-yes {
-        color: green;
-        border-color: green;
+        color: $green;
+        border-color: $green;
+        width: 6em;
     }
     .support-no {
-        color: red;
-        border-color: red;
+        color: $red;
+        border-color: $red;
+        width: 7em;
     }
     .support-unknown {
-        color: gold;
-        border-color: gold;
+        color: $gold;
+        border-color: $gold;
+        width: 6em;
     }
     a {
         color: #555;

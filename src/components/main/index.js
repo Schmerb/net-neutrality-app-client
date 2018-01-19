@@ -1,3 +1,9 @@
+// // // // // // // // // //
+//
+//   MAIN
+//
+// // // // // // // // // //
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
@@ -17,6 +23,7 @@ export class Main extends Component {
         return(
             <main role="main" >
                 <div className={`container`}>
+                {/* <img src="/assets/test.png" alt=""/> */}
                     <StatesMap />
                 </div> 
             </main>

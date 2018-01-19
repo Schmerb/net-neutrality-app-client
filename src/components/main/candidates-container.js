@@ -1,3 +1,9 @@
+// // // // // // // // // //
+//
+//   Candidate Container
+//
+// // // // // // // // // //
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
@@ -40,7 +46,6 @@ export class CandidatesContainer extends Component {
                 <select className="select-box" value={currentState} onChange={this.handleSelect}>
                     {options}
                 </select>
-
                 <CandidatesList group='senate' candidates={senate} />
                 <CandidatesList group='house' candidates={house} />
             </div>

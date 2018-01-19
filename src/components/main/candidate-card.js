@@ -1,15 +1,24 @@
+// // // // // // // // // //
+//
+//   Candidate Card
+//
+// // // // // // // // // //
+
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
+
+import CandidateAvatar from './candidate-avatar';
 
 export default class CandidateCard extends Component {
-    render() {
-        const { firstName, 
-                lastName, 
-                party, 
-                district, 
-                campaignWebsite, 
-                source 
-        } = this.props.candidate;
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
+
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    // Returns props word indicating if candidate
+    // supports or opposes Net Neutrality
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    getSupport = () => {
         let { supportsNetNeutrality: supports } = this.props.candidate;
         supports = supports.toLowerCase();
         const supportClass = `support-${supports}`;
@@ -20,10 +29,46 @@ export default class CandidateCard extends Component {
         } else {
             supports = 'UNKNOWN';
         }
+        return { supports, supportClass };
+    };
+
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    // Returns appropriate number suffix
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    getDistrictSuffix = () => {
+        let num = this.props.candidate.district;
+        if (num === 'unknown') return num;
+        if (num === 4 || num === 11 || num === 12 || num === 13) return num + 'th';
+        const char = num.toString().charAt(num.toString().length - 1);
+        switch (char) {
+            case '1':
+                return num + 'st';
+            case '2':
+                return num + 'nd';
+            case '3':
+                return num + 'rd';
+            default:
+                return num + 'th';
+        }
+    };
+
+    render() {
+        const { supports, supportClass } = this.getSupport();
+        const district = this.getDistrictSuffix();
+        const { firstName, 
+                lastName, 
+                party, 
+                campaignWebsite, 
+                source,
+                imgUrl 
+        } = this.props.candidate;
+        
         return(
             <div className="candidate-wrap">
+                <CandidateAvatar imgUrl={imgUrl} firstName={firstName} 
+                                 lastName={lastName} supports={supports} party={party} />
                 <h3><span>{firstName}</span> <span>{lastName}</span></h3>
-                <span>{party}</span>
+                {/* <span>{party}</span> */}
                 <span className="district">{district}</span>
                 <span className={`${supportClass} support`}>{supports}</span>
                 <span><a href={campaignWebsite} target="__blank">Website</a></span>

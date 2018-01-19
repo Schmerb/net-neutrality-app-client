@@ -1,6 +1,6 @@
 // // // // // // // // // //
 //
-//   Candidate List
+//   Candidates List
 //
 // // // // // // // // // //
 
@@ -10,7 +10,8 @@
         height: 300px;
         // border: 1px solid yellow;
         margin-right: 10px;
-        overflow: scroll;
+        overflow-y: scroll;
+        overflow-x: hidden;
         &::-webkit-scrollbar { // background of bar itself
             background-color: transparent;
             width: 10px;

@@ -1,0 +1,111 @@
+// // // // // // // // // //
+//
+//   Candidate Avatar
+//
+// // // // // // // // // //
+
+.avatar {
+    position: relative;
+    width: 70px;
+    margin: 0 auto;
+    // border: 1px solid white;
+    .svg-wrap {
+        background-color: white;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        // border: 1px solid white;
+    }
+    // // // // // // //
+    //
+    // PARTY ICONS
+    //
+    // // // // // // //
+    .party-icon-wrap {
+        background-color: white;
+        position: absolute;
+        top: 5px;
+        right: 0;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 1px solid white;
+        svg,
+        img  {
+            @extend %middle;
+            left: 0;
+            width: 15px;
+        }
+        svg.republican {
+            fill: red;
+            
+        }
+        svg.democratic {
+            fill: blue;
+        }
+        svg.question-mark {
+            fill: green;
+            width: 125%;
+            height: 125%;
+            left: -2px;
+        }
+        // PNG image
+        .libertarian {
+            height: auto;
+        }
+        .independent {
+            @extend %abs-middle;
+            width: 13px;
+        }
+    }
+    // // // // // // //
+    //
+    // Support Icons
+    //
+    // // // // // // //
+    svg {
+        position: absolute;
+        top: -6px;
+        left: -5px;
+        width: 20px;
+        height: 20px;
+        fill: white;
+        &.check-mark {
+            fill: lawngreen;
+        }
+        &.x-mark {
+            fill: red;
+        }
+        &.prohibited-icon {
+            @extend %abs-middle;
+            fill: red;
+            width: 110%;
+            height: 110%;
+        }
+        &.unknown-mark {
+            @include transform(rotate(-45deg));
+            top: -10px;
+            left: -10px;
+            fill: gold;
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+
+
+.img-wrap {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto;
+    overflow: hidden;
+    // border: 1px solid blue;
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
