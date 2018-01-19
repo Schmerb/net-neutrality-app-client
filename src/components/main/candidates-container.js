@@ -12,6 +12,8 @@ import CandidatesList from './candidates-list';
 import { setCurrentState, getCandidates } from 'actions/map';
 import { getFullName, states } from 'utils/states';
 
+import ArrowDown from 'icons/arrow-down';
+
 export class CandidatesContainer extends Component {
     constructor(props) {
         super(props);
@@ -43,9 +45,12 @@ export class CandidatesContainer extends Component {
         const options = this.getAllStates(currentState);
         return(
             <div className="candidates-container">
-                <select className="select-box" value={currentState} onChange={this.handleSelect}>
-                    {options}
-                </select>
+                <div className="select-box-wrap">
+                    <ArrowDown className="arrow-down"/>
+                    <select className="select-box" value={currentState} onChange={this.handleSelect}>
+                        {options}
+                    </select>
+                </div>
                 <CandidatesList group='senate' candidates={senate} />
                 <CandidatesList group='house' candidates={house} />
             </div>

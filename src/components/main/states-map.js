@@ -36,7 +36,8 @@ export class StatesMap extends Component {
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     statesCustomConfig = () => ({
         [this.props.currentState]: {
-            fill: "grey"
+            fill: "grey",
+            stroke: "grey"
         }
     });
 

@@ -16,10 +16,13 @@
         // border: 1px solid white;
         &:not(.DC1) {
             stroke: white;
+            stroke-width: 1px;
+            stroke-opacity: 0.4;
         }
         &:hover {
             opacity: 0.50;
             fill: lightgrey;
+            stroke: lightgrey;
             cursor: pointer;
         }
     }

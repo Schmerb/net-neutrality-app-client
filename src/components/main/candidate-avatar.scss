@@ -81,8 +81,8 @@
         &.prohibited-icon {
             @extend %abs-middle;
             fill: red;
-            width: 110%;
-            height: 110%;
+            width: 135%;
+            height: 135%;
         }
         &.unknown-mark {
             @include transform(rotate(-45deg));

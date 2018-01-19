@@ -38,17 +38,17 @@ export default class CandidateCard extends Component {
     getDistrictSuffix = () => {
         let num = this.props.candidate.district;
         if (num === 'unknown') return num;
-        if (num === 4 || num === 11 || num === 12 || num === 13) return num + 'th';
+        if (num === 4 || num === 11 || num === 12 || num === 13) return num + 'th District';
         const char = num.toString().charAt(num.toString().length - 1);
         switch (char) {
             case '1':
-                return num + 'st';
+                return num + 'st District';
             case '2':
-                return num + 'nd';
+                return num + 'nd District';
             case '3':
-                return num + 'rd';
+                return num + 'rd District';
             default:
-                return num + 'th';
+                return num + 'th District';
         }
     };
 
@@ -60,12 +60,13 @@ export default class CandidateCard extends Component {
                 party, 
                 campaignWebsite, 
                 source,
-                imgUrl 
+                imgUrl,
+                id 
         } = this.props.candidate;
         
         return(
             <div className="candidate-wrap">
-                <CandidateAvatar imgUrl={imgUrl} firstName={firstName} 
+                <CandidateAvatar id={id} imgUrl={imgUrl} firstName={firstName} 
                                  lastName={lastName} supports={supports} party={party} />
                 <h3><span>{firstName}</span> <span>{lastName}</span></h3>
                 {/* <span>{party}</span> */}

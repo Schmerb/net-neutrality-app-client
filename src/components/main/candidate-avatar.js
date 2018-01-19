@@ -50,7 +50,7 @@ export default function CandidateAvatar(props) {
             <div className="party-icon-wrap">
                 {partyIcon}
             </div>
-            <div className="img-wrap">
+            <div className="img-wrap" data-id={props.id}>
                 <img src={props.imgUrl} alt={`${props.firstName} ${props.lastName}`}/>
             </div>
         </div>
