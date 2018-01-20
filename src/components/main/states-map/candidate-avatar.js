@@ -7,6 +7,7 @@
 import React from 'react';
 
 import CheckMarkIcon    from 'icons/check-mark';
+import CheckMarkLargeIcon    from 'icons/check-mark-lg';
 import XMarkIcon        from 'icons/x-mark';
 import ProhibitedIcon   from 'icons/prohibited-icon';
 import UnknownMarkIcon  from 'icons/unknown-mark';
@@ -20,7 +21,7 @@ export default function CandidateAvatar(props) {
     let supportIcon    = null,
         prohibitedIcon = null;
     if(props.supports === 'SUPPORTS') {
-        supportIcon = <CheckMarkIcon className="check-mark"/>;
+        supportIcon = <CheckMarkLargeIcon className="check-mark"/>;
     } else if (props.supports === 'NO SUPPORT') {
         supportIcon = <XMarkIcon className="x-mark"/>;
         prohibitedIcon = <ProhibitedIcon className="prohibited-icon"/>

@@ -9,16 +9,7 @@
     width: 70px;
     margin: 0 auto;
     // border: 1px solid white;
-    .svg-wrap {
-        background-color: white;
-        position: absolute;
-        top: 10px;
-        left: 0;
-        width: 10px;
-        height: 10px;
-        z-index: 1;
-        // border: 1px solid white;
-    }
+
     // // // // // // //
     //
     // PARTY ICONS
@@ -40,14 +31,14 @@
             width: 15px;
         }
         svg.republican {
-            fill: red;
+            fill: $red;
             
         }
         svg.democratic {
-            fill: blue;
+            fill: $blue;
         }
         svg.question-mark {
-            fill: green;
+            fill: $green;
             width: 125%;
             height: 125%;
             left: -2px;
@@ -66,39 +57,52 @@
     // Support Icons
     //
     // // // // // // //
-    svg {
+    .svg-wrap {
+        background-color: white;
         position: absolute;
-        top: -6px;
-        left: -5px;
-        width: 20px;
-        height: 20px;
-        fill: white;
-        &.check-mark {
-            position: relative;
-            fill: lawngreen;
-        }
-        &.x-mark {
-            position: relative;
-            fill: red;
-        }
-        &.prohibited-icon {
-            @extend %abs-middle;
-            fill: red;
-            fill: blue;
-            width: 135%;
-            height: 135%;
-        }
-        &.unknown-mark {
-            @include transform(rotate(-45deg));
-            top: -10px;
-            left: -10px;
-            fill: gold;
-            width: 30px;
-            height: 30px;
+        top: 10px;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        z-index: 1;
+        border-radius: 50%;
+        // border: 1px solid white;
+        svg {
+            position: absolute;
+            top: 0;
+            left: -1px;
+            width: 20px;
+            height: 20px;
+            fill: white;
+            &.check-mark {
+                position: relative;
+                fill: $green;
+            }
+            &.x-mark {
+                @extend %abs-middle;
+                width: 23px;
+                height: 23px;
+                fill: $red;
+            }
+            &.unknown-mark {
+                @include transform(rotate(-45deg));
+                top: -6px;
+                left: -6px;
+                fill: $gold;
+                width: 30px;
+                height: 30px;
+            }
         }
     }
 }
 
+// Large circle with line icon / stop-sign
+.prohibited-icon {
+    @extend %abs-middle;
+    fill: $red;
+    width: 135%;
+    height: 135%;
+}
 
 
 .img-wrap {
