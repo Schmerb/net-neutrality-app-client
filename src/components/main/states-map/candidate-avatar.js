@@ -21,7 +21,7 @@ export default function CandidateAvatar(props) {
     let supportIcon    = null,
         prohibitedIcon = null;
     if(props.supports === 'SUPPORTS') {
-        supportIcon = <CheckMarkLargeIcon className="check-mark"/>;
+        supportIcon = <CheckMarkLgIcon className="check-mark"/>;
     } else if (props.supports === 'NO SUPPORT') {
         supportIcon = <XMarkIcon className="x-mark"/>;
         prohibitedIcon = <ProhibitedIcon className="prohibited-icon"/>
