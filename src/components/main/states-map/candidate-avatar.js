@@ -7,7 +7,7 @@
 import React from 'react';
 
 import CheckMarkIcon    from 'icons/check-mark';
-import CheckMarkLargeIcon    from 'icons/check-mark-lg';
+import CheckMarkLgIcon  from 'icons/check-mark-lg';
 import XMarkIcon        from 'icons/x-mark';
 import ProhibitedIcon   from 'icons/prohibited-icon';
 import UnknownMarkIcon  from 'icons/unknown-mark';
