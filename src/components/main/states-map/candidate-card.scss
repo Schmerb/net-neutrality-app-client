@@ -42,7 +42,11 @@
         width: 6em;
     }
     a {
+        @extend %transition;
         color: #555;
+        &:hover {
+            color: lightgrey;
+        }
     }
     .district {
         color: #555;

@@ -5,14 +5,16 @@
 // // // // // // // // // //
 
 .candidate-list {
-    max-width: 600px;
-
     ul {
-        height: 240px;
+        height: 250px;
         margin-right: 10px;
+        padding-top: 10px;
         overflow-y: scroll;
         overflow-x: hidden;
         // border: 1px solid yellow;
+        @include mediaMin(1300px) {
+            height: 300px;
+        }
         &::-webkit-scrollbar { // background of bar itself
             background-color: transparent;
             width: 7px;
@@ -30,6 +32,12 @@
             width: 33.3%;
             height: 100%;
             // border: 1px solid red;
+            @include mediaMax(500px) {
+                width: 50%;
+            }
+            @include mediaMinMax(900px, 1000px) {
+                width: 50%;
+            }
         }
     }
 }

@@ -23,11 +23,8 @@
     @include mediaMin(400px) {
         margin-top: 45%;
     }
-    // // // // // // // //
-    //
+
     // Main Lists / Map
-    //
-    // // // // // // // // 
     @include mediaMin($tablet) {
         width: 40%;
         margin: 0;
@@ -36,18 +33,28 @@
             top: 50px;
         }
     }
+    @include mediaMin(1350px) {
+        margin-top: 50px;
+    }
 }
-// 
-// List Title - House / Senate
 //
-.group-name {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.house-wrap {
+// Dropdown / Lists Wrap
+//
+.candidates-inner-wrap {
+    max-width: 700px;
+    margin: 0 auto;
+    // 
+    // List Title - House / Senate
+    //
     .group-name {
-        margin-top: 15px;
-        margin-bottom: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .house-wrap {
+        .group-name {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
     }
 }
 
@@ -59,7 +66,6 @@
 .select-box-wrap {
     @extend %transition;
     position: relative;
-    max-width: 600px;
     margin-bottom: 20px;
     border-bottom: 1px solid #555;
     &:hover {
@@ -80,7 +86,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    color: grey;
+    color: lightgrey;
     background-color: transparent;
     font-size: 36px;
     width: 100%;

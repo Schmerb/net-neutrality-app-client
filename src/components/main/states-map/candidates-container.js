@@ -49,15 +49,17 @@ export class CandidatesContainer extends Component {
         return(
             <div className="candidates-container">
                 <p className="directions">Select your state to see which candidates support net neutrality</p>
-                <div className="select-box-wrap">
-                    <ArrowDown className="arrow-down"/>
-                    <select className="select-box" value={currentState}  onChange={this.handleSelect} placeholder="Testing">
-                        <option value="select-state">Select State</option>
-                        {options}
-                    </select>
+                <div className="candidates-inner-wrap">
+                    <div className="select-box-wrap">
+                        <ArrowDown className="arrow-down"/>
+                        <select className="select-box" value={currentState}  onChange={this.handleSelect} placeholder="Testing">
+                            <option value="select-state">Select State</option>
+                            {options}
+                        </select>
+                    </div>
+                    <CandidatesList group='senate' candidates={senate} />
+                    <CandidatesList group='house' candidates={house} />
                 </div>
-                <CandidatesList group='senate' candidates={senate} />
-                <CandidatesList group='house' candidates={house} />
             </div>
         );
     }

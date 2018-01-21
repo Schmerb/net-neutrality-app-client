@@ -7,7 +7,10 @@
 main {
     background-color: black;
     .container {
-        
+        &.map {
+            // provides some space for mobile devices at bottom of screen
+            margin-bottom: 100px;
+        }
     }
 }
 
