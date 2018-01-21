@@ -7,12 +7,12 @@
 .candidate-list {
     ul {
         height: 250px;
-        margin-right: 10px;
+        // margin-right: 10px;
         padding-top: 10px;
         overflow-y: scroll;
         overflow-x: hidden;
         // border: 1px solid yellow;
-        @include mediaMin(1300px) {
+        @include mediaMin(1500px) {
             height: 300px;
         }
         &::-webkit-scrollbar { // background of bar itself
@@ -37,6 +37,9 @@
             }
             @include mediaMinMax(900px, 1000px) {
                 width: 50%;
+            }
+            @include mediaMin(1500px) {
+                margin-top: 20px;
             }
         }
     }

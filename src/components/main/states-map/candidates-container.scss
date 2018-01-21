@@ -27,22 +27,22 @@
     // Main Lists / Map
     @include mediaMin($tablet) {
         width: 40%;
-        margin: 0;
+        margin-top: 20px;
         .directions {
             @include center;
             top: 50px;
         }
-    }
-    @include mediaMin(1350px) {
-        margin-top: 50px;
     }
 }
 //
 // Dropdown / Lists Wrap
 //
 .candidates-inner-wrap {
-    max-width: 700px;
+    max-width: 600px;
     margin: 0 auto;
+    @include mediaMin($tablet) {
+        max-width: 700px;
+    }
     // 
     // List Title - House / Senate
     //
