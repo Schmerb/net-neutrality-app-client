@@ -7,20 +7,31 @@
     width: 100vw;
     overflow: auto;
     // border: 1px solid blue;
+    @include mediaMin($tablet) {
+        padding-left: 100px;
+        padding-right: 50px;
+    }
     .us-state-map {
         @include transitions(top 0.3s ease-in-out);
-        @extend %center;
         // position: fixed;
         top: 0;
         // border: 1px solid white;
+
+        @include mediaMax($tablet - 1) {
+            @include center;
+        }
+        @include mediaMin($tablet) {
+            width: 50%;
+            float: left;
+        }
         @include mediaMin(400px) {
             top: calc(50px + 2vw);
         }
         @include mediaMin(600px) {
             top: calc(50px + 10vw);
         }
-        @include mediaMin(800px) {
-            top: calc(50px + 15vw);
+        @include mediaMin($tablet) {
+            top: 0;
         }
     }
 }

@@ -18,9 +18,19 @@
         text-align: center;
         margin: 20px auto;
     }
+    @include mediaMin(400px) {
+        margin-top: 45%;
+    }
+    @include mediaMin($tablet) {
+        width: 50%;
+        margin: 0;
+    }
 }
 .house-wrap {
-    margin-top: 20px;
+    h3 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 }
 // // // // // // // // 
 // 
