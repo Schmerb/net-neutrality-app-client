@@ -10,11 +10,12 @@ import CheckMarkLgIcon  from 'icons/check-mark-lg';
 import XMarkIcon        from 'icons/x-mark';
 import ProhibitedIcon   from 'icons/prohibited-icon';
 import UnknownMarkIcon  from 'icons/unknown-mark';
-import RepublicanIcon   from 'icons/republican-icon';
-import DemocraticIcon   from 'icons/democratic-icon';
-import LibertarianIcon  from 'icons/libertarian-icon';
-import IndependentIcon  from 'icons/independent-icon';
 import QuestionMarkIcon from 'icons/question-mark';
+
+import RepublicanIcon  from 'icons/party/republican-icon';
+import DemocraticIcon  from 'icons/party/democratic-icon';
+import LibertarianIcon from 'icons/party/libertarian-icon';
+import IndependentIcon from 'icons/party/independent-icon';
 
 export default function CandidateAvatar(props) {
     let supportIcon    = null,

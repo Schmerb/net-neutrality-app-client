@@ -3,7 +3,6 @@
 //   Candidates Container
 //
 // // // // // // // // // //
-
 .candidates-container {
     color: lightgrey;
     width: 90%;
@@ -12,18 +11,30 @@
     margin-top: 40%;
     overflow: hidden;
     // border: 1px solid white;
-    > p {
+    .directions {
+        color: #555;
         font-size: 26px;
-        max-width: 90%;
+        width: 90%;
+        max-width: 440px;
         text-align: center;
         margin: 20px auto;
+        // border: 1px solid white;
     }
     @include mediaMin(400px) {
         margin-top: 45%;
     }
+    // // // // // // // //
+    //
+    // Main Lists / Map
+    //
+    // // // // // // // // 
     @include mediaMin($tablet) {
-        width: 50%;
+        width: 40%;
         margin: 0;
+        .directions {
+            @include center;
+            top: 50px;
+        }
     }
 }
 .house-wrap {
@@ -32,6 +43,7 @@
         margin-bottom: 20px;
     }
 }
+
 // // // // // // // // 
 // 
 // Dropdown Select Box
@@ -40,6 +52,7 @@
 .select-box-wrap {
     @extend %transition;
     position: relative;
+    max-width: 600px;
     margin-bottom: 20px;
     border-bottom: 1px solid #555;
     &:hover {

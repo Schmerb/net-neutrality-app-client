@@ -29,7 +29,7 @@
     @include mediaMin($tablet) {
         position: fixed;
         top: 0;
-        right: 0;
+        right: 20px;
         margin: 0;
         color: grey;
         svg {

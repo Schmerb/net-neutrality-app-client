@@ -1,8 +1,8 @@
-// // // // // // // // // //
+// // // // // // // //
 //
-//       States Map
+// States Map
 //
-// // // // // // // // // //
+// // // // // // // //
 .usa-map-container {
     width: 100vw;
     overflow: auto;
@@ -10,51 +10,34 @@
     @include mediaMin($tablet) {
         padding-left: 100px;
         padding-right: 50px;
+        margin-top: 100px;
     }
     .us-state-map {
         @include transitions(top 0.3s ease-in-out);
-        // position: fixed;
         top: 0;
         // border: 1px solid white;
 
-        @include mediaMax($tablet - 1) {
-            @include center;
-        }
-        @include mediaMin($tablet) {
-            width: 50%;
-            float: left;
-        }
         @include mediaMin(400px) {
             top: calc(50px + 2vw);
         }
         @include mediaMin(600px) {
             top: calc(50px + 10vw);
         }
+        @include mediaMax($tablet - 1) {
+            @include center;
+        }
+        // // // // // // // //
+        //
+        // Main Lists / Map
+        //
+        // // // // // // // //
         @include mediaMin($tablet) {
+            width: 60%;
+            height: 40vw;
             top: 0;
+            float: left;
         }
     }
 }
 
-// // // // // // // //
-// 
-// Base Map Styles
-// 
-// // // // // // // //
-.us-state-map {
-    path {
-        pointer-events: all;
-        // border: 1px solid white;
-        &:not(.DC1) {
-            stroke: grey;
-            stroke-width: 0.2em;
-            stroke-opacity: 0.4;
-        }
-        &:hover {
-            opacity: 0.50;
-            fill: lightgrey;
-            stroke: lightgrey;
-            cursor: pointer;
-        }
-    }
-}
+

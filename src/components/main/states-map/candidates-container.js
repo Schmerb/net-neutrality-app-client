@@ -48,7 +48,7 @@ export class CandidatesContainer extends Component {
         const options = this.getAllStates(currentState);
         return(
             <div className="candidates-container">
-                <p>Select your state to see which candidates support net neutrality</p>
+                <p className="directions">Select your state to see which candidates support net neutrality</p>
                 <div className="select-box-wrap">
                     <ArrowDown className="arrow-down"/>
                     <select className="select-box" value={currentState}  onChange={this.handleSelect} placeholder="Testing">

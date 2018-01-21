@@ -18,7 +18,7 @@
     .party-icon-wrap {
         background-color: white;
         position: absolute;
-        top: 5px;
+        top: 0;
         right: 0;
         width: 18px;
         height: 18px;
@@ -60,10 +60,10 @@
     .svg-wrap {
         background-color: white;
         position: absolute;
-        top: 10px;
+        top: 0;
         left: 0;
-        width: 18px;
-        height: 18px;
+        width: 17px;
+        height: 17px;
         z-index: 1;
         border-radius: 50%;
         // border: 1px solid white;
@@ -77,6 +77,8 @@
             &.check-mark {
                 position: relative;
                 fill: $green;
+                width: 18px;
+                height: 18px;
             }
             &.x-mark {
                 @extend %abs-middle;

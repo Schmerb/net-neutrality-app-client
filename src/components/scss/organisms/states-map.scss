@@ -1,0 +1,24 @@
+// // // // // // // // // //
+// 
+//     States Maps Base
+// 
+// // // // // // // // // //
+
+.us-state-map {
+    @extend %transition;
+    path {
+        pointer-events: all;
+        // border: 1px solid white;
+        &:not(.DC1) {
+            stroke: grey;
+            stroke-width: 0.2em; 
+            stroke-opacity: 0.4;
+        }
+        &:hover {
+            opacity: 0.50;
+            fill: lightgrey;
+            stroke: lightgrey;
+            cursor: pointer;
+        }
+    }
+}
