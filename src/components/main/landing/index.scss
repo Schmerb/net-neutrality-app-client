@@ -6,32 +6,79 @@
 
 .landing-page {
     color: grey;
-    max-width: 370px;
     margin: 0 auto;
     // border: 1px solid greenyellow;
-    h2 {
-        position: relative;
-        color: white;
-        font-size: 42px;
-        word-spacing: 10px;
-        max-width: 350px;
-        margin: 0 auto 15px;
-        z-index: 1;
+
+    @include mediaMin(900px) {
+        padding-left: 170px;
+        > div {
+            float: left;
+            width: 60%; // map
+            &:first-of-type {
+                width: 40%; // text overview
+            }
+        }
+        .us-state-map {
+            width: 50vw;
+        }
     }
-    p {
-        position: relative;
-        max-width: 350px;
-        margin: 0 auto;
-        z-index: 1;
+
+    // // // // // //
+    //
+    // Text Wrap
+    //
+    // // // // // //
+    .text-wrap {
+        // border: 3px solid white;
+        @include mediaMin($tablet) {
+            margin-top: 10vw;
+            font-size: calc(0.5em + 1vw);
+        }
+        h2 {
+            position: relative;
+            color: white;
+            // font-size: 42px;
+            word-spacing: 10px;
+            max-width: 350px;
+            margin: 0 auto 15px;
+            z-index: 1;
+        }
+        p {
+            position: relative;
+            max-width: 350px;
+            margin: 0 auto;
+            z-index: 1;
+        }
     }
+    // // // // // //
+    //
+    // Map Wrap
+    //
+    // // // // // //
     .landing-map-wrap {
         position: relative;
         height: 300px;
-        // border: 1px solid white;
+        // border: 3px solid red;
+
+        @include mediaMin($tablet) {
+            height: 50vw;
+            // margin-top: 50px;
+        }
+        //
+        // Static US Map
+        //
+        .us-state-map  { 
+            height: inherit;
+            opacity: 0.5;
+            path {
+                pointer-events: none;
+            }
+        }
         //
         // Get Started Button
         //
         .a-btn {
+            @extend %transition;
             @extend %abs-middle;
             color: lightgrey;
             display: block;
@@ -42,20 +89,11 @@
             height: 45px;
             line-height: 45px;
             border: 1px solid grey;
-            border-radius: 1px;
+            border-radius: 3px;
             z-index: 1;
-        }
-        //
-        // Static US Map
-        //
-        .us-state-map  {
-            // @extend %center;
-            // // top: 0;
-            // bottom: -50px;
-            height: inherit;
-            opacity: 0.5;
-            path {
-                pointer-events: none;
+            &:hover {
+                color: white;
+                border-color: white;
             }
         }
     }

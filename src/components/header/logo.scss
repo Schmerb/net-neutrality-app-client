@@ -11,15 +11,34 @@
     justify-content: space-around;
     align-items: center;
     fill: grey;
-    max-width: 700px;
+    max-width: 1400px;
     margin: 0 auto;
+    margin-left: 10px;
+    padding: 0 10px;
     font-size: calc(1em + 1vw);
-    // border: 1px solid white;
+    // border: 1px solid blue;
     svg {
         width: calc(100px + 8vw);
     }
     h1 {
         width: calc(180px + 10vw);
         // border: 1px solid white;
+    }
+    @include mediaMin($tablet) {
+        font-size: 1em;
+        svg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 150px;
+        }
+        h1 {
+            @include transform(rotate(-90deg));
+            position: absolute;
+            left: -80px;
+            top: 280px;
+            width: auto;
+            word-spacing: 20px;
+        }
     }
 }
