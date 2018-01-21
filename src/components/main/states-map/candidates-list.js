@@ -32,7 +32,7 @@ export class CandidatesList extends Component {
         const display = this.props.display ? '': 'hidden';
         return(
             <div className={`${this.props.group}-wrap candidate-list ${display}`}>
-                <h3>{properGroupName}</h3>
+                <h3 className="group-name">{properGroupName}</h3>
                 <ul>
                     {candidates}
                 </ul>

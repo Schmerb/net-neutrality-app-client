@@ -37,10 +37,17 @@
         }
     }
 }
+// 
+// List Title - House / Senate
+//
+.group-name {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .house-wrap {
-    h3 {
-        margin-top: 20px;
-        margin-bottom: 20px;
+    .group-name {
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
 }
 
