@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 
 import CandidatesList from './candidates-list';
 
-import { setCurrentState, getCandidates } from 'actions/map';
+import { setCurrentState, getCandidates, displayCandidates } from 'actions/map';
 import { getFullName, states } from 'utils/states';
 
 import ArrowDown from 'icons/arrow-down';
@@ -26,9 +26,12 @@ export class CandidatesContainer extends Component {
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     handleSelect = (e) => {
         const state = e.target.value;
-        this.props.dispatch(setCurrentState(state));
-        this.props.dispatch(getCandidates(getFullName(state)));
-    };
+        if(state !== 'select-state') {
+            this.props.dispatch(setCurrentState(state));
+            this.props.dispatch(getCandidates(getFullName(state)));
+            this.props.dispatch(displayCandidates());
+        };
+    }
 
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     // Fills dropdown menu with all states
@@ -45,9 +48,11 @@ export class CandidatesContainer extends Component {
         const options = this.getAllStates(currentState);
         return(
             <div className="candidates-container">
+                <p>Select your state to see which candidates support net neutrality</p>
                 <div className="select-box-wrap">
                     <ArrowDown className="arrow-down"/>
-                    <select className="select-box" value={currentState} onChange={this.handleSelect}>
+                    <select className="select-box" value={currentState}  onChange={this.handleSelect} placeholder="Testing">
+                        <option value="select-state">Select State</option>
                         {options}
                     </select>
                 </div>

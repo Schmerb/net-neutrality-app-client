@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import USAMap from 'react-usa-map';
 import CandidatesContainer from './candidates-container';
 
-import { setCurrentState, getCandidates } from 'actions/map';
+import { setCurrentState, getCandidates, displayCandidates } from 'actions/map';
 
 import { getFullName } from 'utils/states';
 
@@ -28,6 +28,7 @@ export class StatesMap extends Component {
         const state = e.target.dataset.name;
         this.props.dispatch(setCurrentState(state));
         this.props.dispatch(getCandidates(getFullName(state)));
+        this.props.dispatch(displayCandidates());
     };
 
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -47,7 +48,7 @@ export class StatesMap extends Component {
                         defaultFill={"transparent"}  
                         onClick={this.handleMapClick}
                         title={"Map of the United States of America"}
-                        width={this.props.width / 2}/>
+                        width={this.props.width}/>
                 <CandidatesContainer />
             </div>
         );

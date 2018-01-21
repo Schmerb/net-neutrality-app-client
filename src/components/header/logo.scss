@@ -5,5 +5,21 @@
 // // // // // // // // // //
 
 .logo {
-    
+    color: white;
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    fill: grey;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: calc(1em + 1vw);
+    // border: 1px solid white;
+    svg {
+        width: calc(100px + 8vw);
+    }
+    h1 {
+        width: calc(180px + 10vw);
+        // border: 1px solid white;
+    }
 }

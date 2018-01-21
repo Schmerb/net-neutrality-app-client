@@ -7,17 +7,36 @@
     width: 100vw;
     overflow: auto;
     // border: 1px solid blue;
+    .us-state-map {
+        @include transitions(top 0.3s ease-in-out);
+        @extend %center;
+        // position: fixed;
+        top: 0;
+        // border: 1px solid white;
+        @include mediaMin(400px) {
+            top: calc(50px + 2vw);
+        }
+        @include mediaMin(600px) {
+            top: calc(50px + 10vw);
+        }
+        @include mediaMin(800px) {
+            top: calc(50px + 15vw);
+        }
+    }
 }
 
+// // // // // // // //
+// 
+// Base Map Styles
+// 
+// // // // // // // //
 .us-state-map {
-    float: left;
-    // border: 1px solid white;
     path {
         pointer-events: all;
         // border: 1px solid white;
         &:not(.DC1) {
-            stroke: white;
-            stroke-width: 1px;
+            stroke: grey;
+            stroke-width: 0.2em;
             stroke-opacity: 0.4;
         }
         &:hover {

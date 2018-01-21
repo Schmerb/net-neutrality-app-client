@@ -19,6 +19,15 @@ export const setCurrentState = (currentState) => {
     }
 };
 
+// * * * * * * * * * * * * * * *
+// Sets display boolean to true
+// to display lists
+// * * * * * * * * * * * * * * *
+export const DISPLAY_CANDIDATES = 'DISPLAY_CANDIDATES';
+export const displayCandidates = () => ({
+    type: DISPLAY_CANDIDATES
+});
+
 
 // * * * * * * * * * * * * * * *
 // Adds candidates to store

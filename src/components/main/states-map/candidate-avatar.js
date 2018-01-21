@@ -6,7 +6,6 @@
 
 import React from 'react';
 
-import CheckMarkIcon    from 'icons/check-mark';
 import CheckMarkLgIcon  from 'icons/check-mark-lg';
 import XMarkIcon        from 'icons/x-mark';
 import ProhibitedIcon   from 'icons/prohibited-icon';

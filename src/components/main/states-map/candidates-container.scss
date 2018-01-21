@@ -5,20 +5,31 @@
 // // // // // // // // // //
 
 .candidates-container {
-    color: white;
+    color: lightgrey;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40%;
     overflow: hidden;
     // border: 1px solid white;
-    > h1 {
-        margin-bottom: 10px;
+    > p {
+        font-size: 26px;
+        max-width: 90%;
+        text-align: center;
+        margin: 20px auto;
     }
 }
 .house-wrap {
     margin-top: 20px;
 }
+// // // // // // // // 
+// 
+// Dropdown Select Box
+//
+// // // // // // // //
 .select-box-wrap {
     @extend %transition;
     position: relative;
-    width: 90%;
     margin-bottom: 20px;
     border-bottom: 1px solid #555;
     &:hover {
@@ -39,7 +50,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    color: $offwhite;
+    color: grey;
     background-color: transparent;
     font-size: 36px;
     width: 100%;

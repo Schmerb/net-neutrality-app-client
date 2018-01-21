@@ -5,10 +5,11 @@
 // // // // // // // // // //
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import CandidateCard from './candidate-card';
 
-export default class CandidatesList extends Component {
+export class CandidatesList extends Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -28,8 +29,9 @@ export default class CandidatesList extends Component {
     render() {
         const candidates = this.getCandidates(this.props.candidates);
         const properGroupName = this.props.group === 'senate' ? 'Senate':'House of Representatives';
+        const display = this.props.display ? '': 'hidden';
         return(
-            <div className={`${this.props.group}-wrap candidate-list`}>
+            <div className={`${this.props.group}-wrap candidate-list ${display}`}>
                 <h3>{properGroupName}</h3>
                 <ul>
                     {candidates}
@@ -38,3 +40,9 @@ export default class CandidatesList extends Component {
         );
     }
 }
+
+const mapStateToProps = state => ({
+    display: state.map.display
+});
+
+export default connect(mapStateToProps)(CandidatesList);

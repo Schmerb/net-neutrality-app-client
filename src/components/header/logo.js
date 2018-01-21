@@ -5,12 +5,15 @@
 // // // // // // // // // //
 
 import React    from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+
+import Monitor from 'icons/monitor';
 
 export default function Logo(props) {
     return (
         <div className="logo">
-            <Link to="/">APP NAME</Link>
+            <Monitor />
+            <h1>TAKE BACK THE NET</h1>
         </div>
     );   
 }

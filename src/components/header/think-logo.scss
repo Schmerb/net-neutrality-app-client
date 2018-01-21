@@ -1,0 +1,29 @@
+// // // // // // // // // //
+//
+//       Thinkful Logo
+//
+// // // // // // // // // //
+
+.think-logo {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: grey;
+    height: 70px;
+    line-height: 50px;
+    margin: 30px 0;
+    // border: 1px solid blue;
+    label {
+        margin-top: 15px;
+        // border: 1px solid red;
+    }
+    span {
+        position: relative;
+        top: -10px;
+        margin-right: 10px;
+        // vertical-align: top;
+    }
+    svg {
+        fill: grey;
+    }
+}

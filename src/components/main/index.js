@@ -6,9 +6,10 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Route } from 'react-router-dom';
 
-import StatesMap from './states-map';
+import LandingPage from './landing';
+import StatesMap   from './states-map';
 
 
 export class Main extends Component {
@@ -17,13 +18,12 @@ export class Main extends Component {
         this.state = {};
     }
 
-   
-
     render() {
         return(
             <main role="main" >
                 <div className={`container`}>
-                    <StatesMap />
+                    <Route exact path="/" component={LandingPage}/>
+                    <Route exact path="/map" component={StatesMap}/>
                 </div> 
             </main>
         );

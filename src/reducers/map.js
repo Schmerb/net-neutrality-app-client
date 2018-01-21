@@ -7,13 +7,15 @@
 import { 
     SET_CURRENT_STATE,
     GET_CANDIDATES_SUCCESS,
-    GET_CANDIDATES_ERORR
+    GET_CANDIDATES_ERORR,
+    DISPLAY_CANDIDATES
 } from 'actions/map'
 
 const initialState = {
-    currentState: 'DC',
+    currentState: 'select-state',
     house: [],
     senate: [],
+    display: false,
     error: null
 };
 
@@ -38,6 +40,11 @@ export default function reducer(state = initialState, action) {
                 ...state,
                 error: action.error
             }
+        case DISPLAY_CANDIDATES:
+            return {
+                ...state,
+                display: true
+            };
         default:
             return state;
     }

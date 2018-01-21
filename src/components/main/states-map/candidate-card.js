@@ -21,14 +21,16 @@ export default class CandidateCard extends Component {
     getSupport = () => {
         let { supportsNetNeutrality: supports } = this.props.candidate;
         supports = supports.toLowerCase();
-        const supportClass = `support-${supports}`;
+        let supportClass = `support-${supports}`;
         if(supports === 'yes') {
             supports = 'SUPPORTS';
         } else if (supports === 'no') {
             supports = 'NO SUPPORT';
         } else {
             supports = 'UNKNOWN';
+            supportClass = 'support-unknown';
         }
+        
         return { supports, supportClass };
     };
 
@@ -69,7 +71,6 @@ export default class CandidateCard extends Component {
                 <CandidateAvatar id={id} imgUrl={imgUrl} firstName={firstName} 
                                  lastName={lastName} supports={supports} party={party} />
                 <h3><span>{firstName}</span> <span>{lastName}</span></h3>
-                {/* <span>{party}</span> */}
                 <span className="district">{district}</span>
                 <span className={`${supportClass} support`}>{supports}</span>
                 <span><a href={campaignWebsite} target="__blank">Website</a></span>

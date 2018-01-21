@@ -24,8 +24,9 @@ body {
     font-weight: lighter;
     position: relative;
     margin: 0; 
-    min-height: 100vh;
-    min-width: 320px;
+    // min-height: 100vh;
+    // width: 100vw;
+    // min-width: 320px;
     padding-bottom: 200px; // Sticky Footer height
     overflow-x: hidden;
 }
