@@ -12,6 +12,13 @@ header {
     // border: 5px solid red;
     @include mediaMin($tablet) {
         height: 80px;
+        &.sources-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: black;
+        }
     }
 }
 

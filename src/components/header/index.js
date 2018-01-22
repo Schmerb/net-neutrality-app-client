@@ -19,8 +19,9 @@ export class Header extends Component {
     }
     
     render() {
+        const classes = this.props.location.pathname.includes('sources') ? 'sources-header' : '';
         return(
-            <header role="banner" className="header">
+            <header role="banner" className={`header ${classes}`}>
                 <Logo />
                 <ThinkLogo />
             </header>
