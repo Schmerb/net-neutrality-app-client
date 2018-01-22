@@ -7,7 +7,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Monitor from 'icons/monitor';
 import SiteLogo    from 'icons/site-logo';
 
 export default function Logo(props) {

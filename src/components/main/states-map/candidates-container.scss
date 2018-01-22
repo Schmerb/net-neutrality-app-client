@@ -4,6 +4,7 @@
 //
 // // // // // // // // // //
 .candidates-container {
+    font-family: "MaisonNeue-Mono";
     color: lightgrey;
     width: 90%;
     margin-left: auto;
@@ -30,7 +31,13 @@
         margin-top: 20px;
         .directions {
             @include center;
+            max-width: 600px;
             top: 50px;
+        }
+    }
+    @include mediaMin($tablet + 200) {
+        .directions {
+            max-width: 700px;
         }
     }
 }
@@ -83,6 +90,7 @@
     pointer-events: none;
 }
 .select-box {
+    font-family: "MaisonNeue-Mono";
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;

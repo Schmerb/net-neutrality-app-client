@@ -40,14 +40,14 @@
             font-size: calc(0.5em + 1vw);
         }
         h2 {
+            font-family: "MaisonNeue-Mono";
             position: relative;
             color: white;
-            // font-size: 42px;
-            word-spacing: 10px;
             margin: 0 auto 15px;
             z-index: 1;
         }
         p {
+            font-family: "MaisonNeue-Book";
             position: relative;
             margin: 0 auto;
             z-index: 1;
@@ -83,17 +83,18 @@
         //
         // Get Started Button
         //
-        .a-btn {
+        .get-started-btn {
             @extend %transition;
             @extend %abs-middle;
+            font-family: "Mark W01 Regular";
             color: lightgrey;
             display: block;
-            font-size: 1.4em;
+            font-size: 24px;
             text-decoration: none;
             text-align: center;
-            width: 170px;
-            height: 45px;
-            line-height: 45px;
+            width: 271px;
+            height: 70px;
+            line-height: 70px;
             border: 1px solid grey;
             border-radius: 3px;
             z-index: 1;
