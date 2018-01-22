@@ -8,8 +8,9 @@
     color: grey;
     margin: 0 auto;
     // border: 1px solid greenyellow;
-
-    @include mediaMin(900px) {
+    
+    @include mediaMin($tablet) {
+        display: flex;
         padding-left: 170px;
         > div {
             float: left;

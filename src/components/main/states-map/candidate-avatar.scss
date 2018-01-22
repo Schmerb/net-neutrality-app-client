@@ -8,7 +8,18 @@
     position: relative;
     width: 70px;
     margin: 0 auto;
-    // border: 1px solid white;
+    // Candidate Head Shot Img
+    .img-wrap {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin: 0 auto;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
 
     // // // // // // //
     //
@@ -16,40 +27,25 @@
     //
     // // // // // // //
     .party-icon-wrap {
-        background-color: white;
         position: absolute;
-        top: 0;
-        right: 0;
-        width: 18px;
-        height: 18px;
-        border-radius: 50%;
-        border: 1px solid white;
-        svg,
-        img  {
-            @extend %middle;
-            left: 0;
-            width: 15px;
+        top: -5px;
+        right: -5px;
+        z-index: 1;
+        &.png {
+            top: -5px;
+            right: -2px;
         }
-        svg.republican {
-            fill: $red;
-            
-        }
-        svg.democratic {
-            fill: blue;
-        }
+        // border: 1px solid white;
         svg.question-mark {
             fill: $green;
-            width: 125%;
-            height: 125%;
-            left: -2px;
         }
-        // PNG image
+        // PNG images
         .libertarian {
+            width: 25px;
             height: auto;
         }
         .independent {
-            @extend %abs-middle;
-            width: 13px;
+            width: 20px;
         }
     }
     // // // // // // //
@@ -57,65 +53,25 @@
     // Support Icons
     //
     // // // // // // //
-    .svg-wrap {
-        background-color: white;
+    .support-icon-wrap {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 17px;
-        height: 17px;
+        top: -5px;
+        left: -5px;
         z-index: 1;
-        border-radius: 50%;
-        // border: 1px solid white;
-        svg {
-            position: absolute;
-            top: 0;
-            left: -1px;
-            width: 20px;
-            height: 20px;
-            fill: white;
-            &.check-mark {
-                position: relative;
-                fill: $green;
-                width: 18px;
-                height: 18px;
-            }
-            &.x-mark {
-                @extend %abs-middle;
-                width: 23px;
-                height: 23px;
-                fill: $red;
-            }
-            &.unknown-mark {
-                @include transform(rotate(-45deg));
-                top: -6px;
-                left: -6px;
-                fill: $gold;
-                width: 30px;
-                height: 30px;
-            }
-        }
     }
 }
-
+//
 // Large circle with line icon / stop-sign
+//
 .prohibited-icon {
     @extend %abs-middle;
-    fill: $red;
     width: 135%;
     height: 135%;
-}
-
-
-.img-wrap {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin: 0 auto;
-    overflow: hidden;
-    // border: 1px solid blue;
-    img {
-        width: 100%;
-        height: auto;
+    fill: $red;
+    &.support {
+        fill: $gold;
     }
 }
+
+
+

@@ -11,8 +11,11 @@
         // border: 1px solid white;
         &:not(.DC1) {
             stroke: grey;
-            stroke-width: 0.2em; 
+            stroke-width: 0.1em; 
             stroke-opacity: 0.4;
+            @include mediaMin($tablet) {
+                // stroke-width: 0.05em; 
+            }
         }
         &:hover {
             opacity: 0.50;

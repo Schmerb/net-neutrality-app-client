@@ -15,6 +15,9 @@
         @include mediaMin(1500px) {
             height: 300px;
         }
+        //
+        // custom scroll bars
+        //
         &::-webkit-scrollbar { // background of bar itself
             background-color: transparent;
             width: 7px;

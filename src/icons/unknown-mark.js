@@ -9,6 +9,6 @@ import React from 'react';
 
 export default function UnknownMarkIcon(props) {
     return(
-        <svg className={props.className} onClick={props.onClick} role="img" aria-label="Unknown mark icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M325 265H175v-30h150v30zm-75-165c-82.71 0-150 67.29-150 150 0 82.725 67.29 150 150 150s150-67.275 150-150c0-82.71-67.29-150-150-150z"/></svg>
+        <svg className={props.className} onClick={props.onClick} role="img" aria-label="Unknown mark icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M24 12c0 6.627-5.372 12-12 12S0 18.627 0 12 5.372 0 12 0s12 5.373 12 12" fill="#FFBB08"/><path fill="#FFF" d="M7.964 17.157l-2.12-2.121 9.192-9.193 2.12 2.121z"/></g></svg>
     );
 }

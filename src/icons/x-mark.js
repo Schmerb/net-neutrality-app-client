@@ -8,7 +8,7 @@ import React from 'react';
 
 export default function XMarkIcon(props) {
     return(
-        <svg className={props.className} onClick={props.onClick} role="img" aria-label="X mark icon"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 10.917c-21.584 0-39.083 17.499-39.083 39.083S28.416 89.083 50 89.083 89.083 71.584 89.083 50 71.584 10.917 50 10.917zm17.045 51.885a3 3 0 0 1-4.242 4.244L50 54.243 37.197 67.044c-.586.585-1.354.878-2.121.878s-1.535-.293-2.121-.879a3 3 0 0 1 0-4.243L45.757 50 32.955 37.198a3 3 0 1 1 4.242-4.243L50 45.757l12.803-12.803a3 3 0 0 1 4.242 4.243L54.242 50l12.803 12.802z"/></svg>
+        <svg className={props.className} onClick={props.onClick} role="img" aria-label="X mark icon"  width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M24 12c0 6.627-5.372 12-12 12S0 18.627 0 12 5.372 0 12 0s12 5.373 12 12" fill="red"/><path fill="#FFF" d="M16.973 15.22l-1.736 1.735-3.614-3.614-3.737 3.737-1.927-1.927 3.737-3.737-3.651-3.651L7.78 6.027l3.65 3.651 3.72-3.72 1.927 1.928-3.719 3.72z"/></g></svg>
     );
 }
 

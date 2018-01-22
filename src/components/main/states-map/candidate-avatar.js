@@ -27,28 +27,32 @@ export default function CandidateAvatar(props) {
         prohibitedIcon = <ProhibitedIcon className="prohibited-icon"/>
     } else {
         supportIcon = <UnknownMarkIcon className="unknown-mark"/>;
+        prohibitedIcon = <ProhibitedIcon className="prohibited-icon support"/>
     }
 
     let partyIcon = null;
+    let classes = '';
     if(props.party === 'Republican') {
         partyIcon = <RepublicanIcon className="republican"/>;
     } else if(props.party === 'Democratic'){
         partyIcon = <DemocraticIcon className="democratic"/>;
     } else if(props.party === 'Libertarian'){
         partyIcon = <LibertarianIcon className="libertarian"/>;
+        classes = 'png';
     } else if(props.party === 'Independent'){
         partyIcon = <IndependentIcon className="independent"/>;
+        classes = 'png';
     } else {
         partyIcon = <QuestionMarkIcon className="question-mark"/>;
     }
     
     return(
         <div className="avatar">
-            <div className="svg-wrap">
+            <div className="support-icon-wrap">
                 {supportIcon}
             </div>
             {prohibitedIcon}
-            <div className="party-icon-wrap">
+            <div className={`party-icon-wrap ${classes}`}>
                 {partyIcon}
             </div>
             <div className="img-wrap" data-id={props.id}>
