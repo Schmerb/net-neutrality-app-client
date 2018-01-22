@@ -8,11 +8,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import CandidatesList from './candidates-list';
-
-import { setCurrentState, getCandidates, displayCandidates } from 'actions/map';
-import { getFullName, states } from 'utils/states';
-
 import ArrowDown from 'icons/arrow-down';
+
+import { states } from 'utils/states';
+import { updateState } from 'services/candidates';
+
 
 export class CandidatesContainer extends Component {
     constructor(props) {
@@ -27,9 +27,7 @@ export class CandidatesContainer extends Component {
     handleSelect = (e) => {
         const state = e.target.value;
         if(state !== 'select-state') {
-            this.props.dispatch(setCurrentState(state));
-            this.props.dispatch(getCandidates(getFullName(state)));
-            this.props.dispatch(displayCandidates());
+            updateState(state); // Dispatches actions to update store with state / candidates
         };
     }
 
@@ -52,7 +50,7 @@ export class CandidatesContainer extends Component {
                 <div className="candidates-inner-wrap">
                     <div className="select-box-wrap">
                         <ArrowDown className="arrow-down"/>
-                        <label htmlFor="state-select-dropdown">Select a state</label>
+                        <label htmlFor="state-select-dropdown" className="aria-hidden" aria-hidden="true">Select a state</label>
                         <select id="state-select-dropdown" className="select-box" value={currentState}  
                                                            onChange={this.handleSelect} placeholder="Testing">
                             <option value="select-state">Select State</option>

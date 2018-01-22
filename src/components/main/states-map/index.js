@@ -10,10 +10,7 @@ import { connect } from 'react-redux';
 import USAMap from 'react-usa-map';
 import CandidatesContainer from './candidates-container';
 
-import { setCurrentState, getCandidates, displayCandidates } from 'actions/map';
-
-import { getFullName } from 'utils/states';
-
+import { updateState } from 'services/candidates';
 
 export class StatesMap extends Component {
     constructor(props) {
@@ -26,9 +23,7 @@ export class StatesMap extends Component {
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     handleMapClick = e => {
         const state = e.target.dataset.name;
-        this.props.dispatch(setCurrentState(state));
-        this.props.dispatch(getCandidates(getFullName(state)));
-        this.props.dispatch(displayCandidates());
+        updateState(state); // Dispatches actions to update store with state / candidates
     };
 
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

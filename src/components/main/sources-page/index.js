@@ -5,34 +5,50 @@
 // // // // // // // // // //
 
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
+
+import SourcesList from './source-list';
 
 import { getFullName } from 'utils/states';
+// import { scrollIt }    from 'utils/scroll';
+import { updateState } from 'services/candidates';
 
-export default class SourcesPage extends Component {
+export class SourcesPage extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            state: this.props.location.pathname.slice(9)
+        };
+    }
+
+    componentWillMount() {
+        updateState(this.state.state);
+    }
+   
+
     render() {
-        // removes "/sources/" from path
-        let state = this.props.location.pathname.slice(9);
-        console.log(this.props);
-        console.log({state});
         return(
             <section className="sources-page">
-                <h2>Sources</h2>
-                <h3>{getFullName(state)}</h3>
+                <div className="sources-title">
+                    <h2>Sources</h2>
+                    <h3>{getFullName(this.state.state)}</h3>
+                </div>
 
-                {/* SENATE */}
-                <section className="senate-sources">
-                    <h4>Senate</h4>
-                    <ul></ul>
-                </section>
-
-                {/* HOUSE */}
-                <section className="house-sources">
-                    <h4>House of Representatives</h4>
-                    <ul></ul>
-                </section>
+                <div className="sources-inner-wrap">
+                    {/* SENATE */}
+                    <SourcesList group="senate" candidates={this.props.senate} location={this.props.location}/>
+                    {/* HOUSE */}
+                    <SourcesList group="house" candidates={this.props.house} location={this.props.location}/>
+                </div>
 
             </section>
         );
     }
 }
+
+const mapStateToProps = state => ({
+    house: state.map.house,
+    senate: state.map.senate
+});
+
+export default connect(mapStateToProps)(SourcesPage);
