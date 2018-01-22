@@ -8,11 +8,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import CandidatesList from './candidates-list';
-
-import { setCurrentState, getCandidates, displayCandidates } from 'actions/map';
-import { getFullName, states } from 'utils/states';
-
 import ArrowDown from 'icons/arrow-down';
+
+import { states } from 'utils/states';
+import { updateState } from 'services/candidates';
+
 
 export class CandidatesContainer extends Component {
     constructor(props) {
@@ -27,9 +27,7 @@ export class CandidatesContainer extends Component {
     handleSelect = (e) => {
         const state = e.target.value;
         if(state !== 'select-state') {
-            this.props.dispatch(setCurrentState(state));
-            this.props.dispatch(getCandidates(getFullName(state)));
-            this.props.dispatch(displayCandidates());
+            updateState(state); // Dispatches actions to update store with state / candidates
         };
     }
 

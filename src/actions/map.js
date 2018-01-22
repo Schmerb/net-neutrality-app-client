@@ -105,7 +105,7 @@ export const getSourcesError = error => ({
 // * * * * * * * * * * * * * * *
 export const getSources = (state, congressGroup) => dispatch => {
     return (
-        fetch(`${API_BASE_URL}/candidates/${congressGroup}?state=${state}`, {
+        fetch(`${API_BASE_URL}/candidates/${congressGroup}?state=${state}&sources=true`, {
             method: 'GET'
         })
         .then(res => normalizeResponseErrors(res))

@@ -16,6 +16,7 @@ import jwtDecode from 'jwt-decode';
 
 import { setAuthToken, setCurrentUser }  from 'actions/auth';
 import { loadAuthToken } from 'utils/local-storage';
+import candidates from 'services/candidates';
 
 import authReducer          from 'reducers/auth';
 import mapReducer           from 'reducers/map';
@@ -49,5 +50,7 @@ if (authToken) {
 
 // Hydrate stores from MongoDB
 // hydrateService(store, authToken);
+
+candidates(store);
 
 export default store;

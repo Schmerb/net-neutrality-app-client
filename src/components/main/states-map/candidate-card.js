@@ -82,7 +82,7 @@ export class CandidateCard extends Component {
                 <CandidateAvatar id={id} imgUrl={imgUrl} firstName={firstName} 
                                  lastName={lastName} supports={supports} party={party} />
                 <h3><span>{firstName}</span> <span>{lastName}</span></h3>
-                <span className="district">{distrSuffix}</span>
+                <span className="district">{distrSuffix === 'null' ? '':distrSuffix}</span>
                 <span className={`${supportClass} support`}>{supports}</span>
                 <span><a href={campaignWebsite} target="_blank">Website</a></span>
                 <span>{source}</span>
