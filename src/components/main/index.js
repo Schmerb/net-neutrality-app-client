@@ -10,6 +10,7 @@ import { withRouter, Route } from 'react-router-dom';
 
 import LandingPage from './landing';
 import StatesMap   from './states-map';
+import SourcesPage from './sources-page';
 
 
 export class Main extends Component {
@@ -25,6 +26,7 @@ export class Main extends Component {
                 <div className={`container ${classes}`}>
                     <Route exact path="/" component={LandingPage}/>
                     <Route exact path="/map" component={StatesMap}/>
+                    <Route path="/sources" component={SourcesPage}/>
                 </div> 
             </main>
         );

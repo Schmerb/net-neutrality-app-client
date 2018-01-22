@@ -43,7 +43,11 @@
     }
     a {
         @extend %transition;
-        color: #555;
+        color: #999;
+        &.disabled {
+            color: #555;
+            pointer-events: none;
+        }
         &:hover {
             color: lightgrey;
         }

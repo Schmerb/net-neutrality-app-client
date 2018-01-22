@@ -52,7 +52,9 @@ export class CandidatesContainer extends Component {
                 <div className="candidates-inner-wrap">
                     <div className="select-box-wrap">
                         <ArrowDown className="arrow-down"/>
-                        <select className="select-box" value={currentState}  onChange={this.handleSelect} placeholder="Testing">
+                        <label htmlFor="state-select-dropdown">Select a state</label>
+                        <select id="state-select-dropdown" className="select-box" value={currentState}  
+                                                           onChange={this.handleSelect} placeholder="Testing">
                             <option value="select-state">Select State</option>
                             {options}
                         </select>

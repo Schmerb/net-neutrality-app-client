@@ -5,10 +5,14 @@
 // // // // // // // // // //
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import CandidateAvatar from './candidate-avatar';
 
-export default class CandidateCard extends Component {
+import { getDistrictSuffix } from 'utils/district-suffix';
+
+export class CandidateCard extends Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -35,47 +39,60 @@ export default class CandidateCard extends Component {
     };
 
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-    // Returns appropriate number suffix
+    // Returns either url to 3rd party source or url to 
+    // redirect to sources page within website to show quotes
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-    getDistrictSuffix = () => {
-        let num = this.props.candidate.district;
-        if (num === 'unknown') return num;
-        if (num === 4 || num === 11 || num === 12 || num === 13) return num + 'th District';
-        const char = num.toString().charAt(num.toString().length - 1);
-        switch (char) {
-            case '1':
-                return num + 'st District';
-            case '2':
-                return num + 'nd District';
-            case '3':
-                return num + 'rd District';
-            default:
-                return num + 'th District';
+    getSource = () => {
+        const { source, lastName } = this.props.candidate;
+        let url = '', classes = '';
+        if(source === '' || source === 'sent') {
+            classes = 'disabled';
+        } else if(source.includes('Email') || source.includes('email') || source.includes('response')) {
+            url = `/sources/${this.props.currentState}#${lastName}`;
+        } else if(source.includes('Retweet') || source.includes('Facebook')) {
+            url = `/sources/${this.props.currentState}#${lastName}`;
+        } else {
+            console.log(source);
+            console.log(source.slice(0,3));
+            if(source.slice(0,3) === 'www') {
+                url = `https://${source}`;
+            } else {
+                url = source;
+            }
         }
-    };
+        return <Link to={url} className={classes} target="_blank">Source</Link>;
+    }
 
     render() {
-        const { supports, supportClass } = this.getSupport();
-        const district = this.getDistrictSuffix();
         const { firstName, 
-                lastName, 
-                party, 
-                campaignWebsite, 
-                source,
-                imgUrl,
-                id 
+            lastName, 
+            district,
+            party, 
+            campaignWebsite, 
+            imgUrl,
+            id 
         } = this.props.candidate;
-        
+
+        const distrSuffix = getDistrictSuffix(district);
+        const { supports, supportClass } = this.getSupport();
+
+        const source = this.getSource();
         return(
             <div className="candidate-wrap">
                 <CandidateAvatar id={id} imgUrl={imgUrl} firstName={firstName} 
                                  lastName={lastName} supports={supports} party={party} />
                 <h3><span>{firstName}</span> <span>{lastName}</span></h3>
-                <span className="district">{district}</span>
+                <span className="district">{distrSuffix}</span>
                 <span className={`${supportClass} support`}>{supports}</span>
-                <span><a href={campaignWebsite} target="__blank">Website</a></span>
-                <span><a href={source} target="__blank">Source</a></span>
+                <span><a href={campaignWebsite} target="_blank">Website</a></span>
+                <span>{source}</span>
             </div>
         );
     }
 }
+
+const mapStateToProps = state => ({
+    currentState: state.map.currentState
+});
+
+export default connect(mapStateToProps)(CandidateCard);
