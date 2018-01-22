@@ -11,6 +11,7 @@ import { getFullName } from 'utils/states';
 
 export default class SourcesPage extends Component {
     render() {
+        // removes "/sources/" from path
         let state = this.props.location.pathname.slice(9);
         console.log(this.props);
         console.log({state});
@@ -22,11 +23,13 @@ export default class SourcesPage extends Component {
                 {/* SENATE */}
                 <section className="senate-sources">
                     <h4>Senate</h4>
+                    <ul></ul>
                 </section>
 
                 {/* HOUSE */}
                 <section className="house-sources">
                     <h4>House of Representatives</h4>
+                    <ul></ul>
                 </section>
 
             </section>

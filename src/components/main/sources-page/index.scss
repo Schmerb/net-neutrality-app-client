@@ -12,7 +12,7 @@
     h2, h3 {
         text-align: center;
     }
-
+    
     @include mediaMin($tablet) {
         margin-left: 140px;
     }

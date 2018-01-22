@@ -14,7 +14,10 @@ const gulp       = require('gulp'),
 /////////////////
 
 const SCSS_SRC  = 'src/components/**/*.scss';
-const SCSS_DEST = 'src/css';
+const SCSS_DEST = 'public/css';
+
+//'src/components/screen.scss'
+
 
 gulp.task('build_scss', function() {
     return gulp.src('src/components/screen.scss')
