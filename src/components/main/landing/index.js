@@ -18,7 +18,7 @@ export class LandingPage extends Component {
 
     render() {
         return(
-            <div className="landing-page">
+            <section className="landing-page">
                 <div className="text-wrap">
                     <h2>Introduction to the microsite sed do eiusmod tempor.</h2>
                     <p>The Federal Communications Commission (FCC) vote on December 14 on Net Neutrality casts a long shadow of doubt on the future of the internet in the United States. As a technologist with more than a decade of experience and now an educator at Thinkful, that same shadow looms over the future of my students.</p>
@@ -29,7 +29,7 @@ export class LandingPage extends Component {
                             defaultFill={"transparent"} 
                             title={"Map of the United States of America"}/>
                 </div>
-            </div>
+            </section>
         );
     }
 }

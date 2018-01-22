@@ -12,16 +12,12 @@
     height: 70px;
     line-height: 50px;
     margin: 30px 0;
-    // border: 1px solid blue;
-    label {
-        margin-top: 15px;
-        // border: 1px solid red;
-    }
     span {
+        font-family: "MaisonNeue-Book";
+        font-size: smaller;
         position: relative;
         top: -10px;
         margin-right: 10px;
-        // vertical-align: top;
     }
     svg {
         fill: white;

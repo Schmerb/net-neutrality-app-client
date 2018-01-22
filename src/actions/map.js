@@ -38,9 +38,9 @@ export const getCandidatesSuccess = candidates => ({
     house: candidates.house,
     senate: candidates.senate
 });
-export const GET_CANDIDATES_ERORR = 'GET_CANDIDATES_ERORR';
+export const GET_CANDIDATES_ERROR = 'GET_CANDIDATES_ERROR';
 export const getCandidatesError = error => ({
-    type: GET_CANDIDATES_ERORR,
+    type: GET_CANDIDATES_ERROR,
     error
 });
 
@@ -63,6 +63,64 @@ export const getCandidates = (state, congressGroup) => dispatch => {
         .catch(err => {
             console.log({message: 'Internal server error', err})
             dispatch(getCandidatesError(err));
+        })
+    );
+};
+
+
+// // // // // // // // // //
+//
+//      Sources
+//
+// // // // // // // // // //
+
+
+// * * * * * * * * * * * * * * *
+// Adds house candidates to 
+// store
+// * * * * * * * * * * * * * * *
+export const GET_SOURCES_HOUSE = 'GET_SOURCES_HOUSE';
+export const getSourcesHouse = (candidates) => ({
+    type: GET_SOURCES_HOUSE,
+    houseSources: candidates
+});
+// * * * * * * * * * * * * * * *
+// Adds senate candidates to 
+// store
+// * * * * * * * * * * * * * * *
+export const GET_SOURCES_SENATE = 'GET_SOURCES_SENATE';
+export const getSourcesSenate = (candidates) => ({
+    type: GET_SOURCES_SENATE,
+    senateSources: candidates
+});
+export const GET_SOURCES_ERROR = 'GET_SOURCES_ERROR';
+export const getSourcesError = error => ({
+    type: GET_SOURCES_ERROR,
+    error
+});
+// * * * * * * * * * * * * * * *
+// Gets current candidates for
+// part of Congress given who
+// have quotes for sources
+// * * * * * * * * * * * * * * *
+export const getSources = (state, congressGroup) => dispatch => {
+    return (
+        fetch(`${API_BASE_URL}/candidates/${congressGroup}?state=${state}`, {
+            method: 'GET'
+        })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(res => {
+            console.log(res);
+            if(congressGroup === 'house') {
+                dispatch(getSourcesHouse(res.Candidates2018));
+            } else {
+                dispatch(getSourcesSenate(res.Candidates2018));
+            }
+        })
+        .catch(err => {
+            console.log({message: 'Internal server error', err})
+            dispatch(getSourcesError(err));
         })
     );
 };

@@ -11,7 +11,8 @@ import { Provider } from 'react-redux';
 
 import App from 'components/app';
 import store from 'store';
-import 'css/screen.min.css';
+
+// import 'css/screen.min.css';
 
 
 

@@ -7,7 +7,10 @@
 import { 
     SET_CURRENT_STATE,
     GET_CANDIDATES_SUCCESS,
-    GET_CANDIDATES_ERORR,
+    GET_CANDIDATES_ERROR,
+    GET_SOURCES_HOUSE,
+    GET_SOURCES_SENATE,
+    GET_SOURCES_ERROR,
     DISPLAY_CANDIDATES
 } from 'actions/map'
 
@@ -15,6 +18,8 @@ const initialState = {
     currentState: 'select-state',
     house: [],
     senate: [],
+    houseSources: [],
+    senateSources: [],
     display: false,
     error: null
 };
@@ -35,7 +40,22 @@ export default function reducer(state = initialState, action) {
                 house: action.house,
                 senate: action.senate
             }
-        case GET_CANDIDATES_ERORR:
+        case GET_CANDIDATES_ERROR:
+            return {
+                ...state,
+                error: action.error
+            }
+        case GET_SOURCES_HOUSE:
+            return {
+                ...state,
+                houseSources: action.houseSources
+            };
+        case GET_SOURCES_SENATE:
+            return {
+                ...state,
+                senateSources: action.senateSources
+            };
+        case GET_SOURCES_ERROR:
             return {
                 ...state,
                 error: action.error
