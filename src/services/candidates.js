@@ -4,7 +4,12 @@
 //
 // // // // // // // // // // // // 
 
-import { setCurrentState, getCandidates, displayCandidates } from 'actions/map';
+import { 
+    setCurrentState, 
+    getCandidates, 
+    displayCandidates, 
+    clearCandidates 
+} from 'actions/map';
 import { getFullName } from 'utils/states';
 
 let store;
@@ -12,6 +17,7 @@ let store;
 
 export function updateState(state) {
     store.dispatch(setCurrentState(state));
+    store.dispatch(clearCandidates);
     store.dispatch(getCandidates(getFullName(state)));
     store.dispatch(displayCandidates());
 };

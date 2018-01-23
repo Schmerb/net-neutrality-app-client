@@ -30,6 +30,16 @@ export const displayCandidates = () => ({
 
 
 // * * * * * * * * * * * * * * *
+// clears all candidates from
+// store
+// * * * * * * * * * * * * * * *
+export const CLEAR_CANDIDATES = 'CLEAR_CANDIDATES';
+export const clearCandidates = () => ({
+    type: CLEAR_CANDIDATES
+});
+
+
+// * * * * * * * * * * * * * * *
 // Adds candidates to store
 // * * * * * * * * * * * * * * *
 export const GET_CANDIDATES_SUCCESS = 'GET_CANDIDATES_SUCCESS';
