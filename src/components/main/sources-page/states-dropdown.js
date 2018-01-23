@@ -11,6 +11,8 @@ import ArrowDown from 'icons/arrow-down';
 import { states } from 'utils/states';
 import { updateState } from 'services/candidates';
 
+const entries = require('object.entries');
+
 export default class StatesDropdown extends Component {
     constructor(props) {
         super(props);
@@ -36,7 +38,7 @@ export default class StatesDropdown extends Component {
     // Fills dropdown menu with all states
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     getAllStates = (currentState) => {
-        return Object.entries(states)
+        return entries(states)
                      .map((state, key) => (
                         <option key={key} value={state[1]}>{state[0]}</option>
                     ));

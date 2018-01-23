@@ -14,6 +14,9 @@ import store from 'store';
 
 // import 'css/screen.min.css';
 
+// ES6 Polyfills 
+require('string.prototype.includes');
+require('string.prototype.startswith');
 
 
 ReactDOM.render(

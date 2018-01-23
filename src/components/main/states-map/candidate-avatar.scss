@@ -31,6 +31,20 @@
         top: -5px;
         right: -5px;
         z-index: 1;
+        &.qmark {
+            &::after {
+                content: '';
+                // @extend %abs-middle;
+                position: absolute;
+                top: 4px;
+                left: 2px;
+                background-color: white;
+                width: 22px;
+                height: 20px;
+                border-radius: 50%;
+                z-index: -1;
+            }
+        }
         &.png {
             top: -5px;
             right: -2px;
@@ -38,6 +52,8 @@
         // border: 1px solid white;
         svg.question-mark {
             fill: $green;
+            width: 26px;
+            height: 26px;
         }
         // PNG images
         .libertarian {

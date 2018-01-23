@@ -44,6 +44,7 @@ export default function CandidateAvatar(props) {
         classes = 'png';
     } else {
         partyIcon = <QuestionMarkIcon className="question-mark"/>;
+        classes = 'qmark';
     }
     
     return(

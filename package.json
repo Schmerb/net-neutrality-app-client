@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "jwt-decode": "^2.2.0",
+    "object.entries": "^1.0.4",
     "react": "^16.2.0",
     "react-cookie": "^2.1.2",
     "react-dom": "^16.2.0",
@@ -17,6 +18,8 @@
     "redux-thunk": "^2.2.0",
     "slick-carousel": "^1.7.1",
     "socket.io-client": "^2.0.4",
+    "string.prototype.includes": "^1.0.0",
+    "string.prototype.startswith": "^0.2.0",
     "validator": "^8.1.0"
   },
   "scripts": {

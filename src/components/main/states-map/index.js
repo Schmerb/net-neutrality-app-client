@@ -22,8 +22,16 @@ export class StatesMap extends Component {
     // Handles all clicks on map
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     handleMapClick = e => {
-        const state = e.target.dataset.name;
-        updateState(state); // Dispatches actions to update store with state / candidates
+        const { attributes } = e.target;
+        let state = this.props.currentState;
+        for(let i=0; i<attributes.length; i++) {
+            if (/^data-.*/.test(attributes[i].name)) {
+                if(attributes[i].name === 'data-name') {
+                    state = attributes[i].value;
+                    updateState(state); // Dispatches actions to update store with state / candidates
+                }
+            }
+        }
     };
 
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
