@@ -6,14 +6,50 @@
 
 .candidate-source {
     // border: 1px solid white; 
+    @include transition(0.9s);
     position: relative;
-    min-height: 100px;
+    min-height: 140px;
     margin-bottom: 15px;
+    border-radius: 20px;
+    padding: 20px 0;
+    &.highlight {
+        background-color: rgba(grey, 0.4);
+    }
+    h3 {
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+    // QUOTE
+    .quote {
+        max-width: 500px;
+        margin: 15px auto;
+    }
+    // SOCIAL quote Fb etc.
+    .social-quote {
+        span {
+            color: grey;
+            display: block;
+            margin: 10px;
+            margin-left: 20px;
+        }
+        p {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+    }
+
+    //
+    // Social icons
+    //
     .source-icon {
         @extend %transition;
-        @extend %abs-middle;
+        @include middleR(20px);
         width: 50px;
         height: 50px;
+        @include mediaMin($tablet) {
+            @include abs-middle;
+            
+        }
         &:hover {
             &.fb, 
             &.twitter .cls-2 {
@@ -21,6 +57,9 @@
             }
             &.link {
                 stroke: white;
+            }
+            &.imgur {
+                fill: grey;
             }
         }
         &.imgur {
@@ -30,6 +69,9 @@
         }
         &.twitter {
             // stroke: $twitter;
+            @include mediaMax($tablet - 1) {
+                @include middleR(10px);
+            }
             .cls-1 {
                 fill: none;
             }
@@ -47,23 +89,6 @@
             width: 40px;
             height: 45px;
             stroke: grey;
-        }
-    }
-    // QUOTE
-    .quote {
-        max-width: 500px;
-        margin: 15px auto;
-    }
-    // SOCIAL quote Fb etc.
-    .social-quote {
-        span {
-            color: grey;
-            display: block;
-            margin: 10px 0;
-        }
-        p {
-            max-width: 500px;
-            margin: 0 auto;
         }
     }
 }
