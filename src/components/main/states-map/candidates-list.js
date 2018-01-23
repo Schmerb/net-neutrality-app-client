@@ -47,7 +47,7 @@ export class CandidatesList extends Component {
     render() {
         const candidates = this.getCandidates(this.props.candidates),
               classes    = this.getListClasses(this.props.candidates.length),
-              spinner    = <Spinner name='circle' fadeIn="none" overrideSpinnerClassName="loading-spinner"/>;
+              spinner    = <Spinner name='circle' fadeIn="quarter" overrideSpinnerClassName="loading-spinner"/>;
         const properGroupName = this.props.group === 'senate' ? 'Senate':'House of Representatives';
         const display = this.props.display ? '': 'hidden';
        
