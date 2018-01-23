@@ -103,4 +103,7 @@
     margin-bottom: 10px;
     border: none;
     cursor: pointer;
+    &::-ms-expand {
+        display: none;
+    }
 }
