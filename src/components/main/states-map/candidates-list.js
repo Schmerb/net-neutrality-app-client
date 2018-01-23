@@ -45,11 +45,11 @@ export class CandidatesList extends Component {
     };
 
     render() {
-        const candidates = this.getCandidates(this.props.candidates);
-        const classes    = this.getListClasses(this.props.candidates.length);
+        const candidates = this.getCandidates(this.props.candidates),
+              classes    = this.getListClasses(this.props.candidates.length),
+              spinner    = <Spinner name='circle' fadeIn="none" overrideSpinnerClassName="loading-spinner"/>;
         const properGroupName = this.props.group === 'senate' ? 'Senate':'House of Representatives';
         const display = this.props.display ? '': 'hidden';
-        const spinner = <Spinner name='circle' overrideSpinnerClassName="loading-spinner"/>;
        
         return(
             <div className={`${this.props.group}-wrap candidate-list ${display}`}>

@@ -6,6 +6,7 @@
 
 .candidate-list {
     ul {
+        position: relative;
         height: 250px;
         // margin-right: 10px;
         padding-top: 10px;
@@ -67,7 +68,15 @@
     }
 }
 
+//
+// Loading Spinner
+//
+.sk-circle {
+    width: 30px !important;
+    height: 30px !important;
+}
 .loading-spinner {
+    @extend %abs-middle;
     div {
         &:nth-of-type(1n) {
             color: #e74949;
