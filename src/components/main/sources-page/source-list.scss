@@ -39,8 +39,14 @@
             @include mediaMin($tablet) {
                 top: 180px;
                 left: 160px;
-                padding-left: 65px;
+                padding-left: calc(45px);
                 width: calc(95% - 160px);
+            }
+            @include mediaMin($tablet + 300) {
+                padding-left: calc(45px + 2vw);
+            }
+            @include mediaMin($tablet + 600) {
+                padding-left: calc(45px + 3vw);
             }
         }
     }
