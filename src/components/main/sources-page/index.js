@@ -17,19 +17,39 @@ export class SourcesPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            state: this.props.location.pathname.slice(9)
+            state: this.props.location.pathname.slice(9),
+            classes: ''
         };
     }
 
     componentWillMount() {
         updateState(this.state.state);
+        window.addEventListener('scroll', this.handleWindowScroll);
     }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleWindowScroll);
+    }
+
+    // * * * * * * * * * * * * * * * * 
+    // Fires on user scroll event
+    // * * * * * * * * * * * * * * * * 
+    handleWindowScroll = e => {
+        const someDiv       = document.getElementById('sources-page');
+        const distanceToTop = someDiv.getBoundingClientRect().top;
+        console.log({distanceToTop});
+        if(distanceToTop <= 0 && this.state.classes === '') {
+            this.setState({ classes: 'fixed' });
+        } else if(distanceToTop > 0 && this.state.classes === 'fixed') {
+            this.setState({ classes: '' });
+        }
+    };
    
 
     render() {
         return(
-            <section className="sources-page">
-                <div className="sources-title">
+            <section className="sources-page" id="sources-page">
+                <div className={`sources-title ${this.state.classes}`} >
                     <h2>Sources</h2>
                     <h3>{getFullName(this.state.state)}</h3>
                 </div>
