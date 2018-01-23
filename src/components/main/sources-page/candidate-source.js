@@ -61,9 +61,14 @@ export default class CandidateSource extends Component {
         );
     }
 
+    // Retweet of :  https://twitter.com/NathanBenefield/status/941425942592983040
+
     render() {
         let src = this.props.candidate.source;
         if(src.includes('twitter.com')) {
+            if(src.includes('Retweet')) {
+                src = src.slice(src.indexOf('http'));
+            }
             src =   (<Link to={src} target="_blank">
                         <span className="aria-hidden" aria-hidden="false">Navigate to {this.props.candidate.firstName} {this.props.candidate.lastName}'s twitter source</span>
                         <TwitterIcon className="source-icon twitter"/>

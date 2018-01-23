@@ -7,7 +7,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import SourcesList from './source-list';
+import SourcesList    from './source-list';
+import StatesDropdown from './states-dropdown';
 
 import { getFullName } from 'utils/states';
 // import { scrollIt }    from 'utils/scroll';
@@ -37,7 +38,7 @@ export class SourcesPage extends Component {
     handleWindowScroll = e => {
         const someDiv       = document.getElementById('sources-page');
         const distanceToTop = someDiv.getBoundingClientRect().top;
-        console.log({distanceToTop});
+        // console.log({distanceToTop});
         if(distanceToTop <= 0 && this.state.classes === '') {
             this.setState({ classes: 'fixed' });
         } else if(distanceToTop > 0 && this.state.classes === 'fixed') {
@@ -51,10 +52,11 @@ export class SourcesPage extends Component {
             <section className="sources-page" id="sources-page">
                 <div className={`sources-title ${this.state.classes}`} >
                     <h2>Sources</h2>
-                    <h3>{getFullName(this.state.state)}</h3>
+                    {/* <h3>{getFullName(this.state.state)}</h3> */}
+                    <StatesDropdown currentState={this.state.state} location={this.props.location} history={this.props.history}/>
                 </div>
 
-                <div className="sources-inner-wrap">
+                <div className={`sources-inner-wrap ${this.state.classes}`}>
                     {/* SENATE */}
                     <SourcesList group="senate" candidates={this.props.senate} location={this.props.location}/>
                     {/* HOUSE */}

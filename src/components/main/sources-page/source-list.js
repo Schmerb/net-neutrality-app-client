@@ -18,13 +18,16 @@ export default class SourcesList extends Component {
     
     componentDidMount() {
         let hash = this.props.location.hash.slice(1);
-        setTimeout(() => {
-            const element = document.getElementById(hash);
-            const elementRect = element.getBoundingClientRect();
-            const absoluteElementTop = elementRect.top + window.pageYOffset;
-            const middle = absoluteElementTop - (window.innerHeight / 2);
-            window.scrollTo(0, middle);
-        }, 1000);
+        if(hash !== '') {
+            // Highlights the source from hash endpoint
+            setTimeout(() => {
+                const element = document.getElementById(hash);
+                const elementRect = element.getBoundingClientRect();
+                const absoluteElementTop = elementRect.top + window.pageYOffset;
+                const middle = absoluteElementTop - (window.innerHeight / 2);
+                window.scrollTo(0, middle);
+            }, 1000);
+        }
     }
 
     componentWillMount() {
@@ -36,12 +39,15 @@ export default class SourcesList extends Component {
     }
 
     // * * * * * * * * * * * * * * * * 
-    // Fires on user scroll event
+    // Fixed the congress group title
+    // to top of screen when it reaches
+    // final position
     // * * * * * * * * * * * * * * * * 
     handleWindowScroll = e => {
+        let offset = window.innerWidth >= 900 ? 140 : 50;
         const someDiv       = document.getElementById(`${this.props.group}-sources`);
-        const distanceToTop = someDiv.getBoundingClientRect().top - 50;
-        console.log({distanceToTop});
+        const distanceToTop = someDiv.getBoundingClientRect().top - offset;
+        // console.log({distanceToTop});
         if(distanceToTop <= 0 && this.state.classes === '') {
             this.setState({ classes: 'fixed' });
         } else if(distanceToTop > 0 && this.state.classes === 'fixed') {

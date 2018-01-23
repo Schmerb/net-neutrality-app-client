@@ -33,6 +33,11 @@
     }
     .sources-inner-wrap {
         margin-top: 100px;
+        @include mediaMax($tablet - 1) {
+            &.fixed {
+                margin-top: 200px;
+            }
+        }
     }
     
     @include mediaMin($tablet) {
