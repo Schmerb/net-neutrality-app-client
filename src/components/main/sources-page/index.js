@@ -10,8 +10,6 @@ import { connect } from 'react-redux';
 import SourcesList    from './source-list';
 import StatesDropdown from './states-dropdown';
 
-import { getFullName } from 'utils/states';
-// import { scrollIt }    from 'utils/scroll';
 import { updateState } from 'services/candidates';
 
 export class SourcesPage extends Component {
@@ -52,7 +50,6 @@ export class SourcesPage extends Component {
             <section className="sources-page" id="sources-page">
                 <div className={`sources-title ${this.state.classes}`} >
                     <h2>Sources</h2>
-                    {/* <h3>{getFullName(this.state.state)}</h3> */}
                     <StatesDropdown currentState={this.state.state} location={this.props.location} history={this.props.history}/>
                 </div>
 
