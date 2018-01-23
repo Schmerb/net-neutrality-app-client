@@ -17,7 +17,7 @@ let store;
 
 export function updateState(state) {
     store.dispatch(setCurrentState(state));
-    store.dispatch(clearCandidates);
+    store.dispatch(clearCandidates());
     store.dispatch(getCandidates(getFullName(state)));
     store.dispatch(displayCandidates());
 };

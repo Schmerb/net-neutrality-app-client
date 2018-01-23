@@ -16,6 +16,7 @@ const initialState = {
     currentState: 'select-state',
     house: [],
     senate: [],
+    loading: false,
     display: false,
     error: null
 };
@@ -34,7 +35,8 @@ export default function reducer(state = initialState, action) {
             return {
                 ...state,
                 house: action.house,
-                senate: action.senate
+                senate: action.senate,
+                loading: false
             }
         case GET_CANDIDATES_ERROR:
             return {
@@ -45,7 +47,8 @@ export default function reducer(state = initialState, action) {
             return {
                 ...state,
                 house: [],
-                senate: []
+                senate: [],
+                loading: true
             };
         case DISPLAY_CANDIDATES:
             return {

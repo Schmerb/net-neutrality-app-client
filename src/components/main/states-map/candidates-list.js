@@ -9,6 +9,8 @@ import { connect } from 'react-redux';
 
 import CandidateCard from './candidate-card';
 
+import Spinner from 'react-spinkit';
+
 export class CandidatesList extends Component {
     constructor(props) {
         super(props);
@@ -26,15 +28,34 @@ export class CandidatesList extends Component {
         ));
     };
 
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    // returns appropriate class based on list length / # of 
+    // candidates per list to style correctly
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    getListClasses = (len) => {
+        if(len === 0) {
+            return 'no-candidates';
+        } else if(len === 1) {
+            return 'one-candidates';
+        } else if(len === 2) {
+            return 'two-candidates';
+        } else {
+            return '';
+        }
+    };
+
     render() {
         const candidates = this.getCandidates(this.props.candidates);
+        const classes    = this.getListClasses(this.props.candidates.length);
         const properGroupName = this.props.group === 'senate' ? 'Senate':'House of Representatives';
         const display = this.props.display ? '': 'hidden';
+        const spinner = <Spinner name='circle' overrideSpinnerClassName="loading-spinner"/>;
+       
         return(
             <div className={`${this.props.group}-wrap candidate-list ${display}`}>
                 <h3 className="group-name">{properGroupName}</h3>
-                <ul>
-                    {candidates}
+                <ul className={classes}>
+                    {this.props.loading ? spinner : candidates}
                 </ul>
             </div>
         );
@@ -42,7 +63,8 @@ export class CandidatesList extends Component {
 }
 
 const mapStateToProps = state => ({
-    display: state.map.display
+    display: state.map.display,
+    loading: state.map.loading
 });
 
 export default connect(mapStateToProps)(CandidatesList);
