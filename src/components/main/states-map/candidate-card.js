@@ -70,9 +70,10 @@ export class CandidateCard extends Component {
             party, 
             campaignWebsite, 
             imageURL,
-            ['house-senate']: house_senate,
             id 
         } = this.props.candidate;
+
+        const house_senate = this.props.candidate['house-senate'];
 
         const distrSuffix = getDistrictSuffix(district);
         const { supports, supportClass } = this.getSupport();
