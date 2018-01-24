@@ -5,13 +5,13 @@
 // // // // // // // // // //
 
 import { 
-    LOAD_PREV_STATE,
     SET_CURRENT_STATE,
     GET_CANDIDATES_SUCCESS,
     GET_CANDIDATES_ERROR,
     CLEAR_CANDIDATES,
     DISPLAY_CANDIDATES
-} from 'actions/map'
+} from 'actions/map';
+
 
 const initialState = {
     currentState: 'select-state',

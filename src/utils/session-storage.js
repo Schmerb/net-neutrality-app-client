@@ -10,13 +10,13 @@
 // * * * * * * * * * * * * * * * 
 
 // saves current store state in session
-export const saveMapStore = store => {
-    return sessionStorage.setItem('store', store);
+export const saveCurrentState = state => {
+    return sessionStorage.setItem('state', JSON.stringify(state));
 };
 
-// returns current store state from session
-export const getMapStore = store => {
-    return sessionStorage.getItem('store');
+// returns current state state from session
+export const getPrevState = state => {
+    return JSON.parse(sessionStorage.getItem('state'));
 };
 
 // removes store state from session

@@ -7,14 +7,6 @@
 import { API_BASE_URL } from 'config';
 import { normalizeResponseErrors } from './utils';
 
-// * * * * * * * * * * * * * * *
-// Loads prev state from session
-// * * * * * * * * * * * * * * *
-export const LOAD_PREV_STATE = 'LOAD_PREV_STATE';
-export const loadPrevState = (prevState) => ({
-    type: LOAD_PREV_STATE,
-    prevState
-});
 
 // * * * * * * * * * * * * * * *
 // Sets current state
@@ -75,7 +67,7 @@ export const getCandidates = (state, congressGroup) => dispatch => {
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then(res => {
-            console.log(res);
+            // console.log(res);
             dispatch(getCandidatesSuccess(res.Candidates2018));
         })
         .catch(err => {

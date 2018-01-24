@@ -4,24 +4,36 @@
 //
 // // // // // // // // // // // // 
 
-import { getMapStore } from 'utils/session-storage';
+import { saveCurrentState, getPrevState } from 'utils/session-storage';
+import { updateState } from 'services/candidates';
 
 let store;
 
 export function clearState() {
+
 };
 
 export function hydrateState() {
+    let US_State = getPrevState();
+    updateState(US_State);
 };
+
+let prevState = '';
+function handleStoreChange() {
+    let { currentState } = store.getState().map;
+    if(currentState !== prevState) {
+        prevState = currentState;
+        // save to sessionStorage
+        saveCurrentState(currentState);
+    }
+}
 
 
 export default function(storeObj) {
     store = storeObj;
 
-    // store.subscribe(() => {
-    //     let state = store.getState();
-    //     console.log(state.protectedData);
-    // });
+    
+    store.subscribe(handleStoreChange);
 
     hydrateState();
 }

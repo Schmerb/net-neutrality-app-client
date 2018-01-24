@@ -25,9 +25,4 @@ export function updateState(state) {
 
 export default function(storeObj) {
     store = storeObj;
-
-    // store.subscribe(() => {
-    //     // let state = store.getState();
-    //     // console.log(state.protectedData);
-    // });
 }
