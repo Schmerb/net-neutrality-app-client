@@ -77,10 +77,6 @@ export class CandidateCard extends Component {
         const distrSuffix = getDistrictSuffix(district);
         const { supports, supportClass } = this.getSupport();
 
-        console.log(this.props.candidate);
-        // console.log({district});
-        // console.log({distrSuffix});
-
         const source = this.getSource();
         return(
             <div className="candidate-wrap">
