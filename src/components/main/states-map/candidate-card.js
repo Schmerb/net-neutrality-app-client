@@ -69,7 +69,7 @@ export class CandidateCard extends Component {
             district,
             party, 
             campaignWebsite, 
-            imgUrl,
+            imageURL,
             id 
         } = this.props.candidate;
 
@@ -79,7 +79,7 @@ export class CandidateCard extends Component {
         const source = this.getSource();
         return(
             <div className="candidate-wrap">
-                <CandidateAvatar id={id} imgUrl={imgUrl} firstName={firstName} 
+                <CandidateAvatar id={id} imageURL={imageURL} firstName={firstName} 
                                  lastName={lastName} supports={supports} party={party} />
                 <h3><span>{firstName}</span> <span>{lastName}</span></h3>
                 <span className="district">{distrSuffix === 'null' ? '':distrSuffix}</span>

@@ -19,6 +19,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-office": "REACT_APP_API_BASE_URL='http://192.168.5.43:7000/api/v1' react-scripts start",
     "build": "REACT_APP_API_BASE_URL='https://net-neutrality-app.herokuapp.com/api/v1' react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
