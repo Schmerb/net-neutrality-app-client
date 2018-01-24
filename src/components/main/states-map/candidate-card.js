@@ -70,11 +70,16 @@ export class CandidateCard extends Component {
             party, 
             campaignWebsite, 
             imageURL,
+            ['house-senate']: house_senate,
             id 
         } = this.props.candidate;
 
         const distrSuffix = getDistrictSuffix(district);
         const { supports, supportClass } = this.getSupport();
+
+        console.log(this.props.candidate);
+        // console.log({district});
+        // console.log({distrSuffix});
 
         const source = this.getSource();
         return(
@@ -82,7 +87,7 @@ export class CandidateCard extends Component {
                 <CandidateAvatar id={id} imageURL={imageURL} firstName={firstName} 
                                  lastName={lastName} supports={supports} party={party} />
                 <h3><span>{firstName}</span> <span>{lastName}</span></h3>
-                <span className="district">{distrSuffix === 'null' ? '':distrSuffix}</span>
+                <span className="district">{house_senate === 'house' ? distrSuffix:''}</span>
                 <span className={`${supportClass} support`}>{supports}</span>
                 <span><a href={campaignWebsite} target="_blank">Website</a></span>
                 <span>{source}</span>
