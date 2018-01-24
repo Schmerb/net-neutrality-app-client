@@ -31,7 +31,6 @@ export class Header extends Component {
 
 
 const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null
 });
 
 export default withRouter(connect(mapStateToProps)(Header));

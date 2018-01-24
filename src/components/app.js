@@ -9,7 +9,6 @@ import { connect }    from 'react-redux';
 import { withRouter } from 'react-router-dom';
 // import { Cookies }    from 'react-cookie';
 
-import { refreshAuthToken } from 'actions/auth';
 import { setWidth } from 'actions/display';
 
 import FlashMessage from './services/flash-message';
@@ -23,35 +22,11 @@ export class App extends Component {
         super(props);
         this.state = {};
     }
-    // * * * * * * * * * * * * * * * * * * * *
-    // 
-    // * * * * * * * * * * * * * * * * * * * *
-    componentDidMount() {
-        // if(this.props.hasAuthToken) {
-        //     // Try to get a fresh auth token if we had an existing one in
-        //     // localStorage
-        //     this.props.dispatch(refreshAuthToken());
-        // }
-    };
-
-    // * * * * * * * * * * * * * * * * * * * *
-    // 
-    // * * * * * * * * * * * * * * * * * * * *
-    componentWillReceiveProps(nextProps) {
-        // if (nextProps.loggedIn && !this.props.loggedIn) {
-        //     // When we are logged in, refresh the auth token periodically
-        //     this.startPeriodicRefresh();
-        // } else if (!nextProps.loggedIn && this.props.loggedIn) {
-        //     // Stop refreshing when we log out
-        //     this.stopPeriodicRefresh();
-        // }
-    };
 
     // * * * * * * * * * * * * * * * * * * * *
     // Fires when component is about to mount
     // * * * * * * * * * * * * * * * * * * * *
     componentWillMount() {
-        this.stopPeriodicRefresh();
         window.addEventListener('resize', this.handleWindowResize);
     };
 
@@ -70,34 +45,6 @@ export class App extends Component {
         this.props.dispatch(setWidth(window.innerWidth));
     };
 
-
-    // * * * * * * * * * * * * * * * * * * * *
-    // starts timer and refreshes JWT token
-    // every hour
-    // * * * * * * * * * * * * * * * * * * * *
-    startPeriodicRefresh() {
-        this.refreshInterval = setInterval(
-            () => this.props.dispatch(refreshAuthToken()),
-            60 * 60 * 1000 // one hour
-        );
-    };
-
-    // * * * * * * * * * * * * * * * * * * * *
-    // stops timer if it is currently running
-    // * * * * * * * * * * * * * * * * * * * *
-    stopPeriodicRefresh() {
-        if(!this.refreshInterval) {
-            return;
-        }
-        clearInterval(this.refreshInterval);
-    };
-
-    // * * * * * * * * * * * * * * * * * * * *
-    // 
-    // * * * * * * * * * * * * * * * * * * * *
-    watchWindowWidth = () => {
-       
-    }
 
     // * * * * * * * * * * * * * * * * * * * *
     // checks for confirmation and flash
@@ -131,9 +78,6 @@ export class App extends Component {
 }
 
 const mapStateToProps = state => ({
-    hasAuthToken: state.auth.authToken !== null,
-    loggedIn: state.auth.currentUser !== null,
-    justLoggedOut: state.auth.justLoggedOut,
     flashMsg: state.display.flashMsg
 });
 

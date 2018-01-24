@@ -35,7 +35,6 @@ export class Footer extends Component {
 
 
 const mapStateToPRops = state => ({
-    loggedIn: state.auth.currentUser !== null
 });
 
-export default withRouter(connect(mapStateToPRops)(Footer));
+export default withRouter(connect(mapStateToProps)(Footer));

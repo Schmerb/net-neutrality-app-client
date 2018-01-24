@@ -5,6 +5,7 @@
 // // // // // // // // // //
 
 import { 
+    LOAD_PREV_STATE,
     SET_CURRENT_STATE,
     GET_CANDIDATES_SUCCESS,
     GET_CANDIDATES_ERROR,

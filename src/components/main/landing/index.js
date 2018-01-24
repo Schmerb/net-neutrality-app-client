@@ -35,7 +35,6 @@ export class LandingPage extends Component {
 }
 
 const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null,
     hasTouch: state.display.hasTouch,
     width: state.display.width,
     height: state.display.height

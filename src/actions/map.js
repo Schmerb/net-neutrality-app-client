@@ -8,11 +8,19 @@ import { API_BASE_URL } from 'config';
 import { normalizeResponseErrors } from './utils';
 
 // * * * * * * * * * * * * * * *
+// Loads prev state from session
+// * * * * * * * * * * * * * * *
+export const LOAD_PREV_STATE = 'LOAD_PREV_STATE';
+export const loadPrevState = (prevState) => ({
+    type: LOAD_PREV_STATE,
+    prevState
+});
+
+// * * * * * * * * * * * * * * *
 // Sets current state
 // * * * * * * * * * * * * * * *
 export const SET_CURRENT_STATE = 'SET_CURRENT_STATE';
 export const setCurrentState = (currentState) => {
-    console.log('In Action: ', currentState);
     return {
         type: SET_CURRENT_STATE,
         currentState
