@@ -15,7 +15,9 @@ export function clearState() {
 
 export function hydrateState() {
     let US_State = getPrevState();
-    updateState(US_State);
+    if(US_State && US_State !== '') {
+        updateState(US_State);
+    }
 };
 
 let prevState = '';
