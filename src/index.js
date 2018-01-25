@@ -12,12 +12,13 @@ import { Provider } from 'react-redux';
 import App from 'components/app';
 import store from 'store';
 
-// import 'css/screen.min.css';
+import 'css/screen.min.css';
 
 // ES6 Polyfills 
 require('string.prototype.includes');
-require('string.prototype.startswith');
+require('string.prototype.startswith'); 
 
+const rootEl = document.getElementById('root');
 
 ReactDOM.render(
     <Provider store={store}>
@@ -25,5 +26,19 @@ ReactDOM.render(
             <App />
         </Router>
     </Provider>,
-    document.getElementById('root')
-);
+    rootEl
+)
+
+if (module.hot) {
+    module.hot.accept('components/app', () => {
+        const NextApp = require('components/app').default;
+        ReactDOM.render(
+            <Provider store={store}>
+                <Router>
+                    <NextApp />
+                </Router>
+            </Provider>,
+            rootEl
+        )
+    })
+}

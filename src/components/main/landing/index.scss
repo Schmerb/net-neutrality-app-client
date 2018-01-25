@@ -6,19 +6,13 @@
 
 .landing-page {
     color: grey;
-    margin: 0 auto;
-    // border: 1px solid greenyellow;
-    
+    padding: 0 20px;
+    @include mediaMax($tablet - 1) {
+        margin-top: 40px;
+    }
     @include mediaMin($tablet) {
         display: flex;
-        padding-left: 170px;
-        > div {
-            float: left;
-            width: 60%; // map
-            &:first-of-type {
-                width: 40%; // text overview
-            }
-        }
+        justify-content: space-between;
         .us-state-map {
             width: 50vw;
         }
@@ -30,27 +24,33 @@
     //
     // // // // // //
     .text-wrap {
-        font-size: calc(0.8em + 1vw);
         width: 90%;
-        max-width: 500px;
+        max-width: 350px;
         margin: 0 auto;
         // border: 3px solid white;
         @include mediaMin($tablet) {
+            max-width: 415px;
             margin-top: 10vw;
-            font-size: calc(0.5em + 1vw);
         }
         h2 {
             font-family: "MaisonNeue-Mono";
+            font-size: calc(1.2em + 1vw);
             position: relative;
             color: white;
             margin: 0 auto 15px;
             z-index: 1;
+            @include mediaMin(1380px) {
+                font-size: 33px;
+            }
         }
         p {
             font-family: "MaisonNeue-Book";
             position: relative;
-            margin: 0 auto;
+            max-width: 340px;
             z-index: 1;
+            @include mediaMin($tablet) {
+                font-size: calc(14px + 0.2vw);
+            }
         }
     }
     // // // // // //
@@ -59,7 +59,6 @@
     //
     // // // // // //
     .landing-map-wrap {
-        
         position: relative;
         min-height: 300px;
         // border: 3px solid red;
@@ -67,8 +66,11 @@
             height: 350px;
         }
         @include mediaMin($tablet) {
-            height: 50vw;
-            // margin-top: 50px;
+            height: 45vw;
+            margin-top: 70px;
+        }
+        @include mediaMin($desktop) {
+            height: 40vw;
         }
         //
         // Static US Map

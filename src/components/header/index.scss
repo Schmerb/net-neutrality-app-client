@@ -8,10 +8,12 @@ header {
     position: relative;
     width: 100%;
     padding-top: 30px;
+    padding-bottom: 30px;
+    pointer-events: none;
     z-index: 10;
-    // border: 5px solid red;
+    // border: 2px solid red;
     @include mediaMin($tablet) {
-        height: 80px;
+        height: 100px;
         &.sources-header {
             position: fixed;
             top: 0;

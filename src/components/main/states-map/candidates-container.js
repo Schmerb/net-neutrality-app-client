@@ -47,19 +47,19 @@ export class CandidatesContainer extends Component {
         const options = this.getAllStates(currentState);
         return(
             <div className="candidates-container">
-                <p className="directions">Select your state to see which candidates support net neutrality</p>
                 <div className="candidates-inner-wrap">
-                    <div className="select-box-wrap">
+                    <form className="select-form" action="#!">
                         <ArrowDown className="arrow-down"/>
                         <label htmlFor="state-select-dropdown" className="aria-hidden" aria-hidden="true">Select a state</label>
                         <select id="state-select-dropdown" className="select-box" value={currentState}  
-                                                           onChange={this.handleSelect} placeholder="Testing">
+                                                        onChange={this.handleSelect} placeholder="Testing">
                             <option value="select-state">Select State</option>
                             {options}
                         </select>
-                    </div>
-                    <CandidatesList group='senate' candidates={senate} />
-                    <CandidatesList group='house' candidates={house} />
+                    </form>
+                    <p className="directions">Select your state to see which candidates support net neutrality</p>
+                    {/* <CandidatesList group='senate' candidates={senate} />
+                    <CandidatesList group='house' candidates={house} /> */}
                 </div>
             </div>
         );

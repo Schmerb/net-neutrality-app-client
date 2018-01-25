@@ -5,13 +5,24 @@
 // // // // // // // // // //
 
 .think-logo {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    color: white;
+    color: grey;
+    position: fixed;
+    bottom: 0;
+    left: 0;
     height: 70px;
     line-height: 50px;
-    margin: 30px 0;
+    z-index: 10;
+    @include mediaMin($tablet) {
+        position: fixed;
+        top: 25px;
+        right: 25px;
+        left: auto;
+        margin: 0;
+        color: grey;
+        svg {
+            fill: grey;
+        }
+    }
     span {
         font-family: "MaisonNeue-Book";
         font-size: smaller;
@@ -20,16 +31,6 @@
         margin-right: 10px;
     }
     svg {
-        fill: white;
-    }
-    @include mediaMin($tablet) {
-        position: fixed;
-        top: 0;
-        right: 20px;
-        margin: 0;
-        color: grey;
-        svg {
-            fill: grey;
-        }
+        fill: grey;
     }
 }

@@ -5,37 +5,35 @@
 // // // // // // // // // //
 
 .logo {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
     font-family: "MaisonNeue-Mono";
     color: white;
     position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     font-size: calc(1em + 1vw);
-    padding: 0 10px;
+    // border: 1px solid white;
+    @include mediaMin($tablet) {
+        justify-content: flex-start;
+        padding-left: 20px;
+    }
     .monitor-icon {
         fill: grey;
+        pointer-events: all;
     }
-    h1 {
-        font-size: calc(24px + 1vw);
-        width: calc(180px + 5vw);
-        margin-left: 20px;
+    .motto {
+        font-size: calc(24px + 2vw);
+        width: calc(190px + 5vw);
+        line-height: 1.3em;
+        padding-top: 8px;
         // border: 1px solid white;
-    }
-    @include mediaMin($tablet) {
-        .monitor-icon {
-            position: absolute;
-            left: 20px;
-            top: 0;
-        }
-        h1 {
-            @include transform(rotate(-90deg));
+        @include mediaMin(600px) {
             font-size: 36px;
-            position: absolute;
-            top: 340px;
-            left: -180px;
+        }
+        @include mediaMin($tablet) {
             width: auto;
-            word-spacing: 20px;
+            padding-top: 20px;
+            margin-left: 30px;
         }
     }
 }

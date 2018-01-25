@@ -14,23 +14,12 @@
     }
     .us-state-map {
         @include transitions(top 0.3s ease-in-out);
-        top: 0;
+        height: 50vw;
+        position: absolute;
+        top: 140px;
         // border: 1px solid white;
 
-        @include mediaMin(400px) {
-            top: calc(50px + 2vw);
-        }
-        @include mediaMin(600px) {
-            top: calc(50px + 10vw);
-        }
-        @include mediaMax($tablet - 1) {
-            @include center;
-        }
-        // // // // // // // //
-        //
-        // Main Lists / Map
-        //
-        // // // // // // // //
+
         @include mediaMin($tablet) {
             width: 60%;
             height: 40vw;

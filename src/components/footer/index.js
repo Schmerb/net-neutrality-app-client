@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
+import ThinkLogo from './think-logo';
 
 import { scrollIt } from 'utils/scroll';
 
@@ -27,14 +28,14 @@ export class Footer extends Component {
     render() {
         return (
             <footer role="contentinfo">
-
+                <ThinkLogo />
             </footer>
         );
     }
 }
 
 
-const mapStateToPRops = state => ({
+const mapStateToProps = state => ({
 });
 
 export default withRouter(connect(mapStateToProps)(Footer));

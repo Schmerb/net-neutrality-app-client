@@ -10,7 +10,7 @@ main {
         &.map {
             // provides some space for mobile devices at bottom of screen
             @include mediaMax($tablet) {
-                margin-bottom: 100px;
+                // margin-bottom: 100px;
             }
         }
     }

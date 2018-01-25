@@ -15,7 +15,7 @@ import FlashMessage from './services/flash-message';
 
 import Header from './header/';
 import Main   from './main/';
-// import Footer from './footer/';
+import Footer from './footer/';
 
 export class App extends Component {
     constructor(props) {
@@ -71,7 +71,7 @@ export class App extends Component {
                 {flashMsg}
                 <Header />
                 <Main />
-                {/* <Footer /> */}
+                <Footer />
             </section>
         );
     }
