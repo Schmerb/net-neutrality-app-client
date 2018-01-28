@@ -1,0 +1,20 @@
+// // // // // // // // // //
+//
+//   Dropdown Select Box
+//
+// // // // // // // // // //
+
+.select-form {
+    @extend %transition;
+    position: relative;
+    max-width: 380px;
+    margin: 0 auto 20px;
+    border-bottom: 1px solid #555;
+    &:hover {
+        border-bottom-color: grey;
+        svg {
+            fill: grey;
+        }
+    }
+   
+}

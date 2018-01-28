@@ -21,10 +21,9 @@ export class Main extends Component {
     }
 
     render() {
-        let classes = this.props.location.pathname.includes('map') ? 'map':'';
         return(
             <main role="main" >
-                <div className={`container ${classes}`}>
+                <div className="container">
                     <Route exact path="/" component={LandingPage}/>
                     <Route exact path="/map" component={StatesMap}/>
                     <Route path="/sources" component={SourcesPage}/>

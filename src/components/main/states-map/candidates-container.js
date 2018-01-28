@@ -7,8 +7,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import DropDownMenu   from './drop-down-menu';
-import ListsContainer from './lists-container';
+import DropDownMenu   from './inputs/drop-down-menu';
+import SearchMenu     from './inputs/search-menu';
+import ListsContainer from './lists/';
 
 import { states } from 'utils/states';
 import { updateState } from 'services/candidates';
@@ -48,8 +49,13 @@ export class CandidatesContainer extends Component {
         return(
             <div className="candidates-container">
                 <div className="candidates-inner-wrap">
-                    <DropDownMenu handleSelect={this.handleSelect} options={options} currentState={currentState}/>
-
+                    {
+                        window.innerWidth < 900 ? 
+                        (<DropDownMenu handleSelect={this.handleSelect} options={options} currentState={currentState}/>)
+                        :
+                        (<SearchMenu />)
+                    }
+                    
                     { !this.props.display ? (<p className="directions">Select your state to see which candidates support net neutrality</p>) : null }
                     
                     <ListsContainer senate={senate} house={house} className={!this.props.display ? 'hide':''}/>

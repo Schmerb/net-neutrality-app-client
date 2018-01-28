@@ -6,10 +6,14 @@
 
 .candidate-wrap {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     font-family: "MaisonNeue-Book";
     height: 100px;
     padding: 10px;
+    @include mediaMin($tablet) {
+        padding: 2px;
+        align-items: center;
+    }
 }
 
 

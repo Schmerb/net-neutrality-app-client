@@ -1,0 +1,46 @@
+// // // // // // // // // //
+//
+//   Lists Container
+//
+// // // // // // // // // //
+
+.lists-container {
+    @include transition(1s);
+    opacity: 1;
+    &.hide {
+        opacity: 0;
+        pointer-events: none;
+    }
+    .btn-wrap {
+        max-width: 440px;
+        margin: 0 auto;
+        @include mediaMin($tablet) {
+            margin-top: 20px;
+        }
+    }
+    button {
+        @extend %transition;
+        font-size: 24px;
+        font-weight: lighter;
+        color: white;
+        width: 50%;
+        float: left;
+        height: 40px;
+        border: 1px solid grey;
+        border-radius: 0px;
+        &:first-of-type {
+            border-right: none;
+        }
+        &:last-of-type {
+            border-left: none;
+        }
+        &.active {
+            background-color: white;
+            color: black;
+        }
+        &:hover {
+            background-color: lightgrey;
+            color: black;
+        }
+    }
+}

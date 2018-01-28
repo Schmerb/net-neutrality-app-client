@@ -10,7 +10,15 @@
     position: relative;
     font-size: 10px;
     height: 100%;
-    width: 100px;
+    width: 120px;
+    @include mediaMax(340px) {
+        font-size: 8px;
+    }
+    @include mediaMin($tablet) {
+        height: 36px;
+        margin-right: 10px;
+    }
+        
     // border: 1px solid blue;
     span {
         position: absolute;
@@ -22,10 +30,16 @@
         padding-right: 20px;
         border: 2px solid transparent; // color overrides below
         border-radius: 3px;
+        @include mediaMin($tablet) {
+            padding-right: 30px;
+        }
         svg {
             @include middleR(-10px);
             width: auto;
             height: 25px;
+            @include mediaMin($tablet) {
+                height: 36px;
+            }
         }
     }
     .support-yes {

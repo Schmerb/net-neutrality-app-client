@@ -70,13 +70,9 @@ export class CandidateCard extends Component {
             imageURL
         } = this.props.candidate;
 
-        // const house_senate = this.props.candidate['house-senate'];
-
         const { supports, supportClass } = this.getSupport();
-
-       
-
         const source = this.getSource();
+        
         return(
             <div className="candidate-wrap">
                 <CandidateAvatar imageURL={imageURL} supports={supports} party={party}/>

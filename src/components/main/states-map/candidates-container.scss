@@ -3,77 +3,59 @@
 //   Candidates Container
 //
 // // // // // // // // // //
+
 .candidates-container {
+    @extend %transition;
     font-family: "MaisonNeue-Mono";
     color: grey;
     width: 95%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 45%;
-    overflow: hidden;
+    
     .directions {
         color: #555;
         font-size: 19px;
         width: 95%;
         max-width: 330px;
+        margin: 15px auto 0;
+    }
+    //
+    // Lists Wrap
+    //
+    .candidates-inner-wrap {
+        max-width: 600px;
         margin: 0 auto;
         @include mediaMin($tablet) {
-            @include center;
-            max-width: 600px;
-            top: 50px;
-        }
-        @include mediaMin($tablet + 200) {
             max-width: 700px;
         }
     }
-
-    // Main Lists / Map
-    @include mediaMin($tablet) {
-        width: 40%;
-        margin-top: 20px;
-    }
 }
-//
-// Dropdown / Lists Wrap
-//
-.candidates-inner-wrap {
-    max-width: 600px;
-    margin: 0 auto;
+
+// - - - - - - - - - - - -
+// Map Page
+// - - - - - - - - - - - -
+.app.map {
     @include mediaMin($tablet) {
-        max-width: 700px;
-    }
-    // 
-    // List Title - House / Senate
-    //
-    .group-name {
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    .house-wrap {
-        .group-name {
-            margin-top: 15px;
-            margin-bottom: 15px;
+        .candidates-container {
+            position: fixed;
+            top: 10px;
+            right: 15px;
+            width: calc(100px + 25vw);
+            max-width: 440px;
+            margin: 0;
+            // border: 1px solid white;
+            .directions {
+                max-width: 430px;
+            }
         }
+    }
+    @include mediaMin($desktop + 300px) {
+        .candidates-container {
+            right: 10vw;
+        } 
     }
 }
 
-// // // // // // // // 
-// 
-// Dropdown Select Box
-//
-// // // // // // // //
-.select-form {
-    @extend %transition;
-    position: relative;
-    max-width: 380px;
-    margin: 0 auto 20px;
-    border-bottom: 1px solid #555;
-    &:hover {
-        border-bottom-color: grey;
-        svg {
-            fill: grey;
-        }
-    }
-   
-}
+
 

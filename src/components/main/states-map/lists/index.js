@@ -24,10 +24,12 @@ export default class ListsContainer extends Component {
         const group = this.state.currentGroup;
         return(
             <div className={`lists-container ${this.props.className}`}>
-                <button type="button" className={group === 'senate' ? 'active':''} 
-                                      onClick={e => this.handleClick('senate')}>Senate</button>
-                <button type="button" className={group === 'house' ? 'active':''}  
-                                      onClick={e => this.handleClick('house')}>House</button>
+                <div className="btn-wrap">
+                    <button type="button" className={group === 'senate' ? 'active':''} 
+                                        onClick={e => this.handleClick('senate')}>Senate</button>
+                    <button type="button" className={group === 'house' ? 'active':''}  
+                                        onClick={e => this.handleClick('house')}>House</button>
+                </div>
                 <CandidatesList group={group} 
                                 candidates={this.props[group]} />
             </div>

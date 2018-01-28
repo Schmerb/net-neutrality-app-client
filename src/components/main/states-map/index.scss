@@ -5,7 +5,7 @@
 // // // // // // // //
 .usa-map-container {
     width: 100%;
-    overflow: auto;
+    overflow: hidden;
     
     @include mediaMin($tablet) {
         padding-left: 100px;
@@ -17,7 +17,6 @@
         height: 50vw;
         position: absolute;
         top: 140px;
-
         @include mediaMin($tablet) {
             width: 60%;
             height: 40vw;
@@ -27,4 +26,29 @@
     }
 }
 
+// - - - - - - - - - - - -
+// Map Page
+// - - - - - - - - - - - -
+.app.map {
+    @include mediaMin($tablet) {
+        .usa-map-container {
+            margin-top: 0;
+        }
+        .us-state-map {
+            position: relative;
+        }
+    }
+}
+// - - - - - - - - - - - -
+// Sources Page
+// - - - - - - - - - - - -
+.app.sources {
+    @include mediaMin($tablet) {
+        .usa-map-container {
+        }
+        .us-state-map {
+
+        }
+    }
+}
 

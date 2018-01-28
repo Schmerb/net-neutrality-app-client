@@ -7,7 +7,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import CandidateCard from './candidate-card/';
+import CandidateCard from '../candidate-card/';
 
 import Spinner from 'react-spinkit';
 

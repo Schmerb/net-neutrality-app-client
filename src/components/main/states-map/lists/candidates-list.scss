@@ -1,0 +1,61 @@
+// // // // // // // // // //
+//
+//   Candidates List
+//
+// // // // // // // // // //
+
+.candidate-list {
+    padding-top: 80px;
+    ul {
+        @include mediaMin($tablet) {
+            overflow: scroll;
+            height: 420px;
+        }
+        li {
+            max-width: 440px;
+            padding: 20px 0;
+            margin: 0 auto;
+            border-bottom: 1px solid;
+            @include mediaMin($tablet) {
+                padding: 0;
+            }
+        }
+        // - - - - - - - - - - -
+        // custom scroll bars
+        // - - - - - - - - - - -
+        &::-webkit-scrollbar { // background of bar itself
+            background-color: #444;
+            background-color: black;
+            width: 7px;
+        }
+        &::-webkit-scrollbar-thumb { // addresses the draggable scrolling element that resizes depending on the size of the scrollable element
+            background-color: grey;
+            border-radius: 20px;
+        }
+        &::-webkit-scrollbar-corner { // addresses the (usually) bottom corner of the scrollable element, where two scrollbars might meet
+            background-color: transparent;
+        }
+    }
+}
+
+// - - - - - - - - - - -
+// Loading Spinner
+// - - - - - - - - - - -
+.sk-circle {
+    width: 30px !important;
+    height: 30px !important;
+}
+.loading-spinner {
+    @extend %abs-middle;
+    div {
+        &:nth-of-type(1n) {
+            color: #e74949;
+        }
+        &:nth-of-type(2n) {
+            color: white;
+        }
+        &:nth-of-type(3n) {
+            color: #07648e;
+        }
+    }
+}

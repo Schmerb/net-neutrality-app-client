@@ -16,9 +16,19 @@ header {
         height: 100px;
     }
 }
-//
+// - - - - - - - - - - - -
+// Map Page
+// - - - - - - - - - - - -
+.app.map {
+    @include mediaMin($tablet) {
+        .header {
+            height: 140px;
+        }
+    }
+}
+// - - - - - - - - - - - -
 // Sources Page
-//
+// - - - - - - - - - - - -
 .app.sources {
     @include mediaMin($tablet) {
         .header {
