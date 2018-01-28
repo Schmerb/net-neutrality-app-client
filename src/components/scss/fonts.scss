@@ -31,4 +31,9 @@
     src: url("/assets/fonts/Maison/MaisonNeue-Book.woff") format("woff"), 
          url("/assets/fonts/Maison/MaisonNeue-Book.woff2") format("woff2");
 }
+@font-face {
+    font-family: "MaisonNeue-Light";
+    src: url("/assets/fonts/Maison/MaisonNeue-Thin.woff") format("woff"), 
+         url("/assets/fonts/Maison/MaisonNeue-Thin.woff2") format("woff2");
+}
 

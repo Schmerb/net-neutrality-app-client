@@ -10,12 +10,16 @@
     justify-content: space-between;
     min-width: 150px;
     padding: 10px;
-    // border: 1px solid white; 
+    margin-left: 2.5px;
+    margin-right: 2.5px;
     h3 {
-        font-size: 16px;
+        font-family: "MaisonNeue-Light";
+        font-size: 18px;
         color: $offwhite;
     }
     .links-wrap {
+        font-family: "MaisonNeue-Book";
+        font-size: 12px;
         display: flex;
         justify-content: flex-start;
         span {
@@ -24,8 +28,12 @@
             }
         }
         a {
+            @extend %transition;
             font-size: 13px;
             color: grey;
+            &:hover {
+                color: lightgrey;
+            }
         }
     }
 }

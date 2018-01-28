@@ -6,7 +6,7 @@
 .usa-map-container {
     width: 100%;
     overflow: auto;
-    // border: 1px solid blue;
+    
     @include mediaMin($tablet) {
         padding-left: 100px;
         padding-right: 20px;
@@ -17,8 +17,6 @@
         height: 50vw;
         position: absolute;
         top: 140px;
-        // border: 1px solid white;
-
 
         @include mediaMin($tablet) {
             width: 60%;

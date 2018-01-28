@@ -6,7 +6,6 @@
 
 .avatar-wrap {
     position: relative;
-    // border: 1px solid red;
 
     .avatar-img {
         position: relative;
@@ -15,6 +14,8 @@
         border-radius: 50%;
         background-size: cover;
         background-repeat: no-repeat;
+        background-position-y: 10%;
+        background-position-x: 50%;
         // border: 1px solid white;
         .prohibited-icon {
             @extend %abs-middle;

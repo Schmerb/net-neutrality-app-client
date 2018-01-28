@@ -13,6 +13,24 @@ html {
     }
 }
 
+html, body {
+    //
+    // custom scroll bars
+    //
+    &::-webkit-scrollbar { // background of bar itself
+        background-color: #444;
+        background-color: black;
+        width: 7px;
+    }
+    &::-webkit-scrollbar-thumb { // addresses the draggable scrolling element that resizes depending on the size of the scrollable element
+        background-color: grey;
+        border-radius: 20px;
+    }
+    &::-webkit-scrollbar-corner { // addresses the (usually) bottom corner of the scrollable element, where two scrollbars might meet
+        background-color: transparent;
+    }
+}
+
 *, 
 *:before, 
 *:after {
