@@ -6,8 +6,10 @@
 
 .lists-container {
     @include transition(1s);
+    margin-top: 30px;
     opacity: 1;
     &.hide {
+        margin-top: 0px;
         opacity: 0;
         pointer-events: none;
     }
@@ -20,12 +22,12 @@
     }
     button {
         @extend %transition;
+        color: white;
         font-size: 24px;
         font-weight: lighter;
-        color: white;
         width: 50%;
-        float: left;
         height: 40px;
+        float: left;
         border: 1px solid grey;
         border-radius: 0px;
         &:first-of-type {

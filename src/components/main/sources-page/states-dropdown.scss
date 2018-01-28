@@ -44,4 +44,7 @@
     &::-ms-expand {
         display: none;
     }
+    @include mediaMax(340px) {
+        font-size: 32px;
+    }
 }

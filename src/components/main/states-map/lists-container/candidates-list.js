@@ -44,15 +44,51 @@ export class CandidatesList extends Component {
         }
     };
 
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    // Checks if candidates exist 
+    // returns a) a special message string if there are none
+    //              OR
+    //         b) empty string otherwise
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    checkIfEmpty = () => {
+        let group      = this.props.group === 'senate' ? 'Senate':'House',
+            otherGroup = this.props.group === 'senate' ? 'House':'Senate';
+
+        let noCandidateMsg = '';
+        const { length } = this.props.candidates;
+        if(length === 1 ) {
+            const { firstName, lastName } = this.props.candidates[0];
+            if(firstName === '' && lastName === '') {
+                noCandidateMsg = `No open ${group} seats in this state in 2018. Check out the ${otherGroup}!`;
+            }
+        } else if (length === 0) {
+            noCandidateMsg = `No open ${group} seats in this state in 2018. Check out the ${otherGroup}!`;
+        }
+        return noCandidateMsg;
+    }
+
     render() {
+        const noCandidateMsg = this.checkIfEmpty();
         const candidates = this.getCandidates(this.props.candidates),
               classes    = this.getListClasses(this.props.candidates.length),
               spinner    = <Spinner name='circle' fadeIn="quarter" overrideSpinnerClassName="loading-spinner"/>;
+        
+        const list = (
+                    <ul className={classes}>
+                        {this.props.loading ? spinner : candidates}
+                    </ul>
+        );
+        
         return(
             <div className={`${this.props.group}-wrap candidate-list`}>
-                <ul className={classes}>
-                    {this.props.loading ? spinner : candidates}
-                </ul>
+
+                {
+                    noCandidateMsg !== '' ? 
+                    <p>{noCandidateMsg}</p> 
+                    : 
+                    list
+                }
+
             </div>
         );
     }

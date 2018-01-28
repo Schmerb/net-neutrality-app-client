@@ -5,30 +5,30 @@
 // // // // // // // // // //
 
 .info-wrap {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 150px;
-    padding: 10px;
-    margin-left: 2.5px;
-    margin-right: 2.5px;
-    @include mediaMin($tablet) {
-        margin: 0;
-        margin-left: 10px;
+    margin-left: 10px;
+    min-width: 120px;
+    height: 60px;
+    // border: 1px solid red;
+    @include mediaMin(375px) {
+        margin-left: 25px;
     }
+
     h3 {
         font-family: "MaisonNeue-Light";
         font-size: 18px;
         color: $offwhite;
     }
     .links-wrap {
+        position: absolute;
+        bottom: 10px;
+        display: inline-block;
         font-family: "MaisonNeue-Book";
         font-size: 12px;
-        display: flex;
-        justify-content: flex-start;
-        @include mediaMin($tablet) {
-            margin-top: 10px;
-        }
+
         span {
             &:nth-of-type(2) {
                 margin-left: 15px;

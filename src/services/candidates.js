@@ -17,9 +17,11 @@ let store;
 
 export function updateState(state) {
     store.dispatch(setCurrentState(state));
-    store.dispatch(clearCandidates());
-    store.dispatch(getCandidates(getFullName(state)));
-    store.dispatch(displayCandidates());
+    // store.dispatch(clearCandidates());
+    store.dispatch(getCandidates(getFullName(state)))
+         .then(() => {
+             store.dispatch(displayCandidates());
+         });
 };
 
 

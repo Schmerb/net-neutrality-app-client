@@ -7,15 +7,20 @@
 .candidate-list {
     padding-top: 80px;
     ul {
+        position: relative;
+        min-height: 200px;
         @include mediaMin($tablet) {
-            overflow: scroll;
+            overflow-y: scroll;
+            overflow-x: hidden;
             height: 420px;
+            padding-top: 15px;
+            padding-right: 10px;
+            padding-left: 2px;
         }
         li {
             max-width: 440px;
-            padding: 20px 0;
             margin: 0 auto;
-            border-bottom: 1px solid;
+            
             @include mediaMin($tablet) {
                 padding: 0;
             }

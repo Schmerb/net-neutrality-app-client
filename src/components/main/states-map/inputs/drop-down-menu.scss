@@ -6,9 +6,10 @@
 
 .select-form {
     @extend %transition;
+    font-family: "MaisonNeue-Mono";
     position: relative;
     max-width: 380px;
-    margin: 0 auto 20px;
+    margin: 0 auto;
     border-bottom: 1px solid #555;
     &:hover {
         border-bottom-color: grey;

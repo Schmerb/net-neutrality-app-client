@@ -5,12 +5,16 @@
 // // // // // // // // // //
 
 .candidate-wrap {
-    display: flex;
-    justify-content: space-around;
     font-family: "MaisonNeue-Book";
-    height: 100px;
-    padding: 10px;
+    height: 120px;
+    padding: 20px 20px;
+    border-bottom: 1px solid;
+    > div {
+        display: inline-block;
+        vertical-align: middle;
+    }
     @include mediaMin($tablet) {
+        height: 105px;
         padding: 2px;
         align-items: center;
     }

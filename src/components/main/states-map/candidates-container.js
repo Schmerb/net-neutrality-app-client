@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 
 import DropDownMenu   from './inputs/drop-down-menu';
 import SearchMenu     from './inputs/search-menu';
-import ListsContainer from './lists/';
+import ListsContainer from './lists-container/';
 
 import { states } from 'utils/states';
 import { updateState } from 'services/candidates';
@@ -46,6 +46,7 @@ export class CandidatesContainer extends Component {
     render() {
         const { house, senate, currentState } = this.props;
         const options = this.getAllStates(currentState);
+        
         return(
             <div className="candidates-container">
                 <div className="candidates-inner-wrap">
