@@ -7,8 +7,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import CandidatesList from './candidates-list';
-import ArrowDown from 'icons/arrow-down';
+import DropDownMenu   from './drop-down-menu';
+import ListsContainer from './lists-container';
 
 import { states } from 'utils/states';
 import { updateState } from 'services/candidates';
@@ -48,18 +48,12 @@ export class CandidatesContainer extends Component {
         return(
             <div className="candidates-container">
                 <div className="candidates-inner-wrap">
-                    <form className="select-form" action="#!">
-                        <ArrowDown className="arrow-down"/>
-                        <label htmlFor="state-select-dropdown" className="aria-hidden" aria-hidden="true">Select a state</label>
-                        <select id="state-select-dropdown" className="select-box" value={currentState}  
-                                                        onChange={this.handleSelect} placeholder="Testing">
-                            <option value="select-state">Select State</option>
-                            {options}
-                        </select>
-                    </form>
-                    <p className="directions">Select your state to see which candidates support net neutrality</p>
-                    {/* <CandidatesList group='senate' candidates={senate} />
-                    <CandidatesList group='house' candidates={house} /> */}
+                    <DropDownMenu handleSelect={this.handleSelect} options={options} currentState={currentState}/>
+
+                    { !this.props.display ? (<p className="directions">Select your state to see which candidates support net neutrality</p>) : null }
+                    
+                    <ListsContainer senate={senate} house={house} className={!this.props.display ? 'hide':''}/>
+                    
                 </div>
             </div>
         );
@@ -70,7 +64,8 @@ const mapStateToProps = state => ({
     width: state.display.width,
     currentState: state.map.currentState,
     house: state.map.house,
-    senate: state.map.senate
+    senate: state.map.senate,
+    display: state.map.display
 });
 
 export default connect(mapStateToProps)(CandidatesContainer);

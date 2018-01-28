@@ -28,6 +28,9 @@
         max-width: 350px;
         margin: 0 auto;
         // border: 3px solid white;
+        @include mediaMinMax(500px, $tablet - 1) {
+            max-width: 450px;
+        }
         @include mediaMin($tablet) {
             max-width: 415px;
             margin-top: 10vw;
@@ -48,6 +51,9 @@
             position: relative;
             max-width: 340px;
             z-index: 1;
+            @include mediaMinMax(500px, $tablet - 1) {
+                max-width: 450px;
+            }
             @include mediaMin($tablet) {
                 font-size: calc(14px + 0.2vw);
             }

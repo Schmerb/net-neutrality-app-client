@@ -1,0 +1,31 @@
+// // // // // // // // // //
+//
+//   Candidate Info
+//
+// // // // // // // // // //
+
+.info-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 150px;
+    padding: 10px;
+    // border: 1px solid white; 
+    h3 {
+        font-size: 16px;
+        color: $offwhite;
+    }
+    .links-wrap {
+        display: flex;
+        justify-content: flex-start;
+        span {
+            &:nth-of-type(2) {
+                margin-left: 15px;
+            }
+        }
+        a {
+            font-size: 13px;
+            color: grey;
+        }
+    }
+}

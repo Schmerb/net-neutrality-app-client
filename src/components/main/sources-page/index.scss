@@ -7,9 +7,9 @@
 .sources-page {
     font-family: "MaisonNeue-Mono";
     color: white;
-    margin-top: 80px;
     overflow: auto;
     // border: 1px solid white;
+    
     .sources-title {
         display: flex;
         background-color: black;
@@ -28,19 +28,15 @@
         }
         @include mediaMin($tablet) {
             position: fixed;
-            width: calc(100% - 160px);
+            left: 0;
         }
     }
     .sources-inner-wrap {
-        margin-top: 100px;
+        margin-top: 140px;
         @include mediaMax($tablet - 1) {
             &.fixed {
                 margin-top: 200px;
             }
         }
-    }
-    
-    @include mediaMin($tablet) {
-        margin-left: 160px;
     }
 }

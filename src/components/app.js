@@ -65,9 +65,10 @@ export class App extends Component {
     // // // // // // // // // //
     render () {
         const { flashMsg } = this.getMessages();
+        const classes = this.props.location.pathname.includes('sources') ? 'sources' : '';
 
         return(
-            <section className="app">
+            <section className={`app ${classes}`}>
                 {flashMsg}
                 <Header />
                 <Main />

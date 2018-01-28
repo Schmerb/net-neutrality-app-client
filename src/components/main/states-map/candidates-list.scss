@@ -5,66 +5,32 @@
 // // // // // // // // // //
 
 .candidate-list {
+    // border: 1px solid white;
+    margin-top: 40px;
     ul {
-        position: relative;
-        height: 250px;
-        // margin-right: 10px;
-        padding-top: 10px;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        // border: 1px solid yellow;
-        @include mediaMin(1500px) {
-            height: 300px;
-        }
-        //
-        // custom scroll bars
-        //
-        &::-webkit-scrollbar { // background of bar itself
-            background-color: transparent;
-            width: 7px;
-        }
-        &::-webkit-scrollbar-thumb { // addresses the draggable scrolling element that resizes depending on the size of the scrollable element
-            background-color: grey;
-            border-radius: 20px;
-        }
-        &::-webkit-scrollbar-corner { // addresses the (usually) bottom corner of the scrollable element, where two scrollbars might meet
-            background-color: transparent;
-        }
-
-        //
-        // Small List Length cases
-        //
-        &.no-candidates {
-            // styles for empty candidate list
-        }
-        &.one-candidates {
-            li {
-                // width: 10ga0%;
-            }
-        }
-        &.two-candidates {
-            li {
-                // width: 50%;ga
-            }
-        }
-
         li {
-            position: relative;
-            float: left;
-            width: 33.3%;
-            height: 100%;
-            margin-bottom: 50px;
-            // border: 1px solid red;
-            @include mediaMax(500px) {
-                width: 50%;
-            }
-            @include mediaMinMax(900px, 1000px) {
-                width: 50%;
-            }
-            @include mediaMin(1500px) {
-                margin-top: 20px;
-            }
+            padding: 20px 0;
+            border-bottom: 1px solid;
         }
+
+    }
+}
+
+html, body {
+    //
+    // custom scroll bars
+    //
+    &::-webkit-scrollbar { // background of bar itself
+        background-color: #444;
+        background-color: black;
+        width: 7px;
+    }
+    &::-webkit-scrollbar-thumb { // addresses the draggable scrolling element that resizes depending on the size of the scrollable element
+        background-color: grey;
+        border-radius: 20px;
+    }
+    &::-webkit-scrollbar-corner { // addresses the (usually) bottom corner of the scrollable element, where two scrollbars might meet
+        background-color: transparent;
     }
 }
 

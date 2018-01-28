@@ -1,0 +1,40 @@
+// // // // // // // // // //
+//
+//   Candidate Support
+//
+// // // // // // // // // //
+
+// SUPPORT
+.support-wrap {
+    position: relative;
+    font-size: 10px;
+    height: 100%;
+    width: 100px;
+    // border: 1px solid blue;
+    span {
+        position: absolute;
+        bottom: 10px;
+        right: 0;
+        padding: 1px 6px;
+        padding-right: 20px;
+        border: 2px solid green;
+        border-radius: 3px;
+        svg {
+            @include middleR(-10px);
+            width: auto;
+            height: 25px;
+        }
+    }
+    .support-yes {
+        color: $green;
+        border-color: $green;
+    }
+    .support-no {
+        color: $red;
+        border-color: $red;
+    }
+    .support-unknown {
+        color: $gold;
+        border-color: $gold;
+    }
+}

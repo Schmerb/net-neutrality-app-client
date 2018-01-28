@@ -6,22 +6,21 @@
 
 .think-logo {
     color: grey;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     height: 70px;
     line-height: 50px;
     z-index: 10;
+    // border: 1px solid white;
     @include mediaMin($tablet) {
-        position: fixed;
-        top: 25px;
-        right: 25px;
         left: auto;
-        margin: 0;
-        color: grey;
-        svg {
-            fill: grey;
-        }
+        bottom: auto;
+        top: 0;
+        right: 0;
+    }
+    svg {
+        fill: grey;
     }
     span {
         font-family: "MaisonNeue-Book";
@@ -32,5 +31,13 @@
     }
     svg {
         fill: grey;
+    }
+}
+
+.app.sources {
+    @include mediaMin($tablet) {
+        .think-logo {
+            position: fixed;
+        }
     }
 }

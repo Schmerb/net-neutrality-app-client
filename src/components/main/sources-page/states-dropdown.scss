@@ -22,3 +22,26 @@
         outline: none;
     }
 }
+
+.arrow-down {
+    @extend %transition;
+    @extend %middleR;
+    width: 30px;
+    fill: #555;
+    pointer-events: none;
+}
+.select-box {
+    @include appearance(none);
+    font-family: "MaisonNeue-Mono";
+    color: lightgrey;
+    background-color: transparent;
+    font-size: 36px;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border: none;
+    cursor: pointer;
+    &::-ms-expand {
+        display: none;
+    }
+}

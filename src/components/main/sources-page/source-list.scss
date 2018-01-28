@@ -5,7 +5,7 @@
 // // // // // // // // // //
 .sources {
     font-family: "MaisonNeue-Book";
-    padding: 20px;
+    // padding: 20px;
     max-width: 900px;
     margin: 0 auto;
     // border: 1px solid white;
@@ -37,16 +37,7 @@
             border-bottom-color:rgba(55,55,55,0.8);
             z-index: 1;
             @include mediaMin($tablet) {
-                top: 180px;
-                left: 160px;
-                padding-left: calc(45px);
-                width: calc(95% - 160px);
-            }
-            @include mediaMin($tablet + 300) {
-                padding-left: calc(45px + 2vw);
-            }
-            @include mediaMin($tablet + 600) {
-                padding-left: calc(45px + 3vw);
+                top: 245px;
             }
         }
     }

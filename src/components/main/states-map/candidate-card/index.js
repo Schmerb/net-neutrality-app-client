@@ -8,9 +8,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import CandidateAvatar from './candidate-avatar';
+import CandidateAvatar  from './avatar';
+import CandidateInfo    from './info';
+import CandidateSupport from './support';
 
-import { getDistrictSuffix } from 'utils/district-suffix';
 
 export class CandidateCard extends Component {
     constructor(props) {
@@ -64,30 +65,25 @@ export class CandidateCard extends Component {
     }
 
     render() {
-        const { firstName, 
-            lastName, 
-            district,
+        const { 
             party, 
-            campaignWebsite, 
-            imageURL,
-            id 
+            imageURL
         } = this.props.candidate;
 
-        const house_senate = this.props.candidate['house-senate'];
+        // const house_senate = this.props.candidate['house-senate'];
 
-        const distrSuffix = getDistrictSuffix(district);
         const { supports, supportClass } = this.getSupport();
+
+       
 
         const source = this.getSource();
         return(
             <div className="candidate-wrap">
-                <CandidateAvatar id={id} imageURL={imageURL} firstName={firstName} 
-                                 lastName={lastName} supports={supports} party={party} />
-                <h3><span>{firstName}</span> <span>{lastName}</span></h3>
-                <span className="district">{house_senate === 'house' ? distrSuffix:''}</span>
-                <span className={`${supportClass} support`}>{supports}</span>
-                <span><a href={campaignWebsite} target="_blank">Website</a></span>
-                <span>{source}</span>
+                <CandidateAvatar imageURL={imageURL} supports={supports} party={party}/>
+
+                <CandidateInfo candidate={this.props.candidate} source={source}/>
+
+                <CandidateSupport supports={supports} supportClass={supportClass}/>
             </div>
         );
     }

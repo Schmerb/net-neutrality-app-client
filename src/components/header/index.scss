@@ -14,12 +14,21 @@ header {
     // border: 2px solid red;
     @include mediaMin($tablet) {
         height: 100px;
-        &.sources-header {
+    }
+}
+//
+// Sources Page
+//
+.app.sources {
+    @include mediaMin($tablet) {
+        .header {
+            background-color: black;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: black;
+            height: 150px;
+            // border: 1px solid white;
         }
     }
 }

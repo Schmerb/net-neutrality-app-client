@@ -4,7 +4,7 @@
 //
 // // // // // // // //
 .usa-map-container {
-    width: 100vw;
+    width: 100%;
     overflow: auto;
     // border: 1px solid blue;
     @include mediaMin($tablet) {

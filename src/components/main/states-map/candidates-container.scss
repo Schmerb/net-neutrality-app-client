@@ -6,12 +6,12 @@
 .candidates-container {
     font-family: "MaisonNeue-Mono";
     color: grey;
-    width: 90%;
+    width: 95%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 45%;
     overflow: hidden;
-    // border: 1px solid red;
+    border: 1px solid red;
     .directions {
         color: #555;
         font-size: 19px;
@@ -75,26 +75,6 @@
             fill: grey;
         }
     }
-    .arrow-down {
-        @extend %transition;
-        @extend %middleR;
-        width: 30px;
-        fill: #555;
-        pointer-events: none;
-    }
-    .select-box {
-        @include appearance(none);
-        font-family: "MaisonNeue-Mono";
-        color: lightgrey;
-        background-color: transparent;
-        font-size: 36px;
-        width: 100%;
-        height: 50px;
-        line-height: 50px;
-        border: none;
-        cursor: pointer;
-        &::-ms-expand {
-            display: none;
-        }
-    }
+   
 }
+

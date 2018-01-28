@@ -7,7 +7,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import CandidateCard from './candidate-card';
+import CandidateCard from './candidate-card/';
 
 import Spinner from 'react-spinkit';
 
@@ -48,12 +48,8 @@ export class CandidatesList extends Component {
         const candidates = this.getCandidates(this.props.candidates),
               classes    = this.getListClasses(this.props.candidates.length),
               spinner    = <Spinner name='circle' fadeIn="quarter" overrideSpinnerClassName="loading-spinner"/>;
-        const properGroupName = this.props.group === 'senate' ? 'Senate':'House of Representatives';
-        const display = this.props.display ? '': 'hidden';
-       
         return(
-            <div className={`${this.props.group}-wrap candidate-list ${display}`}>
-                <h3 className="group-name">{properGroupName}</h3>
+            <div className={`${this.props.group}-wrap candidate-list`}>
                 <ul className={classes}>
                     {this.props.loading ? spinner : candidates}
                 </ul>

@@ -17,9 +17,9 @@ export class Header extends Component {
     }
     
     render() {
-        const classes = this.props.location.pathname.includes('sources') ? 'sources-header' : '';
+        // const classes = this.props.location.pathname.includes('sources') ? 'sources-header' : '';
         return(
-            <header role="banner" className={`header ${classes}`}>
+            <header role="banner" className="header">
                 <Logo />
             </header>
         );

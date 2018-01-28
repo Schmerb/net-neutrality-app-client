@@ -21,7 +21,7 @@ export default class SourcesList extends Component {
         if(hash !== '') {
             // Highlights the source from hash endpoint
             setTimeout(() => {
-                const element = document.getElementById(hash);
+                const element     = document.getElementById(hash);
                 const elementRect = element.getBoundingClientRect();
                 const absoluteElementTop = elementRect.top + window.pageYOffset;
                 const middle = absoluteElementTop - (window.innerHeight / 2);
@@ -44,7 +44,7 @@ export default class SourcesList extends Component {
     // final position
     // * * * * * * * * * * * * * * * * 
     handleWindowScroll = e => {
-        let offset = window.innerWidth >= 900 ? 140 : 50;
+        let offset = window.innerWidth >= 900 ? 245 : 105;
         const someDiv       = document.getElementById(`${this.props.group}-sources`);
         const distanceToTop = someDiv.getBoundingClientRect().top - offset;
         // console.log({distanceToTop});
