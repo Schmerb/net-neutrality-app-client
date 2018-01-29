@@ -42,6 +42,10 @@
             @extend %transition;
             font-size: 13px;
             color: grey;
+            &.disabled {
+                pointer-events: none;
+                color: #444;
+            }
             &:hover, &:focus {
                 color: lightgrey;
             }

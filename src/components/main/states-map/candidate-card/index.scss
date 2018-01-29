@@ -12,11 +12,12 @@
     > div {
         display: inline-block;
         vertical-align: middle;
-    }
+    } 
+    
     @include mediaMin(500px) {
         height: 105px;
         padding: 2px;
-        align-items: center;
+        align-items: center; 
     }
 }
 
