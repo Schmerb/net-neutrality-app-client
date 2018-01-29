@@ -3,12 +3,10 @@
 //   States Dropdown
 //
 // // // // // // // // // //
+
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
 
 import DropDownMenu from '../states-map/inputs/drop-down-menu';
-
-import ArrowDown from 'icons/arrow-down';
 
 import { states } from 'utils/states';
 import { updateState } from 'services/candidates';
@@ -46,7 +44,6 @@ export default class StatesDropdown extends Component {
                     ));
     };
     render() {
-        console.log(this.props);
         const { currentState } = this.props;
         const options = this.getAllStates(currentState);
         return(

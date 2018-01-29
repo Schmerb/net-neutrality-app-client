@@ -21,6 +21,14 @@
             color: white;
         }
     }
+    .search-arrow {
+        position: absolute;
+        right: 0;
+        top: 20px;
+        fill: grey;
+        height: 25px;
+        pointer-events: none;
+    }
     //
     // Search results box
     //
@@ -32,7 +40,7 @@
         opacity: 0;
         border: 1px solid transparent;
         &.show {
-            // background-color: red;
+            // needs bg-color if absolutely positioned
             height: auto;
             max-height: 9999px;
             opacity: 1;

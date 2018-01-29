@@ -6,7 +6,7 @@
 
 .avatar-wrap {
     position: relative;
-    @include mediaMin($tablet) {
+    @include mediaMin(500px) {
         height: 100%;
         width: 72px; // to account for absolutely positioned nested img
     }
@@ -23,7 +23,7 @@
         width: 37px;
         height: 37px;
         border-radius: 50%;
-        @include mediaMin($tablet) {
+        @include mediaMin(500px) {
             @include abs-middle;
             width: 60px;
             height: 60px;
@@ -52,7 +52,7 @@
             height: 32px;
             left: -2px;
         }
-        @include mediaMin($tablet) {
+        @include mediaMin(500px) {
             position: absolute;
             height: 30px;
             top: 12px;

@@ -22,7 +22,7 @@
         padding-right: 20px;
         border: 2px solid transparent; // color overrides below
         border-radius: 3px;
-        @include mediaMin($tablet) {
+        @include mediaMin(500px) {
             padding-right: 30px;
             bottom: 30px;
         }
@@ -30,7 +30,7 @@
             @include middleR(-10px);
             width: auto;
             height: 25px;
-            @include mediaMin($tablet) {
+            @include mediaMin(500px) {
                 height: 36px;
             }
         }
@@ -44,7 +44,7 @@
         border-color: $red;
         width: 95px;
         padding-right: 5px;
-        @include mediaMin($tablet) {
+        @include mediaMin(500px) {
             width: 105px;
         }
     }

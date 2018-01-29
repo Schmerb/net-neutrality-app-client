@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-// import ArrowDown from 'icons/arrow-down';
+import ArrowDown from 'icons/arrow-down';
 
 import { getFullName, getAbbr, searchStates } from 'utils/states';
 import { updateState } from 'services/candidates';
@@ -53,9 +53,20 @@ export class SearchMenu extends Component {
     };
 
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    // Handles refilling search with current state when user 
+    // exits search input and nothing has been selected yet
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    handleBlur = (e) => {
+        if(e.target.value === '') {
+            this.setState({
+                val: getFullName(this.props.currentState)
+            });
+        }
+    };
+
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     // Returns
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-    
     getResults = () => {
         let { results } = this.state; 
         results = results.map((state, key) => (
@@ -74,8 +85,8 @@ export class SearchMenu extends Component {
             <form className="search-form" action="#!" onSubmit={e => e.preventDefault()} autoComplete="off">
                 <label className="aria-hidden" aria-hidden="false" htmlFor="search">Please search for a state</label>
                 <input id="search" ref="search" type="search" placeholder="Search by State" value={this.state.val}
-                       onChange={this.handleChange} />
-
+                       onChange={this.handleChange} onBlur={this.handleBlur}/>
+                {this.state.val === '' ? <ArrowDown className="search-arrow"/> : null}
                 <div className={`results-box ${show}`}>
                     <ul>
                         {results}

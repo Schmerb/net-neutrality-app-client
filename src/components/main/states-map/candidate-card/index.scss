@@ -13,7 +13,7 @@
         display: inline-block;
         vertical-align: middle;
     }
-    @include mediaMin($tablet) {
+    @include mediaMin(500px) {
         height: 105px;
         padding: 2px;
         align-items: center;
