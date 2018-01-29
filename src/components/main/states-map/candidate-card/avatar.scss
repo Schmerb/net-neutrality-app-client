@@ -47,6 +47,10 @@
             position: absolute;
             top: 8px;
             right: -5px;
+            &.libertarian {
+                height: 32px;
+                left: auto;
+            }
         }
     }
 }
