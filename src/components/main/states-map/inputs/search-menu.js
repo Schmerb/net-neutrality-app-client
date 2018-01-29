@@ -57,7 +57,7 @@ export class SearchMenu extends Component {
     // exits search input and nothing has been selected yet
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     handleBlur = (e) => {
-        if(e.target.value === '') {
+        if(e.target.value === '' && this.props.currentState !== 'select-state') {
             this.setState({
                 val: getFullName(this.props.currentState)
             });
