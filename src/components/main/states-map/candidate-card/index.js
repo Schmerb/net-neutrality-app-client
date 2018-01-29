@@ -53,8 +53,6 @@ export class CandidateCard extends Component {
         } else if(source.includes('Retweet') || source.includes('Facebook')) {
             url = `/sources/${this.props.currentState}#${lastName}`;
         } else {
-            // console.log(source);
-            // console.log(source.slice(0,3));
             if(source.slice(0,3) === 'www') {
                 url = `https://${source}`;
             } else {
