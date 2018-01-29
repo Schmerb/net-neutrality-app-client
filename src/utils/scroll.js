@@ -4,7 +4,7 @@
 //
 // // // // // // // // // // // // 
 
-exports.scrollIt = (destination, duration = 200, easing = 'linear', callback) => {
+exports.scrollIt = (destination, duration = 200, easing = 'linear', offset, callback) => {
 
 	const easings = {
 		linear(t) {
@@ -53,7 +53,7 @@ exports.scrollIt = (destination, duration = 200, easing = 'linear', callback) =>
 
 	const documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
 	const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
-	const destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop;
+	const destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop - offset;
 	const destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
 
 	if ('requestAnimationFrame' in window === false) {

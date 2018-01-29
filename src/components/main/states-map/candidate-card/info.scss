@@ -42,7 +42,7 @@
             @extend %transition;
             font-size: 13px;
             color: grey;
-            &:hover {
+            &:hover, &:focus {
                 color: lightgrey;
             }
         }

@@ -29,7 +29,7 @@ export default class CandidateSource extends Component {
                 setTimeout(() => {
                     this.setState({ classes: "" });
                 }, 3000);
-            }, 150);
+            }, 2150);
         }
     }
 
