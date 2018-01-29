@@ -19,6 +19,9 @@ export class ListsContainer extends Component {
         };
     }
 
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    // Handles tab clicks to display correct list
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     handleClick = (currentGroup) => {
         this.setState({ currentGroup });
     };
