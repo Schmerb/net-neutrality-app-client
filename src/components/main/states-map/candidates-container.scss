@@ -52,7 +52,12 @@
     }
     @include mediaMin($desktop + 300px) {
         .candidates-container {
-            right: 10vw;
+            right: 5vw;
+        } 
+    }
+    @include mediaMin($desktop + 500px) {
+        .candidates-container {
+            right: 8vw;
         } 
     }
 }

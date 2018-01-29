@@ -8,9 +8,13 @@
     position: relative;
     @include mediaMin($tablet) {
         height: 100%;
+        width: 72px; // to account for absolutely positioned nested img
+    }
+    @include mediaMin($desktop) {
         width: 80px; // to account for absolutely positioned nested img
     }
     .avatar-img {
+        @extend %transition;
         position: relative;
         background-size: cover;
         background-repeat: no-repeat;
@@ -21,8 +25,12 @@
         border-radius: 50%;
         @include mediaMin($tablet) {
             @include abs-middle;
-            width: 74px;
-            height: 74px;
+            width: 60px;
+            height: 60px;
+        }
+        @include mediaMin($desktop) {
+            width: 70px;
+            height: 70px;
         }
         .prohibited-icon {
             @extend %abs-middle;
@@ -35,6 +43,7 @@
         }
     }
     .party-icon {
+        @extend %transition;
         position: relative;
         top: -5px;
         width: auto;
@@ -45,11 +54,25 @@
         }
         @include mediaMin($tablet) {
             position: absolute;
-            top: 8px;
-            right: -5px;
+            height: 30px;
+            top: 12px;
+            right: 0px;
             &.libertarian {
-                height: 32px;
+                height: 26px;
                 left: auto;
+            }
+        }
+        @include mediaMin($desktop) {
+            height: 36px;
+            top: 0;
+            right: -5px;
+
+            &.libertarian, 
+            &.independent {
+                height: 32px;
+            }
+            &.independent {
+                top: 8px;
             }
         }
     }

@@ -5,6 +5,7 @@
 // // // // // // // // // //
 
 .info-wrap {
+    @extend %transition;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -15,6 +16,9 @@
     // border: 1px solid red;
     @include mediaMin(375px) {
         margin-left: 25px;
+    }
+    @include mediaMinMax($tablet, $desktop - 1) {
+        margin-left: 10px;
     }
 
     h3 {

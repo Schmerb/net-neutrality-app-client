@@ -51,7 +51,8 @@ export class CandidatesContainer extends Component {
             <div className="candidates-container">
                 <div className="candidates-inner-wrap">
                     {
-                        window.innerWidth < 900 ? 
+                        window.innerWidth < 900 
+                        ? 
                         (<DropDownMenu handleSelect={this.handleSelect} options={options} currentState={currentState}/>)
                         :
                         (<SearchMenu />)
