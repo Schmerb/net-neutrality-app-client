@@ -5,10 +5,13 @@
 // // // // // // // // // //
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import CandidatesList from './candidates-list';
 
-export default class ListsContainer extends Component {
+import Spinner from 'react-spinkit';
+
+export class ListsContainer extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -21,7 +24,9 @@ export default class ListsContainer extends Component {
     };
 
     render() {
-        const group = this.state.currentGroup;
+        const group   = this.state.currentGroup;
+        const spinner = <Spinner name='circle' fadeIn="quarter" overrideSpinnerClassName="loading-spinner"/>;
+
         return(
             <div className={`lists-container ${this.props.className}`}>
                 <div className="btn-wrap">
@@ -30,9 +35,21 @@ export default class ListsContainer extends Component {
                     <button type="button" className={group === 'house' ? 'active':''}  
                                         onClick={e => this.handleClick('house')}>House</button>
                 </div>
-                <CandidatesList group={group} 
-                                candidates={this.props[group]} />
+                {
+                    this.props.loading 
+                    ?
+                    spinner
+                    :
+                    <CandidatesList group={group} 
+                                    candidates={this.props[group]} />
+                }
             </div>
         );
     }
 }
+
+const mapStateToProps = state => ({
+    loading: state.map.loading
+});
+
+export default connect(mapStateToProps)(ListsContainer);

@@ -6,6 +6,7 @@
 
 import { 
     SET_CURRENT_STATE,
+    SET_LOADING,
     GET_CANDIDATES_SUCCESS,
     GET_CANDIDATES_ERROR,
     CLEAR_CANDIDATES,
@@ -49,6 +50,11 @@ export default function reducer(state = initialState, action) {
                 ...state,
                 house: [],
                 senate: [],
+                loading: true
+            };
+        case SET_LOADING:
+            return {
+                ...state,
                 loading: true
             };
         case DISPLAY_CANDIDATES:

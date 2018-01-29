@@ -6,7 +6,9 @@
 
 .lists-container {
     @include transition(1s);
+    position: relative;
     margin-top: 30px;
+    min-height: 300px;
     opacity: 1;
     &.hide {
         margin-top: 0px;

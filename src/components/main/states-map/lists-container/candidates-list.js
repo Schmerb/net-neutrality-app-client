@@ -9,8 +9,6 @@ import { connect } from 'react-redux';
 
 import CandidateCard from '../candidate-card/';
 
-import Spinner from 'react-spinkit';
-
 export class CandidatesList extends Component {
     constructor(props) {
         super(props);
@@ -68,25 +66,21 @@ export class CandidatesList extends Component {
     }
 
     render() {
-        const noCandidateMsg = this.checkIfEmpty();
-        const candidates = this.getCandidates(this.props.candidates),
-              classes    = this.getListClasses(this.props.candidates.length),
-              spinner    = <Spinner name='circle' fadeIn="quarter" overrideSpinnerClassName="loading-spinner"/>;
-        
-        const list = (
-                    <ul className={classes}>
-                        {this.props.loading ? spinner : candidates}
-                    </ul>
-        );
+        const noCandidateMsg = this.checkIfEmpty(),
+              candidates     = this.getCandidates(this.props.candidates),
+              classes        = this.getListClasses(this.props.candidates.length);
         
         return(
             <div className={`${this.props.group}-wrap candidate-list`}>
 
                 {
-                    noCandidateMsg !== '' ? 
+                    noCandidateMsg !== '' 
+                    ? 
                     <p>{noCandidateMsg}</p> 
                     : 
-                    list
+                    <ul className={classes}>
+                        {candidates}
+                    </ul>
                 }
 
             </div>

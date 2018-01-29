@@ -38,6 +38,14 @@ export const clearCandidates = () => ({
     type: CLEAR_CANDIDATES
 });
 
+// * * * * * * * * * * * * * * *
+// Sets loading to true
+// * * * * * * * * * * * * * * *
+export const SET_LOADING = 'SET_LOADING';
+export const setLoading = () => ({
+    type: SET_LOADING
+});
+
 
 // * * * * * * * * * * * * * * *
 // Adds candidates to store
@@ -60,6 +68,7 @@ export const getCandidatesError = error => ({
 // * * * * * * * * * * * * * * *
 export const getCandidates = (state, congressGroup) => dispatch => {
     congressGroup = congressGroup ? congressGroup : 'all'; // by default returns ALL candidates
+    dispatch(setLoading());
     return (
         fetch(`${API_BASE_URL}/candidates/${congressGroup}?state=${state}`, {
             method: 'GET'
