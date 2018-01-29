@@ -29,6 +29,7 @@
         @include mediaMin($tablet) {
             position: fixed;
             left: 0;
+            top: 145px;
         }
     }
     .sources-inner-wrap {
