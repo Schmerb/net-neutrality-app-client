@@ -6,6 +6,7 @@
 
 .avatar-wrap {
     position: relative;
+    width: 40px; // Base width needed for IE
     @include mediaMin(500px) {
         height: 100%;
         width: 72px; // to account for absolutely positioned nested img
@@ -46,29 +47,35 @@
         @extend %transition;
         position: relative;
         top: -5px;
-        width: auto;
+        left: -1px;
+        width: 36px;
         height: 36px;
         &.libertarian {
+            width: 32px;
             height: 32px;
             left: -2px;
         }
         @include mediaMin(500px) {
             position: absolute;
+            width: 30px;
             height: 30px;
             top: 12px;
             right: -5px;
+            left: auto;
             &.libertarian {
                 height: 26px;
                 left: auto;
             }
         }
         @include mediaMin($desktop) {
+            width: 36px;
             height: 36px;
-            top: 10px;
+            top: 5px;
             right: -10px;
 
             &.libertarian, 
             &.independent {
+                width: 32px;
                 height: 32px;
             }
             &.independent {

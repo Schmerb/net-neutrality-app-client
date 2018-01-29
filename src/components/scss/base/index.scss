@@ -13,6 +13,8 @@ html {
     }
 }
 
+
+
 html, body {
     //
     // custom scroll bars
@@ -29,6 +31,18 @@ html, body {
     &::-webkit-scrollbar-corner { // addresses the (usually) bottom corner of the scrollable element, where two scrollbars might meet
         background-color: transparent;
     }
+}
+
+// IE custom scrollbar support
+body {
+    scrollbar-base-color: #000;
+    scrollbar-face-color: grey;
+    scrollbar-3dlight-color: #000;
+    scrollbar-highlight-color: #000;
+    scrollbar-track-color: #000;
+    scrollbar-arrow-color: grey;
+    scrollbar-shadow-color: #000;
+    scrollbar-dark-shadow-color: #000;
 }
 
 *, 

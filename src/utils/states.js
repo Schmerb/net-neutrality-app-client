@@ -4,9 +4,11 @@
 //
 // // // // // // // // // //
 
+const Obj_keys = Object.keys || require('object-keys');
+
 function searchStates(val) {
     val = val.toLowerCase();
-    const stateNames = Object.keys(states); // from states obj below!
+    const stateNames = Obj_keys(states); // from states obj below!
     let results = [];
     for(let state of stateNames) {
         let added = false;

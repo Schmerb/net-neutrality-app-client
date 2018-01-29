@@ -28,7 +28,6 @@
         }
         svg {
             @include middleR(-10px);
-            width: auto;
             height: 25px;
             @include mediaMin(500px) {
                 height: 36px;
