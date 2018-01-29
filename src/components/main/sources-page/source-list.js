@@ -25,8 +25,8 @@ export default class SourcesList extends Component {
             // Highlights the source from hash endpoint
             setTimeout(() => {
                 const element = document.getElementById(hash);
-                // const offset = window.innerWidth < 900 ? 350 : 350;
-                scrollIt(element, 1000, 'linear', 350);
+                const offset = window.innerWidth < 900 ? 350 : 450;
+                scrollIt(element, 1000, 'linear', offset);
                 // const elementRect = element.getBoundingClientRect();
                 // const absoluteElementTop = elementRect.top + window.pageYOffset;
                 // const middle = absoluteElementTop - (window.innerHeight / 2);
