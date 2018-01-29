@@ -40,7 +40,7 @@
             background-color: white;
             color: black;
         }
-        &:hover {
+        &:hover, &:focus {
             background-color: lightgrey;
             color: black;
         }

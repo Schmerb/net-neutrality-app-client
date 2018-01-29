@@ -61,7 +61,7 @@ export class CandidateCard extends Component {
                 url = source;
             }
         }
-        return <Link to={url} className={classes} target="_blank">Source</Link>;
+        return <Link id={`source-${lastName}`} to={url} className={classes} target="_blank">Source</Link>;
     }
 
     render() {

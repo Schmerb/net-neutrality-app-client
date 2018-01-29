@@ -8,7 +8,7 @@ import {
     setCurrentState, 
     getCandidates, 
     displayCandidates, 
-    clearCandidates 
+    // clearCandidates 
 } from 'actions/map';
 import { getFullName } from 'utils/states';
 

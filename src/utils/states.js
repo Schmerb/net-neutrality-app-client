@@ -4,12 +4,40 @@
 //
 // // // // // // // // // //
 
+function searchStates(val) {
+    val = val.toLowerCase();
+    const stateNames = Object.keys(states); // from states obj below!
+    let results = [];
+    for(let state of stateNames) {
+        let added = false;
+        // To catch matches with a space e.g. "New York"
+        if(state.toLowerCase().startsWith(val)) {
+            results.push(state);
+            added = true;
+        }
+        // if not already added, check for match within any word in name
+        if(!added) {
+            // spitting up states by word allows searches to return results 
+            // for either word in a state e.g. "New" or "York" both return "New York"
+            let arr = state.split(' ');
+            
+            for(let word of arr) {
+                if(word.toLowerCase().startsWith(val)) {
+                    results.push(state);
+                    added = true;
+                    break; // state is at least a partial match, no need to check any further words
+                }
+            }
+        }
+    }
+    return results;
+}
 
 // * * * * * * * * * * * * * * *
 // returns full name associated 
 // with abbreviation
 // * * * * * * * * * * * * * * *
-exports.getFullName = abbr => {
+function getFullName(abbr) {
     switch (abbr) {
         case 'DC':
             return 'Washington D.C.';
@@ -122,7 +150,7 @@ exports.getFullName = abbr => {
 // returns abbreviation 
 // for given state
 // * * * * * * * * * * * * * * *
-exports.getAbbr = state => {
+function getAbbr(state) {
     switch (state) {
         case 'Washington D.C.':
             return 'DC';
@@ -231,7 +259,7 @@ exports.getAbbr = state => {
     }
 }
 
-exports.states = {
+const states = {
     'Washington D.C.': 'DC',
     'Alabama': 'AL',
     'Alaska': 'AK',
@@ -284,3 +312,5 @@ exports.states = {
     'Wisconsin': 'WI',
     'Wyoming': 'WY'
 };
+
+module.exports = { searchStates, getFullName, getAbbr, states };

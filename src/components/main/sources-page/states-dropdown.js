@@ -6,6 +6,8 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 
+import DropDownMenu from '../states-map/inputs/drop-down-menu';
+
 import ArrowDown from 'icons/arrow-down';
 
 import { states } from 'utils/states';
@@ -49,13 +51,9 @@ export default class StatesDropdown extends Component {
         const options = this.getAllStates(currentState);
         return(
             <div className="sources-select-box-wrap">
-                <ArrowDown className="arrow-down"/>
-                <label htmlFor="state-select-dropdown" className="aria-hidden" aria-hidden="true">Select a state</label>
-                <select id="state-select-dropdown" className=" select-box" value={this.state.currentState}  
-                                                    onChange={this.handleSelect} >
-                    <option value="select-state">Select State</option>
-                    {options}
-                </select>
+                <DropDownMenu currentState={this.state.currentState} 
+                              handleSelect={this.handleSelect} 
+                              options={options}/>
             </div>
         );
     }
