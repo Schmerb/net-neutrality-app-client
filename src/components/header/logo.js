@@ -4,19 +4,43 @@
 //
 // // // // // // // // // //
 
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import { connect }          from 'react-redux';
+import { withRouter, Link } from 'react-router-dom';
 
 import SiteLogo from 'icons/site-logo';
 
-export default function Logo(props) {
-    return (
-        <div className="logo">
-            <Link to="/">
-                <span className="aria-hidden" aria-hidden="false">Navigate Home</span>
-                <SiteLogo className="monitor-icon"/>
-            </Link>
-            <h1 className="motto">TAKE BACK THE NET</h1>
-        </div>
-    );   
+ import { resetState } from 'actions/map';
+
+export class Logo extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
+
+    handleClick = e => {
+        e.preventDefault();
+        this.props.dispatch(resetState());
+        this.props.history.push({
+            pathname: '/map'
+        });
+    };
+
+    render() {
+        return (
+            <div className="logo">
+                <Link to="/" onClick={this.handleClick}>
+                    <span className="aria-hidden" aria-hidden="false">Navigate Home</span>
+                    <SiteLogo className="monitor-icon"/>
+                </Link>
+                <h1 className="motto">TAKE BACK THE NET</h1>
+            </div>
+        );   
+    }
 }
+
+const mapStateToProps = state => ({
+    currentState: state.map.currentState
+});
+
+export default withRouter(connect(mapStateToProps)(Logo));

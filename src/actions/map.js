@@ -39,6 +39,14 @@ export const clearCandidates = () => ({
 });
 
 // * * * * * * * * * * * * * * *
+// resets store to inital state
+// * * * * * * * * * * * * * * *
+export const RESET_STATE = 'RESET_STATE';
+export const resetState = () => ({
+    type: RESET_STATE
+});
+
+// * * * * * * * * * * * * * * *
 // Sets loading to true
 // * * * * * * * * * * * * * * *
 export const SET_LOADING = 'SET_LOADING';

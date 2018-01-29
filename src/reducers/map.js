@@ -10,6 +10,7 @@ import {
     GET_CANDIDATES_SUCCESS,
     GET_CANDIDATES_ERROR,
     CLEAR_CANDIDATES,
+    RESET_STATE,
     DISPLAY_CANDIDATES
 } from 'actions/map';
 
@@ -24,10 +25,12 @@ const initialState = {
 };
 
 //
-// Display Reducer
+// USMap Reducer
 //
 export default function reducer(state = initialState, action) {
     switch (action.type) {
+        case RESET_STATE:
+            return initialState;
         case SET_CURRENT_STATE:
             return {
                 ...state,

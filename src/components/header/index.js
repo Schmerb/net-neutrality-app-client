@@ -4,29 +4,15 @@
 //
 // // // // // // // // // //
 
-import React, { Component } from 'react';
-import { connect }    from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import React from 'react';
 
 import Logo from './logo';
 
-export class Header extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
-    
-    render() {
-        return(
-            <header role="banner" className="header">
-                <Logo />
-            </header>
-        );
-    }
+export default function Header(props) {
+    return(
+        <header role="banner" className="header">
+            <Logo />
+        </header>
+    );
 }
 
-
-const mapStateToProps = state => ({
-});
-
-export default withRouter(connect(mapStateToProps)(Header));

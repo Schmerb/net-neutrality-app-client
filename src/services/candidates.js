@@ -25,6 +25,7 @@ export function updateState(state) {
 };
 
 
+
 export default function(storeObj) {
     store = storeObj;
 }
