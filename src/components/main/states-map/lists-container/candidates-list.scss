@@ -6,6 +6,13 @@
 
 .candidate-list {
     padding-top: 80px;
+    > p {
+        font-family: "MaisonNeue-Light";
+        font-size: 24px;
+        max-width: 302px;
+        margin: 0 auto;
+        text-align: center;
+    }
     ul {
         position: relative;
         min-height: 200px;

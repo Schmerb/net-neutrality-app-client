@@ -25,8 +25,7 @@ export default class SourcesList extends Component {
             // Highlights the source from hash endpoint
             setTimeout(() => {
                 const element = document.getElementById(hash);
-                const offset = window.innerWidth < 900 ? 350 : 450;
-                scrollIt(element, 1000, 'linear', offset);
+                scrollIt(element, 1000, 'linear', window.innerHeight / 2);
                 // const elementRect = element.getBoundingClientRect();
                 // const absoluteElementTop = elementRect.top + window.pageYOffset;
                 // const middle = absoluteElementTop - (window.innerHeight / 2);
@@ -63,7 +62,7 @@ export default class SourcesList extends Component {
     render() {
         const candidates = this.props
                                .candidates
-                               .filter(candidate => !(candidate.source === '' || candidate.source.includes('sent')))
+                               .filter(candidate => !(candidate.source === '' || candidate.source.trim() === 'sent'))
                                .map((candidate, key) => {
                                 return (
                                     <li key={key} id={candidate.lastName} name={candidate.lastName}>
