@@ -65,5 +65,13 @@ export const setWidth = width => ({
     type: SET_WIDTH,
     width
 });
+// * * * * * * * * * * * * * * *
+// Sets current window height
+// * * * * * * * * * * * * * * *
+export const SET_HEIGHT = 'SET_HEIGHT';
+export const setHeight = height => ({
+    type: SET_HEIGHT,
+    height
+});
 
 

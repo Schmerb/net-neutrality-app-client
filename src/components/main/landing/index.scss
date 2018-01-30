@@ -7,9 +7,7 @@
 .landing-page {
     color: grey;
     padding: 0 20px;
-    @include mediaMax($tablet - 1) {
-        margin-top: 40px;
-    }
+    margin-top: 40px;
     @include mediaMin($tablet) {
         display: flex;
         justify-content: space-between;
@@ -32,8 +30,10 @@
             max-width: 450px;
         }
         @include mediaMin($tablet) {
-            max-width: 415px;
-            margin-top: 10vw;
+            // max-width: 415px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         h2 {
             font-family: "MaisonNeue-Mono";
@@ -67,29 +67,31 @@
     .landing-map-wrap {
         position: relative;
         min-height: 300px;
-        // border: 3px solid red;
-        @include mediaMax(700px) {
-            height: 350px;
-        }
-        @include mediaMin($tablet) {
-            height: 45vw;
-            margin-top: 70px;
-        }
-        @include mediaMin($desktop) {
-            height: 40vw;
-        }
+        // border: 1px solid white;
+
         //
         // Static US Map
         //
         .us-state-map  { 
-            height: inherit;
+            @extend %transition;
+            width: 100%;
+            height: 40vh;
             opacity: 0.5;
+            // border: 1px solid red;
             path {
                 pointer-events: none;
             }
+            @include mediaMin($tablet) {
+                width: 60vw;
+                height: 50vh;
+                min-height: 300px;
+            }
+            @include mediaMin($desktop) {
+                height: 60vh;
+            }
         }
         //
-        // Get Started Button
+        // Get Started Buttons
         //
         .get-started-btn {
             @extend %transition;

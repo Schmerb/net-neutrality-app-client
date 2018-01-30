@@ -9,7 +9,7 @@ import { connect }    from 'react-redux';
 import { withRouter } from 'react-router-dom';
 // import { Cookies }    from 'react-cookie';
 
-import { setWidth } from 'actions/display';
+import { setWidth, setHeight } from 'actions/display';
 
 import FlashMessage from './services/flash-message';
 
@@ -43,6 +43,7 @@ export class App extends Component {
     // * * * * * * * * * * * * * * * * * * * *
     handleWindowResize = () => {
         this.props.dispatch(setWidth(window.innerWidth));
+        this.props.dispatch(setHeight(window.innerHeight));
     };
 
 

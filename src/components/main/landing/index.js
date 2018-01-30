@@ -25,9 +25,9 @@ export class LandingPage extends Component {
                 </div>
                 <div className="landing-map-wrap">
                     <Link className="get-started-btn" to="/map">GET STARTED</Link>
-                    <USAMap width={this.props.width}
-                            defaultFill={"transparent"} 
+                    <USAMap defaultFill={"transparent"} 
                             title={"Map of the United States of America"}/>
+                            
                 </div>
             </section>
         );

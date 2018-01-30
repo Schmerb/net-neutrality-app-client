@@ -44,14 +44,19 @@ export class StatesMap extends Component {
         }
     });
 
+    getMapOptions = () => {
+        return {
+            title:   "Map of the United States of America",
+            defaultFill: "transparent",
+            customize: this.statesCustomConfig(),
+            onClick:   this.handleMapClick
+        }
+    };
+
     render() {
         return(
             <div className="usa-map-container">
-                <USAMap customize={this.statesCustomConfig()} 
-                        defaultFill={"transparent"}  
-                        onClick={this.handleMapClick}
-                        title={"Map of the United States of America"}
-                        width={this.props.width}/>
+                <USAMap {...this.getMapOptions()}/>
                 <CandidatesContainer />
             </div>
         );
@@ -60,6 +65,7 @@ export class StatesMap extends Component {
 
 const mapStateToProps = state => ({
     width: state.display.width,
+    height: state.display.height,
     currentState: state.map.currentState
 });
 

@@ -4,24 +4,30 @@
 //
 // // // // // // // //
 .usa-map-container {
+    position: relative;
     width: 100%;
     overflow: hidden;
+    // border: 1px solid white;
     
-    @include mediaMin($tablet) {
-        padding-left: 100px;
-        padding-right: 20px;
-        margin-top: 50px;
-    }
     .us-state-map {
         @include transitions(top 0.3s ease-in-out);
-        height: 50vw;
-        position: absolute;
-        top: 140px;
-        @include mediaMin($tablet) {
-            width: 60%;
+        width: 100vw;
+        height: 200px;
+        min-height: 200px;
+        // border: 1px solid red;
+        @include mediaMin(400px) {
+            width: 100%;
             height: 40vw;
+        }
+        @include mediaMax($tablet - 1) {
+            @include center;
+        }
+        @include mediaMin($tablet) {
+            position: absolute;
             top: 0;
-            float: left;
+            left: 0;
+            width: 60vw;
+            height: 60vh;
         }
     }
 }
