@@ -6,18 +6,14 @@
 
 .think-logo {
     color: grey;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 70px;
-    line-height: 50px;
     z-index: 10;
-    // border: 1px solid white;
+    figure {
+        margin: 0;
+    }
     @include mediaMin($tablet) {
-        left: auto;
-        bottom: auto;
-        top: 0;
-        right: 0;
+        position: fixed;
+        top: 20px;
+        right: 20px;
     }
     svg {
         fill: grey;
@@ -34,9 +30,9 @@
     }
 }
 
-//
+// - - - - - - - -
 // Sources Page
-//
+// - - - - - - - -
 .app.sources {
     @include mediaMin($tablet) {
         .think-logo {
@@ -44,9 +40,9 @@
         }
     }
 }
-//
+// - - - - - - - -
 // Map Page
-//
+// - - - - - - - -
 .app.map {
     @include mediaMin($tablet) {
         .think-logo {

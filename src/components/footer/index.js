@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 import ThinkLogo from './think-logo';
 
@@ -28,7 +28,9 @@ export class Footer extends Component {
     render() {
         return (
             <footer role="contentinfo">
+                {/* {this.props.width < 900 ? <ThinkLogo /> : null }  */}
                 <ThinkLogo />
+                <Link className="about-proj-link" to="/about-project">About This Project</Link>
             </footer>
         );
     }
@@ -36,6 +38,7 @@ export class Footer extends Component {
 
 
 const mapStateToProps = state => ({
+    width: state.display.width
 });
 
 export default withRouter(connect(mapStateToProps)(Footer));
