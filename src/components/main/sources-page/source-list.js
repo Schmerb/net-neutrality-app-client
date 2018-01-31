@@ -51,7 +51,6 @@ export default class SourcesList extends Component {
         let offset = window.innerWidth >= 900 ? 245 : 105;
         const someDiv       = document.getElementById(`${this.props.group}-sources`);
         const distanceToTop = someDiv.getBoundingClientRect().top - offset;
-        // console.log({distanceToTop});
         if(distanceToTop <= 0 && this.state.classes === '') {
             this.setState({ classes: 'fixed' });
         } else if(distanceToTop > 0 && this.state.classes === 'fixed') {

@@ -1,0 +1,61 @@
+// // // // // // // // // //
+//
+//       Landing Page MAP
+//
+// // // // // // // // // //
+
+.landing-map-wrap {
+    @extend %transition;
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    min-height: 300px;
+    // border: 1px solid white;
+    @include mediaMin($tablet) {
+        width: 50vw;
+        width: 60%;
+        height: 50vh;
+        min-height: 300px;
+        float: left;
+    }
+    @include mediaMin($desktop + 200) {
+        height: 60vh;
+    }
+
+    // - - - - - - - - - - - -
+    // Static US Map
+    // - - - - - - - - - - - -
+    .us-state-map  { 
+        @extend %transition;
+        width: 100%;
+        height: 100%;
+        opacity: 0.9;
+        // border: 1px solid red;
+        path {
+            pointer-events: none;
+        }
+    }
+    // - - - - - - - - - - - -
+    // Get Started Buttons
+    // - - - - - - - - - - - -
+    .get-started-btn {
+        @extend %transition;
+        @extend %abs-middle;
+        font-family: "Mark W01 Regular";
+        color: lightgrey;
+        display: block;
+        font-size: 24px;
+        text-decoration: none;
+        text-align: center;
+        width: 241px;
+        height: 70px;
+        line-height: 70px;
+        border: 1px solid grey;
+        border-radius: 3px;
+        z-index: 1;
+        &:hover {
+            color: white;
+            border-color: white;
+        }
+    }
+}
