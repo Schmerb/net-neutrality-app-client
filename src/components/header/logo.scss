@@ -12,7 +12,6 @@
     color: white;
     position: relative;
     font-size: calc(1em + 1vw);
-    // border: 1px solid white;
     @include mediaMin($tablet) {
         justify-content: flex-start;
         padding-left: 20px;
@@ -22,33 +21,20 @@
         pointer-events: all;
     }
     .motto {
-        font-size: calc(24px + 2vw);
-        width: calc(190px + 5vw);
+        font-size: 24px;
+        width: 190px;
         line-height: 1.3em;
-        padding-top: 8px;
-        // border: 1px solid white;
+        @include mediaMax(599px) {
+            padding-top: 8px;
+        }
         @include mediaMin(600px) {
             font-size: 36px;
+            line-height: 2em;
+            width: auto;
         }
         @include mediaMin($tablet) {
             width: auto;
-            padding-top: 20px;
             margin-left: 30px;
         }
     }
 }
-
-// // - - - - - - - - - - - -
-// // Map Page
-// // - - - - - - - - - - - -
-// .app.map {
-//     @include mediaMin($tablet) {
-//         .monitor-icon {
-//             width: 40px;
-//             height: 40px;
-//         }
-//         .motto {
-//             font-size: ;
-//         }
-//     }
-// }

@@ -36,6 +36,12 @@
 // Map Page
 // - - - - - - - - - - - -
 .app.map {
+    .candidates-container {
+        margin-top: 25vh;
+        @include mediaMin(600px) {
+            margin-top: 45%;
+        }
+    }
     @include mediaMin($tablet) {
         .candidates-container {
             position: fixed;

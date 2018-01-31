@@ -83,7 +83,12 @@ body {
     margin: 0; 
     padding-bottom: 100px;
     overflow-x: hidden;
-
+    @include mediaMin($tablet) {
+        padding-bottom: 50px;
+    }
+    @media screen and (min-width: $tablet) and (min-height: 430px) {
+        overflow-y: hidden;
+    }
     &.landing {
         padding-bottom: 0;
         @include mediaMin($tablet) {

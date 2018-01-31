@@ -28,9 +28,6 @@
             max-width: 9999px;
             float: left;
         }
-        @include mediaMin($desktop + 200) {
-            // padding-top: 0;
-        }
         
         // - - - - - - - - -
         // INNER TEXT WRAP

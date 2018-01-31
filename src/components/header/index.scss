@@ -20,6 +20,9 @@ header {
 // Map Page
 // - - - - - - - - - - - -
 .app.map {
+    .header {
+        padding-bottom: 0;
+    }
     @include mediaMin($tablet) {
         .header {
             height: 140px;
