@@ -46,7 +46,7 @@
     @include mediaMin($tablet) {
         .candidates-container {
             position: absolute;
-            top: -200px;
+            top: -100px;
             right: 15px;
             width: calc(100px + 25vw);
             max-width: 440px;
