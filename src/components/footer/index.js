@@ -26,11 +26,16 @@ export class Footer extends Component {
     handleClick = () => scrollIt(0, 500, 'easeInOutCubic');
 
     render() {
+        const path = this.props.location.pathname;
+        let thinkLogo = null;
+        if((path === '/map') || (path === '/' && this.props.width < 900)) {
+            thinkLogo = <ThinkLogo path={path}/>;
+        }
+        let landing = path === '/' ? 'landing':'';
         return (
-            <footer role="contentinfo">
-                {/* {this.props.width < 900 ? <ThinkLogo /> : null }  */}
-                <ThinkLogo />
-                <Link className="about-proj-link" to="/about-project">About This Project</Link>
+            <footer role="contentinfo" className={landing}>
+                {thinkLogo}
+                {path === '/about-project' ? null : <Link className="about-proj-link" to="/about-project">About This Project</Link>}
             </footer>
         );
     }

@@ -18,6 +18,14 @@ export class StatesMap extends Component {
         this.state = {};
     }
 
+    componentDidMount() {
+        document.body.classList.add('map');
+    }
+
+    componentWillUnmount() {
+        document.body.classList.remove('map');
+    }
+
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     // Handles all clicks on map
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

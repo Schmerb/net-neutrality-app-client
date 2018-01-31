@@ -16,7 +16,7 @@ export class LandingPage extends Component {
         this.state = {};
     }
 
-    componentWillMount() {
+    componentDidMount() {
         document.body.classList.add('landing');
     }
 

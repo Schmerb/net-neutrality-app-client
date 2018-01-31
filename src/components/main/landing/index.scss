@@ -28,6 +28,14 @@
             max-width: 9999px;
             float: left;
         }
+
+        a {
+            @extend %transition;
+            color: inherit;
+            &:hover, &:focus {
+                color: #999;
+            }
+        }
         
         // - - - - - - - - -
         // INNER TEXT WRAP

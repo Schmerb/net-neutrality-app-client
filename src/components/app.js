@@ -72,12 +72,12 @@ export class App extends Component {
             classes = 'sources';
         } else if (path.includes('map')) {
             classes = 'map';
-        }
+        } 
 
         return(
             <section className={`app ${classes}`}>
                 {flashMsg}
-                <Header />
+                <Header width={this.props.width} path={path}/>
                 <Main />
                 <Footer />
             </section>
@@ -86,7 +86,8 @@ export class App extends Component {
 }
 
 const mapStateToProps = state => ({
-    flashMsg: state.display.flashMsg
+    flashMsg: state.display.flashMsg,
+    width: state.display.width
 });
 
 export default withRouter(connect(mapStateToProps)(App));

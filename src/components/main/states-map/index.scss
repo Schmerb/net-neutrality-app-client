@@ -39,6 +39,7 @@
     @include mediaMin($tablet) {
         .usa-map-container {
             margin-top: 0;
+            overflow: visible;
         }
         .us-state-map {
             position: relative;

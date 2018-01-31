@@ -12,6 +12,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 45%;
+    z-index: 20; // Needed for larger viewport to overlay header/logo
     
     .directions {
         color: #555;
@@ -44,8 +45,8 @@
     }
     @include mediaMin($tablet) {
         .candidates-container {
-            position: fixed;
-            top: 10px;
+            position: absolute;
+            top: -200px;
             right: 15px;
             width: calc(100px + 25vw);
             max-width: 440px;

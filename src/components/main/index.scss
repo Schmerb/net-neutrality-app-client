@@ -7,12 +7,7 @@
 main {
     background-color: black;
     .container {
-        &.map {
-            // provides some space for mobile devices at bottom of screen
-            @include mediaMax($tablet) {
-                // margin-bottom: 100px;
-            }
-        }
+        overflow: hidden;
     }
 }
 // 
@@ -22,6 +17,17 @@ main {
     main {
         @include mediaMin($tablet) {
             margin-top: 150px;
+        }
+    }
+}
+
+//
+// Map Page
+//
+.app.map {
+    main {
+        .container {
+            overflow: visible;
         }
     }
 }

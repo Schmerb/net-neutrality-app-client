@@ -5,15 +5,16 @@
 // // // // // // // // // //
 
 .think-logo {
+    position: relative;
     color: grey;
-    z-index: 10;
-    figure {
-        margin: 0;
-    }
+    z-index: 20;
     @include mediaMin($tablet) {
         position: fixed;
         top: 20px;
         right: 20px;
+    }
+    figure {
+        margin: 0;
     }
     svg {
         fill: grey;
@@ -46,10 +47,7 @@
 .app.map {
     @include mediaMin($tablet) {
         .think-logo {
-            top: auto;
-            right: auto;
-            bottom: 0;
-            left: 0;
+            position: static;
         }
     }
 }
