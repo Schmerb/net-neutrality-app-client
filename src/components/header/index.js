@@ -10,10 +10,11 @@ import Logo      from './logo';
 import ThinkLogo from 'components/footer/think-logo';
 
 export default function Header(props) {
-    let thinkLogo = null;
-    if((props.path === '/' && props.width >= 900) || (props.path === '/about-project')) {
-        console.log(props.path.slice(1));
-        thinkLogo = <ThinkLogo className={props.path.slice(1)}/>;
+    let thinkLogo = null, 
+        { path }  = props,
+        big       = props.width >= 900;
+    if((path === '/' && big) || (path === '/about-project' && big)) {
+        thinkLogo = <ThinkLogo className={path.slice(1)}/>;
     }
 
     return(

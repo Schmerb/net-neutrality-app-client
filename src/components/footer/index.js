@@ -5,7 +5,7 @@
 // // // // // // // // // //
 
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { connect }          from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
 
 import ThinkLogo from './think-logo';
@@ -19,7 +19,6 @@ export class Footer extends Component {
         this.state = {};
     }
 
-
     // * * * * * * * * * * * * * * * * * * * *
     // Scrolls to top of document
     // * * * * * * * * * * * * * * * * * * * *
@@ -27,8 +26,9 @@ export class Footer extends Component {
 
     render() {
         const path = this.props.location.pathname;
-        let thinkLogo = null;
-        if((path === '/map') || (path === '/' && this.props.width < 900)) {
+        let thinkLogo = null,
+            small     = this.props.width < 900;
+        if((path === '/map') || (path === '/' && small) || (path === '/about-project' && small)) {
             thinkLogo = <ThinkLogo path={path}/>;
         }
         let landing = path === '/' ? 'landing':'';

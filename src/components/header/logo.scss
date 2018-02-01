@@ -21,16 +21,16 @@
         pointer-events: all;
     }
     .motto {
+        width: 160px;
         font-size: 24px;
-        width: 190px;
         line-height: 1.3em;
         @include mediaMax(599px) {
             padding-top: 8px;
         }
         @include mediaMin(600px) {
             font-size: 36px;
-            line-height: 2em;
             width: auto;
+            line-height: 2em;
         }
         @include mediaMin($tablet) {
             width: auto;
