@@ -37,10 +37,11 @@ export default class CandidateSource extends Component {
     // Formats email responses to display on screen
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     formatEmailSrc = (src) => {
-        src = src.split('�')
-                  .join('')
-                  .replace('Email response: ', '')
-                  .replace('Email response:', '');
+        src = src.trim()
+                 .split('�')
+                 .join('')
+                 .replace('Email response: ', '')
+                 .replace('Email response:', '');
         src = `"${src}"`;
         return <p className="quote">{src}</p>;
     }
@@ -49,10 +50,11 @@ export default class CandidateSource extends Component {
     // Formats FB responses to display on screen
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     formatFbSrc = (src) => {
-        src = src.split('�')
-                  .join('')
-                  .replace('-', ':')
-                  .split(':');
+        src = src.trim()
+                 .split('�')
+                 .join('')
+                 .replace('-', ':')
+                 .split(':');
         return (
             <div className="social-quote">
                 <span>{src[0]}</span>
@@ -61,40 +63,53 @@ export default class CandidateSource extends Component {
         );
     }
 
-    // Retweet of :  https://twitter.com/NathanBenefield/status/941425942592983040
-
-    render() {
-        let src = this.props.candidate.source;
+    getProperSrcFormat() {
+        let src = this.props.candidate.source.trim();
+        let hasIcon  = false, 
+            hasQuote = true;
         if(src.includes('twitter.com')) {
             if(src.includes('Retweet')) {
                 src = src.slice(src.indexOf('http'));
-            }
-            src =   (<Link to={src} target="_blank">
+            } 
+            src = (<Link to={src} target="_blank">
                         <span className="aria-hidden" aria-hidden="false">Navigate to {this.props.candidate.firstName} {this.props.candidate.lastName}'s twitter source</span>
                         <TwitterIcon className="source-icon twitter"/>
-                    </Link>);
+                  </Link>);
+            hasIcon  = true;
+            hasQuote = false;
         } else if(src.includes('facebook.com')) {
             src =   (<Link to={src} target="_blank">
                         <span className="aria-hidden" aria-hidden="false">Navigate to {this.props.candidate.firstName} {this.props.candidate.lastName}'s facebook source</span>
                         <FacebookIcon className="source-icon fb"/>
                     </Link>);
+            hasIcon  = true;
+            hasQuote = false;
         } else if(src.includes('imgur.com')) {
             src =   (<Link to={src} target="_blank">
                         <span className="aria-hidden" aria-hidden="false">Navigate to {this.props.candidate.firstName} {this.props.candidate.lastName}'s imgur source</span>
                         <ImgurIcon className="source-icon imgur"/>
                     </Link>);
+            hasIcon  = true;
+            hasQuote = false;
         } else if(src.startsWith('http')) {
             src =   (<Link to={src} target="_blank">
                         <span className="aria-hidden" aria-hidden="false">Navigate to {this.props.candidate.firstName} {this.props.candidate.lastName}'s external source</span>
                         <LinkIcon className="source-icon link"/>
                     </Link>);
+            hasIcon  = true;
+            hasQuote = false;
         } else if(src.includes('Facebook post') || src.includes('Facebook message') || src.includes('Facebook reponse') || src.includes('Facebook response')) {
             src = this.formatFbSrc(src);
         } else if(src.includes('Email') || src.includes('email') || src.includes('response')) {
             src = this.formatEmailSrc(src);
         } 
+        return { src, hasIcon, hasQuote };
+    }
+
+    render() {
+        const { src, hasIcon, hasQuote } = this.getProperSrcFormat();
         return(
-            <div className={`candidate-source ${this.state.classes}`}>
+            <div className={`candidate-source ${this.state.classes} ${hasIcon?'hasIcon':''} ${hasQuote?'hasQuote':''}`}>
                 <h3>{this.props.candidate.firstName} {this.props.candidate.lastName}</h3>
                 {src}
             </div>
