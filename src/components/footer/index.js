@@ -25,7 +25,7 @@ export class Footer extends Component {
     handleClick = () => scrollIt(0, 500, 'easeInOutCubic');
 
     render() {
-        const path = this.props.location.pathname;
+        const path    = this.props.location.pathname;
         let thinkLogo = null,
             small     = this.props.width < 900;
         if((path === '/map') || (path === '/' && small) || (path === '/about-project' && small)) {
@@ -35,7 +35,7 @@ export class Footer extends Component {
         return (
             <footer role="contentinfo" className={landing}>
                 {thinkLogo}
-                {path === '/about-project' ? null : <Link className="about-proj-link" to="/about-project">About This Project</Link>}
+                {path === '/about-project' ? null : <Link className="about-proj-link" to="/about-project" target="_blank">About This Project</Link>}
             </footer>
         );
     }

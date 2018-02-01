@@ -24,10 +24,12 @@ export class SourcesPage extends Component {
     componentWillMount() {
         updateState(this.state.state);
         window.addEventListener('scroll', this.handleWindowScroll);
+        document.body.classList.add('sources');
     }
 
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleWindowScroll);
+        document.body.classList.remove('sources');
     }
 
     // * * * * * * * * * * * * * * * * 

@@ -86,7 +86,7 @@ body {
     @include mediaMin($tablet) {
         padding-bottom: 50px;
     }
-    &:not(.landing) {
+    &.map, &.sources {
         @include mediaMax($tablet - 1) {
             padding-bottom: 200px;
         }
@@ -107,6 +107,12 @@ body {
     &.landing {
         @include mediaMax(600px) {
             padding-bottom: 50px;
+        }
+    }
+    &.about-page {
+        padding-bottom: 100px;
+        @include mediaMin($tablet) {
+            padding-bottom: 0;
         }
     }
 }
