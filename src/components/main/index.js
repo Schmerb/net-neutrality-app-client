@@ -25,9 +25,9 @@ export class Main extends Component {
         return(
             <main role="main" >
                 <div className="container">
-                    <Route exact path="/"        component={LandingPage}/>
-                    <Route exact path="/map"     component={StatesMap}/>
-                    <Route path="/sources"       component={SourcesPage}/>
+                    <Route exact path="/"    component={LandingPage}/>
+                    <Route exact path="/map" component={StatesMap}/>
+                    <Route path="/sources"   component={SourcesPage}/>
                     {!this.props.loading ? <Route path="/about-project" component={AboutProjectPage}/> : null}
                 </div> 
             </main>

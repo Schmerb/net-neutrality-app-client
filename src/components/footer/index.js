@@ -27,23 +27,23 @@ export class Footer extends Component {
     render() {
         const path    = this.props.location.pathname;
         let thinkLogo = null,
+            aboutLink = null,
             small     = this.props.width < 900,
             landing   = path === '/', 
             map       = path === '/map',
-            about     = path === '/about-project';
-        if(map || (landing && small) || (about && small)) {
+            about     = path === '/about-project',
+            sources   = path.includes('sources');
+        if(map || (sources && small) || (landing && small) || (about && small)) {
             thinkLogo = <ThinkLogo path={path}/>;
         }
+        if(map || sources) {
+            aboutLink = <Link className="about-proj-link" to="/about-project" target="_blank">About This Project</Link>;
+        }
+        let classes = `${landing?'landing':''} ${sources?'sources':''}`;
         return (
-            <footer role="contentinfo" className={landing ? 'landing':''}>
+            <footer role="contentinfo" className={classes}>
                 {thinkLogo}
-                {
-                    (map || path === '/sources') 
-                    ? 
-                    <Link className="about-proj-link" to="/about-project" target="_blank">About This Project</Link> 
-                    : 
-                    null
-                }
+                {aboutLink}
             </footer>
         );
     }

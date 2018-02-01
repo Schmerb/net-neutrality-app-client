@@ -31,6 +31,18 @@ footer {
             justify-content: space-between;
         }
     }
+    &.sources {
+        margin-bottom: 40px;
+        @include mediaMax(599px) {
+            justify-content: space-around;
+            height: 180px;
+            margin-bottom: 20px;
+        }
+        @include mediaMin($tablet) {
+            flex-direction: row-reverse;
+            justify-content: center;
+        }
+    }
     .about-proj-link {
         @extend %transition;
         font-family: "MaisonNeue-Light";
