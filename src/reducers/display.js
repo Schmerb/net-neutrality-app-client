@@ -11,6 +11,7 @@ import {
     FLASH_MESSAGE,
     REMOVE_FLASH_MESSAGE,
     FLASH_MSG_CLASS,
+    DOM_LOADED,
     SET_WIDTH,
     SET_HEIGHT
 } from 'actions/display'
@@ -25,7 +26,8 @@ const initialState = {
         flashMsg: null,
         flashClass: '',
         width: window.innerWidth,
-        height: window.innerHeight
+        height: window.innerHeight,
+        loading: true
 };
 
 //
@@ -55,6 +57,8 @@ export default function reducer(state = initialState, action) {
             return {...state, flashMsg: null};
         case FLASH_MSG_CLASS:
             return {...state, flashClass: action.classname};
+        case DOM_LOADED:
+            return {...state, loading: false};
         case SET_WIDTH:
             return {...state, width: action.width};
         case SET_HEIGHT:

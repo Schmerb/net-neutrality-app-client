@@ -4,10 +4,15 @@
 //
 // // // // // // // //
 .usa-map-container {
+    @include transition(0.8s);
     position: relative;
     width: 100%;
     overflow: hidden;
     // border: 1px solid white;
+    opacity: 0;
+    &.fadeIn {
+        opacity: 1;
+    }
     
     .us-state-map {
         @include transitions(top 0.3s ease-in-out);

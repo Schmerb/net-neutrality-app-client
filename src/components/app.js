@@ -9,7 +9,7 @@ import { connect }    from 'react-redux';
 import { withRouter } from 'react-router-dom';
 // import { Cookies }    from 'react-cookie';
 
-import { setWidth, setHeight } from 'actions/display';
+import { setWidth, setHeight, DOMLoaded } from 'actions/display';
 
 import FlashMessage from './services/flash-message';
 
@@ -29,6 +29,15 @@ export class App extends Component {
     componentWillMount() {
         window.addEventListener('resize', this.handleWindowResize);
     };
+
+    // * * * * * * * * * * * * * * * * * * * *
+    // 
+    // * * * * * * * * * * * * * * * * * * * *
+    componentDidMount() {
+        window.onload = () => {
+            this.props.dispatch(DOMLoaded());
+        }
+    }
 
     // * * * * * * * * * * * * * * * * * * * *
     // Fires when component is about to 
@@ -73,7 +82,9 @@ export class App extends Component {
         } else if (path.includes('map')) {
             classes = 'map';
         } 
-
+        if(this.props.loading) {
+            classes = classes + ' loading';
+        }
         return(
             <section className={`app ${classes}`}>
                 {flashMsg}
@@ -87,7 +98,8 @@ export class App extends Component {
 
 const mapStateToProps = state => ({
     flashMsg: state.display.flashMsg,
-    width: state.display.width
+    width: state.display.width,
+    loading: state.display.loading
 });
 
 export default withRouter(connect(mapStateToProps)(App));

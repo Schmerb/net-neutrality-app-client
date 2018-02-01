@@ -56,6 +56,14 @@ export const toggleMenu = () => ({
     type: TOGGLE_MENU
 });
 
+// * * * * * * * * * * * * * * *
+// Toggles nav menu
+// * * * * * * * * * * * * * * *
+export const DOM_LOADED = 'DOM_LOADED';
+export const DOMLoaded = () => ({
+    type: DOM_LOADED
+});
+
 
 // * * * * * * * * * * * * * * *
 // Sets current window width

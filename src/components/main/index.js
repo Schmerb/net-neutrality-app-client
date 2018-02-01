@@ -25,10 +25,10 @@ export class Main extends Component {
         return(
             <main role="main" >
                 <div className="container">
-                    <Route exact path="/" component={LandingPage}/>
-                    <Route exact path="/map" component={StatesMap}/>
-                    <Route path="/sources" component={SourcesPage}/>
-                    <Route path="/about-project" component={AboutProjectPage}/>
+                    <Route exact path="/"        component={LandingPage}/>
+                    <Route exact path="/map"     component={StatesMap}/>
+                    <Route path="/sources"       component={SourcesPage}/>
+                    {!this.props.loading ? <Route path="/about-project" component={AboutProjectPage}/> : null}
                 </div> 
             </main>
         );
@@ -38,7 +38,8 @@ export class Main extends Component {
 const mapStateToProps = state => ({
     hasTouch: state.display.hasTouch,
     width: state.display.width,
-    height: state.display.height
+    height: state.display.height,
+    loading: state.display.loading
 });
 
 export default withRouter(connect(mapStateToProps)(Main));

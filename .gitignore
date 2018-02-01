@@ -12,6 +12,9 @@
 # Netlify
 .netlify
 
+#VSCode
+.vscode
+
 # misc
 .DS_Store
 .env.local

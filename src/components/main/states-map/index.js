@@ -15,11 +15,19 @@ import { updateState } from 'services/candidates';
 export class StatesMap extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            fadeIn: ''
+        };
+    }
+
+    componentWillMount() {
+        document.body.classList.add('map');
     }
 
     componentDidMount() {
-        document.body.classList.add('map');
+        setTimeout(() => {
+            this.setState({ fadeIn: 'fadeIn' });
+        }, 200);
     }
 
     componentWillUnmount() {
@@ -63,7 +71,7 @@ export class StatesMap extends Component {
 
     render() {
         return(
-            <div className="usa-map-container">
+            <div className={`usa-map-container ${this.state.fadeIn}`}>
                 <USAMap {...this.getMapOptions()}/>
                 <CandidatesContainer />
             </div>

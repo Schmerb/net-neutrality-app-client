@@ -76,7 +76,7 @@ body {
 }
 
 body {
-    background-color: black;
+    background-color: black; 
     font-weight: lighter;
     position: relative;
     min-height: 98vh;
@@ -116,6 +116,15 @@ body {
         }
     }
 }
+
+.app {
+    @include transition(1s);
+    opacity: 1;
+    &.loading {
+        opacity: 0;
+    }
+}
+
 
 
 .no-scroll {
