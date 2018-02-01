@@ -8,6 +8,15 @@
     position: relative;
     color: grey;
     z-index: 20;
+    @include mediaMax($tablet - 1) {
+        &.about-project {
+            position: fixed;
+            top: auto;
+            right: auto;
+            left: 20px;
+            bottom: 20px;
+        }
+    }
     @include mediaMin($tablet) {
         position: fixed;
         top: 20px;

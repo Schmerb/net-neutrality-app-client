@@ -8,9 +8,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Route } from 'react-router-dom';
 
-import LandingPage from './landing';
-import StatesMap   from './states-map';
-import SourcesPage from './sources-page';
+import LandingPage      from './landing';
+import StatesMap        from './states-map';
+import SourcesPage      from './sources-page';
+import AboutProjectPage from './about-project-page';
 
 
 
@@ -27,6 +28,7 @@ export class Main extends Component {
                     <Route exact path="/" component={LandingPage}/>
                     <Route exact path="/map" component={StatesMap}/>
                     <Route path="/sources" component={SourcesPage}/>
+                    <Route path="/about-project" component={AboutProjectPage}/>
                 </div> 
             </main>
         );

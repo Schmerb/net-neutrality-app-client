@@ -12,7 +12,7 @@ import ThinkfulLogo from 'icons/thinkful-logo';
 export default function ThinkLogo(props) {
     let classes = props.path === '/about-project' ? 'about':'';
     return (
-        <div className={`think-logo ${classes}`}>
+        <div className={`think-logo ${classes} ${props.className}`}>
             <figure>
                 <span>Presented by</span>
                 <Link to="https://www.thinkful.com/" target="_blank" >

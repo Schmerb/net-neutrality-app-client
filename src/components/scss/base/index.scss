@@ -87,19 +87,21 @@ body {
         padding-bottom: 50px;
     }
     &:not(.landing) {
-        // @media screen and (min-width: $tablet) and (min-height: 500px) {
-        //     overflow-y: hidden;
-        // }
         @include mediaMax($tablet - 1) {
             padding-bottom: 200px;
         }
         @include mediaMin($tablet) {
             padding-bottom: 100px;
+            
         }
     }
     &.map {
         @media screen and (min-width: $tablet) and (min-height: 530px) {
             overflow-y: hidden;
+        }
+        @media screen and (min-width: $tablet) and (max-height: 530px) {
+            padding-bottom: 140px; // prevents 'About this Project' from overlapping  
+                                   // candidates list on wide and short windows
         }
     }
     &.landing {
