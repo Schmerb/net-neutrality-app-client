@@ -52,4 +52,4 @@ npm build
 
 ## Acknowledgments
 
-* **Darren** - Designer
+* **Darren Laiben** - Designer
