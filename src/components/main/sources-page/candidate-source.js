@@ -5,7 +5,6 @@
 // // // // // // // // // //
 
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import TwitterIcon  from 'icons/social/twitter-icon';
@@ -63,6 +62,10 @@ export default class CandidateSource extends Component {
         );
     }
 
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    // Parses source and applies appropriate 3rd party
+    // icon
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     getProperSrcFormat() {
         let src = this.props.candidate.source.trim();
         let hasIcon  = false, 
@@ -98,9 +101,9 @@ export default class CandidateSource extends Component {
                     </Link>);
             hasIcon  = true;
             hasQuote = false;
-        } else if(src.includes('Facebook post') || src.includes('Facebook message') || src.includes('Facebook reponse') || src.includes('Facebook response')) {
+        } else if(src.includes('Facebook post') || src.includes('Facebook message') || src.includes('Facebook response')) {
             src = this.formatFbSrc(src);
-        } else if(src.includes('Email') || src.includes('email') || src.includes('response')) {
+        } else if(src.includes('Email response:') || src.includes('Email response')) {
             src = this.formatEmailSrc(src);
         } 
         return { src, hasIcon, hasQuote };

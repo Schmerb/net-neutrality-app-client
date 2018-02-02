@@ -38,7 +38,6 @@ export class SourcesPage extends Component {
     handleWindowScroll = e => {
         const someDiv       = document.getElementById('sources-page');
         const distanceToTop = someDiv.getBoundingClientRect().top;
-        // console.log({distanceToTop});
         if(distanceToTop <= 0 && this.state.classes === '') {
             this.setState({ classes: 'fixed' });
         } else if(distanceToTop > 0 && this.state.classes === 'fixed') {

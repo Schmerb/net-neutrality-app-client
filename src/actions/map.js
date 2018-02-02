@@ -84,7 +84,6 @@ export const getCandidates = (state, congressGroup) => dispatch => {
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .then(res => {
-            // console.log(res);
             dispatch(getCandidatesSuccess(res.Candidates2018));
         })
         .catch(err => {

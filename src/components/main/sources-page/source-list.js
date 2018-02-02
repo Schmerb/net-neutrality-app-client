@@ -5,7 +5,6 @@
 // // // // // // // // // //
 
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
 
 import CandidateSource from './candidate-source';
 
@@ -26,10 +25,6 @@ export default class SourcesList extends Component {
             setTimeout(() => {
                 const element = document.getElementById(hash);
                 scrollIt(element, 1000, 'linear', window.innerHeight / 2);
-                // const elementRect = element.getBoundingClientRect();
-                // const absoluteElementTop = elementRect.top + window.pageYOffset;
-                // const middle = absoluteElementTop - (window.innerHeight / 2);
-                // window.scrollTo(0, middle);
             }, 1000);
         }
     }

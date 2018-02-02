@@ -8,7 +8,6 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    // border: 1px solid white;
     opacity: 0;
     &.fadeIn {
         opacity: 1;
@@ -19,7 +18,6 @@
         width: 100vw;
         height: 200px;
         min-height: 200px;
-        // border: 1px solid red;
         @include mediaMin(400px) {
             width: 100%;
             height: 40vw;
@@ -48,18 +46,6 @@
         }
         .us-state-map {
             position: relative;
-        }
-    }
-}
-// - - - - - - - - - - - -
-// Sources Page
-// - - - - - - - - - - - -
-.app.sources {
-    @include mediaMin($tablet) {
-        .usa-map-container {
-        }
-        .us-state-map {
-
         }
     }
 }

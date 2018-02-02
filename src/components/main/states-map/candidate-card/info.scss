@@ -13,7 +13,6 @@
     margin-left: 10px;
     min-width: 120px;
     height: 60px;
-    // border: 1px solid red;
     @include mediaMin(375px) {
         margin-left: 25px;
     }

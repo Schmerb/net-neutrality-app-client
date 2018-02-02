@@ -10,7 +10,6 @@ header {
     padding-top: 30px;
     padding-bottom: 30px;
     z-index: 10;
-    // border: 2px solid red;
     @include mediaMin($tablet) {
         height: 100px;
     }
@@ -40,7 +39,6 @@ header {
             left: 0;
             width: 100%;
             height: 150px;
-            // border: 1px solid white;
         }
     }
 }

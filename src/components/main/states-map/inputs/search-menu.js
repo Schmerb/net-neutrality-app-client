@@ -33,8 +33,7 @@ export class SearchMenu extends Component {
     handleChange = (e) => {
         let val = e.target.value;
         this.setState({ val }); // updates input box as user types
-        // this.searchStates(val); // searches and displays matching results as user types
-        const results = searchStates(val);
+        const results = searchStates(val); // searches and displays matching results as user types
         if(val !== '') {
             this.setState({ results });
         } else {
@@ -65,7 +64,7 @@ export class SearchMenu extends Component {
     };
 
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-    // Returns
+    // Returns live search results
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     getResults = () => {
         let { results } = this.state; 
