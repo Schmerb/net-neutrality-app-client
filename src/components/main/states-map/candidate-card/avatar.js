@@ -15,6 +15,7 @@ import RepublicanIcon   from 'icons/party/republican-icon';
 import DemocraticIcon   from 'icons/party/democratic-icon';
 import LibertarianIcon  from 'icons/party/libertarian-icon';
 import IndependentIcon  from 'icons/party/independent-icon';
+import GreenPartyIcon   from 'icons/party/green-party-icon';
 
 export default class CandidateAvatar extends Component {
     constructor(props) {
@@ -37,6 +38,8 @@ export default class CandidateAvatar extends Component {
                 return <LibertarianIcon className="party-icon libertarian"/>;
             case 'Independent':
                 return <IndependentIcon className="party-icon independent"/>;
+            case 'Green':
+                return <GreenPartyIcon className="party-icon green"/>;
             default: 
                 return <QuestionMarkIcon className="party-icon question-mark"/>;
         }
