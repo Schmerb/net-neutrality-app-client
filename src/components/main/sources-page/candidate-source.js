@@ -37,8 +37,7 @@ export default class CandidateSource extends Component {
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     formatEmailSrc = (src) => {
         src = src.trim()
-                 .split('�')
-                 .join('')
+                 .replace(/�/g, '')
                  .replace('Email response: ', '')
                  .replace('Email response:', '');
         src = `"${src}"`;
@@ -49,15 +48,13 @@ export default class CandidateSource extends Component {
     // Formats FB responses to display on screen
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     formatFbSrc = (src) => {
+        // console.log(src);
         src = src.trim()
-                 .split('�')
-                 .join('')
-                 .replace('-', ':')
-                 .split(':');
+                 .replace(/�/g, '')
+                 .replace('Facebook response:', '');
         return (
             <div className="social-quote">
-                <span>{src[0]}</span>
-                <p>"{src[1]}"</p>
+                <p>{src}</p>
             </div>
         );
     }
@@ -71,9 +68,6 @@ export default class CandidateSource extends Component {
         let hasIcon  = false, 
             hasQuote = true;
         if(src.includes('twitter.com')) {
-            if(src.includes('Retweet')) {
-                src = src.slice(src.indexOf('http'));
-            } 
             src = (<Link to={src} target="_blank">
                         <span className="aria-hidden" aria-hidden="false">Navigate to {this.props.candidate.firstName} {this.props.candidate.lastName}'s twitter source</span>
                         <TwitterIcon className="source-icon twitter"/>
