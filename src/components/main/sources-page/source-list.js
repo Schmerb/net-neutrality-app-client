@@ -67,7 +67,7 @@ export default class SourcesList extends Component {
         return(
             <section className={`${this.props.group}-sources sources`} id={`${this.props.group}-sources`}>
                 <h4 className={this.state.classes}>{this.props.group.charAt(0).toUpperCase() + this.props.group.slice(1)}</h4>
-                <ul>{candidates}</ul>
+                <ul className="sources-list-ul">{candidates}</ul>
             </section>
         );
     }

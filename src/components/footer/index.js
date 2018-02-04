@@ -9,6 +9,7 @@ import { connect }          from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
 
 import ThinkLogo from './think-logo';
+import SocialShareButtons from './social-share-buttons';
 
 import { scrollIt } from 'utils/scroll';
 
@@ -16,8 +17,32 @@ import { scrollIt } from 'utils/scroll';
 export class Footer extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            fadeIn: ''
+        };
     }
+
+    componentDidMount() {
+        let current = this.props.location.pathname;
+        if(current !== '/') {
+            setTimeout(() => {
+                this.setState({ fadeIn: 'fadeIn' });
+            }, 1000);
+        }
+    }
+
+    componentDidUpdate(prevProps) {
+        let prev    = prevProps.location.pathname;
+        let current = this.props.location.pathname;
+        console.log({current, prev});
+        if(current !== prev && this.state.fadeIn === '') {
+            setTimeout(() => {
+                this.setState({ fadeIn: 'fadeIn' });
+            }, 200);
+        }
+    }
+
+
 
     // * * * * * * * * * * * * * * * * * * * *
     // Scrolls to top of document
@@ -39,10 +64,14 @@ export class Footer extends Component {
         if(map || sources) {
             aboutLink = <Link className="about-proj-link" to="/about-project" target="_blank">About This Project</Link>;
         }
-        let classes = `${landing?'landing':''} ${sources?'sources':''}`;
+        let classes =  `${this.state.fadeIn} 
+                        ${landing?'landing':''} 
+                        ${sources?'sources':''} 
+                        ${about?'about':''}`;
         return (
             <footer role="contentinfo" className={classes}>
                 {thinkLogo}
+                <SocialShareButtons location={this.props.location} className={classes}/>
                 {aboutLink}
             </footer>
         );

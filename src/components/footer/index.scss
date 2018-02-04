@@ -5,7 +5,8 @@
 // // // // // // // // // //
 
 footer {
-    // flex
+    @include transition(1.5s);
+    // flex-box
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -13,10 +14,10 @@ footer {
     // positioning
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -20px;
     width: 100%;
     height: 100px; 
-    
+    opacity: 0;
     @include mediaMin(600px) {
         @include center;
         flex-direction: row;
@@ -24,7 +25,12 @@ footer {
         height: auto; 
         width: 90%;
     }
+    &.fadeIn {
+        bottom: 0;
+        opacity: 1;
+    }
     &.landing {
+        display: none;
         @include mediaMin($tablet) {
             height: 100px;
             flex-direction: row-reverse;
@@ -39,10 +45,18 @@ footer {
             margin-bottom: 20px;
         }
         @include mediaMin($tablet) {
-            flex-direction: row-reverse;
-            justify-content: center;
+            display: block;
+            width: 100%;
+            .about-proj-link {
+                float: right;
+            }
         }
     }
+    // ABOUT PAGE
+    &.about {
+        height: 50px;
+    }
+    // ABOUT PROJ Link
     .about-proj-link {
         @extend %transition;
         font-family: "MaisonNeue-Light";
@@ -54,6 +68,7 @@ footer {
         }
         @include mediaMin($tablet) {
             padding-right: 20px;
+            margin-bottom: 15px;
         }
     }
 }

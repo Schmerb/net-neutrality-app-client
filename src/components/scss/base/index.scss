@@ -112,7 +112,7 @@ body {
     &.about-page {
         padding-bottom: 100px;
         @include mediaMin($tablet) {
-            padding-bottom: 0;
+            padding-bottom: 50px;
         }
     }
 }
