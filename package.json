@@ -2,6 +2,7 @@
   "name": "net-neutrality-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://www.thinkful.com/net-neutrality/",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "jwt-decode": "^2.2.0",
@@ -23,7 +24,7 @@
     "start": "react-scripts start",
     "start-office": "REACT_APP_API_BASE_URL='http://192.168.5.43:7000/api/v1' react-scripts start",
     "start-boston": "REACT_APP_API_BASE_URL='http://172.20.10.3:7000/api/v1' react-scripts start",
-    "build": "REACT_APP_API_BASE_URL='https://net-neutrality-app.herokuapp.com/api/v1' react-scripts build",
+    "build": "NODE_PATH=./src REACT_APP_API_BASE_URL='https://tf-ms-neutrality-server-prod.herokuapp.com/api/v1' react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
