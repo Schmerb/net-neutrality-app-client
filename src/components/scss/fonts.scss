@@ -4,34 +4,84 @@
 //
 // // // // // // // // // //
 
-//
-// Mark font-family
-//
 @font-face{
-    font-family:"Mark W01 Bold";
-    src: url("%PUBLIC_URL%/media/assets/fonts/Mark/bold/8706c0b6-b423-44f7-ae1a-dd0aabd8a542.eot?#iefix") format("eot"),url("%PUBLIC_URL%/media/assets/fonts/Mark/bold/41c8162d-c2a6-49b0-8139-8bebab187588.woff2") format("woff2"),url("%PUBLIC_URL%/media/assets/fonts/Mark/bold/4fe94f2e-7892-4785-9663-0350a7adf8c0.woff") format("woff"),url("%PUBLIC_URL%/media/assets/fonts/Mark/bold/3a7daddb-0a78-4734-a699-6fe08d0e8b99.ttf") format("truetype");
-}
-@font-face{
-    font-family:"Mark W01 Regular";
-    src: url("%PUBLIC_URL%/media/assets/fonts/Mark/regular/230b3c63-b497-421b-ae7d-182024bef8ac.eot?#iefix") format("eot"),url("%PUBLIC_URL%/media/assets/fonts/Mark/regular/ec598369-4d91-4a16-9db3-6654f68d3c28.woff2") format("woff2"),url("%PUBLIC_URL%/media/assets/fonts/Mark/regular/90214997-3760-4b80-a23b-fec02ab55fac.woff") format("woff"),url("%PUBLIC_URL%/media/assets/fonts/Mark/regular/118e930e-1f56-4131-aee9-236212c0a10b.ttf") format("truetype");
+    font-family:'Mark-Regular';
+    src:
+        url('https://fonts.thinkful.com/Mark W01 Regular.woff') format('woff'),
+        url('https://fonts.thinkful.com/Mark W01 Regular.woff2') format('woff2');
+    font-weight: normal !important;
+    font-style: normal !important;
 }
 
-//
-// MaisonNeue font-family
-//
-@font-face {
-    font-family: "MaisonNeue-Mono";
-    src: url("%PUBLIC_URL%/media/assets/fonts/Maison/MaisonNeue-Mono_web.woff") format("woff"),
-         url("%PUBLIC_URL%/media/assets/fonts/Maison/MaisonNeue-Mono_web.woff2") format("woff2");
+@font-face{
+    font-family:'Mark-Bold';
+    src:
+        url('https://fonts.thinkful.com/Mark W01 Bold.woff') format('woff'),
+        url('https://fonts.thinkful.com/Mark W01 Bold.woff2') format('woff2');
+    font-weight: normal !important;
+    font-style: normal !important;
 }
+
 @font-face {
-    font-family: "MaisonNeue-Book";
-    src: url("%PUBLIC_URL%/media/assets/fonts/Maison/MaisonNeue-Book.woff") format("woff"),
-         url("%PUBLIC_URL%/media/assets/fonts/Maison/MaisonNeue-Book.woff2") format("woff2");
+    font-family: 'MaisonNeue';
+    src:
+        url('https://fonts.thinkful.com/MaisonNeue-Book.woff') format('woff'),
+        url('https://fonts.thinkful.com/MaisonNeue-Book.woff2') format('woff2');
+    font-weight: normal !important;
+    font-style: normal !important;
 }
+
 @font-face {
-    font-family: "MaisonNeue-Light";
-    src: url("%PUBLIC_URL%/media/assets/fonts/Maison/MaisonNeue-Thin.woff") format("woff"),
-         url("%PUBLIC_URL%/media/assets/fonts/Maison/MaisonNeue-Thin.woff2") format("woff2");
+    font-family: 'MaisonNeue-Italic';
+    src:
+        url('https://fonts.thinkful.com/MaisonNeue-BookItalic.woff') format('woff'),
+        url('https://fonts.thinkful.com/MaisonNeue-BookItalic.woff2') format('woff2');
+    font-weight: normal !important;
+    font-style: normal !important;
+}
+
+@font-face {
+    font-family: 'MaisonNeue-Bold';
+    src:
+        url('https://fonts.thinkful.com/MaisonNeue-Bold.woff') format('woff'),
+        url('https://fonts.thinkful.com/MaisonNeue-Bold.woff2') format('woff2');
+    font-weight: normal !important;
+    font-style: normal !important;
+}
+
+@font-face {
+    font-family: 'MaisonNeue-BoldItalic';
+    src:
+        url('https://fonts.thinkful.com/MaisonNeue-BoldItalic.woff') format('woff'),
+        url('https://fonts.thinkful.com/MaisonNeue-BoldItalic.woff2') format('woff2');
+    font-weight: normal !important;
+    font-style: normal !important;
+}
+
+@font-face {
+    font-family: 'MaisonNeue-Thin';
+    src:
+        url('https://fonts.thinkful.com/MaisonNeue-Thin.woff') format('woff'),
+        url('https://fonts.thinkful.com/MaisonNeue-Thin.woff2') format('woff2');
+    font-weight: normal !important;
+    font-style: normal !important;
+}
+
+@font-face {
+    font-family: 'MaisonNeue-ThinItalic';
+    src:
+        url('https://fonts.thinkful.com/MaisonNeue-ThinItalic.woff') format('woff'),
+        url('https://fonts.thinkful.com/MaisonNeue-ThinItalic.woff2') format('woff2');
+    font-weight: normal !important;
+    font-style: normal !important;
+}
+
+@font-face {
+    font-family: 'MaisonNeue-Mono';
+    src:
+        url('https://fonts.thinkful.com/MaisonNeue-Mono_web.woff') format('woff'),
+        url('https://fonts.thinkful.com/MaisonNeue-Mono_web.woff2') format('woff2');
+    font-weight: normal !important;
+    font-style: normal !important;
 }
 
