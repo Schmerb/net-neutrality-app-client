@@ -26,7 +26,7 @@
   }
   button {
     @extend %transition;
-    font-family: 'MaisonNeue-Mono';
+    font-family: 'MaisonNeue-Mono', monospace;
     color: white;
     font-size: 18px;
     font-weight: lighter;

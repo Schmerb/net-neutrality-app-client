@@ -6,7 +6,7 @@
 
 .candidates-container {
   @extend %transition;
-  font-family: 'MaisonNeue-Mono';
+  font-family: 'MaisonNeue-Mono', monospace;
   color: grey;
   width: 95%;
   margin-left: auto;
