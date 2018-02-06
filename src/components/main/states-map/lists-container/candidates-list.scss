@@ -5,51 +5,51 @@
 // // // // // // // // // //
 
 .candidate-list {
-    padding-top: 80px;
-    > p {
-        font-family: "MaisonNeue-Light";
-        font-size: 24px;
-        max-width: 302px;
-        margin: 0 auto;
-        text-align: center;
+  padding-top: 80px;
+  > p {
+    font-family: 'MaisonNeue-Thin', sans-serif;
+    font-size: 24px;
+    max-width: 302px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  ul {
+    @include transition(0.15s);
+    position: relative;
+    min-height: 200px;
+    @include mediaMin($tablet) {
+      overflow-y: scroll;
+      overflow-x: hidden;
+      height: calc(80vh - 200px);
+      padding-top: 15px;
+      padding-right: 10px;
+      padding-left: 2px;
     }
-    ul {
-        @include transition(0.15s);
-        position: relative;
-        min-height: 200px;
-        @include mediaMin($tablet) {
-            overflow-y: scroll;
-            overflow-x: hidden;
-            height: calc(80vh - 200px);
-            padding-top: 15px;
-            padding-right: 10px;
-            padding-left: 2px;
-        }
-        li {
-            max-width: 440px;
-            margin: 0 auto;
-            
-            @include mediaMin($tablet) {
-                padding: 0;
-            }
-        }
-        // - - - - - - - - - - -
-        // custom scroll bars
-        // - - - - - - - - - - -
-        &::-webkit-scrollbar { // background of bar itself
-            background-color: #444;
-            background-color: black;
-            width: 7px;
-        }
-        &::-webkit-scrollbar-thumb { // addresses the draggable scrolling element that resizes depending on the size of the scrollable element
-            background-color: grey;
-            border-radius: 20px;
-        }
-        &::-webkit-scrollbar-corner { // addresses the (usually) bottom corner of the scrollable element, where two scrollbars might meet
-            background-color: transparent;
-        }
+    li {
+      max-width: 440px;
+      margin: 0 auto;
+
+      @include mediaMin($tablet) {
+        padding: 0;
+      }
     }
+    // - - - - - - - - - - -
+    // custom scroll bars
+    // - - - - - - - - - - -
+    &::-webkit-scrollbar {
+      // background of bar itself
+      background-color: #444;
+      background-color: black;
+      width: 7px;
+    }
+    &::-webkit-scrollbar-thumb {
+      // addresses the draggable scrolling element that resizes depending on the size of the scrollable element
+      background-color: grey;
+      border-radius: 20px;
+    }
+    &::-webkit-scrollbar-corner {
+      // addresses the (usually) bottom corner of the scrollable element, where two scrollbars might meet
+      background-color: transparent;
+    }
+  }
 }
-
-
-
