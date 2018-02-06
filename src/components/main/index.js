@@ -8,6 +8,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Route } from 'react-router-dom';
 
+import { ROUTE_SLUG } from 'config';
+
 import LandingPage from './landing';
 import StatesMap from './states-map';
 import SourcesPage from './sources-page';
@@ -23,20 +25,9 @@ export class Main extends Component {
     return (
       <main role="main">
         <div className="container">
-          <Route
-            exact
-            path={`${process.env.PATH_BASE || ''}/`}
-            component={LandingPage}
-          />
-          <Route
-            exact
-            path={`${process.env.PATH_BASE || ''}/map`}
-            component={StatesMap}
-          />
-          <Route
-            path={`${process.env.PATH_BASE || ''}/sources`}
-            component={SourcesPage}
-          />
+          <Route exact path={`${ROUTE_SLUG}/`} component={LandingPage} />
+          <Route exact path={`${ROUTE_SLUG}/map`} component={StatesMap} />
+          <Route path={`${ROUTE_SLUG}/sources`} component={SourcesPage} />
           {!this.props.loading ? (
             <Route path="/about-project" component={AboutProjectPage} />
           ) : null}
