@@ -8,6 +8,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import { ROUTE_SLUG } from 'config';
+
 import CandidateAvatar from './avatar';
 import CandidateInfo from './info';
 import CandidateSupport from './support';
@@ -53,9 +55,9 @@ export class CandidateCard extends Component {
       source.includes('email') ||
       source.includes('response')
     ) {
-      url = `/sources/${this.props.currentState}#${lastName}`;
+      url = `${ROUTE_SLUG}/sources/${this.props.currentState}#${lastName}`;
     } else if (source.includes('Retweet') || source.includes('Facebook')) {
-      url = `/sources/${this.props.currentState}#${lastName}`;
+      url = `${ROUTE_SLUG}/sources/${this.props.currentState}#${lastName}`;
     } else {
       if (source.slice(0, 3) === 'www') {
         url = `https://${source}`;
