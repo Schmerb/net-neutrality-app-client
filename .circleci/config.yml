@@ -19,7 +19,9 @@ jobs:
             - "node_modules"
       - run:
           name: Build
-          command: npm run build
+          command: |
+            gulp build_scss
+            npm run build
       - deploy:
           name: Deploy Master to Heroku
           command: |
