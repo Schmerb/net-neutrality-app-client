@@ -5,21 +5,18 @@
 // // // // // // // // // //
 
 .candidate-wrap {
-    font-family: "MaisonNeue-Book";
-    height: 120px;
-    padding: 20px 20px;
-    border-bottom: 1px solid;
-    > div {
-        display: inline-block;
-        vertical-align: middle;
-    } 
-    
-    @include mediaMin(500px) {
-        height: 105px;
-        padding: 2px;
-        align-items: center; 
-    }
+  font-family: 'MaisonNeue', sans-serif;
+  height: 120px;
+  padding: 20px 20px;
+  border-bottom: 1px solid;
+  > div {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  @include mediaMin(500px) {
+    height: 105px;
+    padding: 2px;
+    align-items: center;
+  }
 }
-
-
-

@@ -5,37 +5,37 @@
 // // // // // // // // // //
 
 .sources-page {
-    font-family: "MaisonNeue-Mono";
-    color: white;
-    overflow: auto;
-    .sources-title {
-        display: flex;
-        background-color: black;
-        width: 100%;
-        height: 100px;
-        text-align: center;
-        flex-direction: column;
-        justify-content: space-around;
-        z-index: 10;
-        @include mediaMax($tablet - 1) {
-            &.fixed {
-                position: fixed;
-                top: 0;
-                left: 0;
-            }
-        }
-        @include mediaMin($tablet) {
-            position: fixed;
-            left: 0;
-            top: 145px;
-        }
+  font-family: 'MaisonNeue-Mono', monospace;
+  color: white;
+  overflow: auto;
+  .sources-title {
+    display: flex;
+    background-color: black;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 10;
+    @include mediaMax($tablet - 1) {
+      &.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
     }
-    .sources-inner-wrap {
-        margin-top: 140px;
-        @include mediaMax($tablet - 1) {
-            &.fixed {
-                margin-top: 200px;
-            }
-        }
+    @include mediaMin($tablet) {
+      position: fixed;
+      left: 0;
+      top: 145px;
     }
+  }
+  .sources-inner-wrap {
+    margin-top: 140px;
+    @include mediaMax($tablet - 1) {
+      &.fixed {
+        margin-top: 200px;
+      }
+    }
+  }
 }

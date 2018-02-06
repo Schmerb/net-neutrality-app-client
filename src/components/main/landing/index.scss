@@ -5,90 +5,90 @@
 // // // // // // // // // //
 
 .landing-page {
-    color: grey;
-    padding: 0 20px;
-    margin-top: 40px;
+  color: grey;
+  padding: 0 20px;
+  margin-top: 40px;
 
-    // // // // // // //
-    //
-    // Outer Text Wrap
-    //
-    // // // // // // //
-    .text-wrap {
-        width: 90%;
-        max-width: 310px;
-        margin: 0 auto;
+  // // // // // // //
+  //
+  // Outer Text Wrap
+  //
+  // // // // // // //
+  .text-wrap {
+    width: 90%;
+    max-width: 310px;
+    margin: 0 auto;
 
-        @include mediaMinMax(500px, $tablet - 1) {
-            max-width: 360px;
-        }
-        @include mediaMin($tablet) {
-            padding-top: 5vh;
-            width: 40%;
-            max-width: 9999px;
-            float: left;
-        }
-
-        a {
-            @extend %transition;
-            color: inherit;
-            &:hover, &:focus {
-                color: #999;
-            }
-        }
-        
-        // - - - - - - - - -
-        // INNER TEXT WRAP
-        // - - - - - - - - -
-        .inner-wrap {
-            max-width: 360px;
-            margin: 0 auto;
-            @include mediaMin($desktop + 100) {
-                max-width: 420px;
-            }
-            @include mediaMin(1380px) {
-                max-width: 460px;
-            }
-        }
-        // - - - - - - -
-        // TITLE
-        // - - - - - - -
-        .landing-title {
-            @include transitions(all 0.3s ease-in-out, font-size 0.3s ease-in-out);
-            font-family: "MaisonNeue-Mono";
-            font-size: calc(1.5em + 0.8vw);
-            position: relative;
-            color: white;
-            max-width: 300px;
-            margin-bottom: 15px;
-            z-index: 1;
-            @include mediaMin(500px) { 
-                font-size: calc(1.5em + 1vw);
-            }
-            @include mediaMin(800px) {
-                font-size: 31px;
-            }
-            @include mediaMin($tablet) {
-                font-size: 36px;
-                max-width: 9999px;
-                margin: 0 auto 15px;
-            }
-            @include mediaMin(1380px) {
-                font-size: 48px;
-            }
-        }
-        // - - - - - - -
-        // OVERVIEW
-        // - - - - - - -
-        .overview {
-            font-family: "MaisonNeue-Book";
-            font-size: 16px;
-            position: relative;
-            z-index: 1;
-            @include mediaMin($tablet) {
-                max-width: 380px;
-            }
-        }
+    @include mediaMinMax(500px, $tablet - 1) {
+      max-width: 360px;
     }
-    
+    @include mediaMin($tablet) {
+      padding-top: 5vh;
+      width: 40%;
+      max-width: 9999px;
+      float: left;
+    }
+
+    a {
+      @extend %transition;
+      color: inherit;
+      &:hover,
+      &:focus {
+        color: #999;
+      }
+    }
+
+    // - - - - - - - - -
+    // INNER TEXT WRAP
+    // - - - - - - - - -
+    .inner-wrap {
+      max-width: 360px;
+      margin: 0 auto;
+      @include mediaMin($desktop + 100) {
+        max-width: 420px;
+      }
+      @include mediaMin(1380px) {
+        max-width: 460px;
+      }
+    }
+    // - - - - - - -
+    // TITLE
+    // - - - - - - -
+    .landing-title {
+      @include transitions(all 0.3s ease-in-out, font-size 0.3s ease-in-out);
+      font-family: 'MaisonNeue-Mono';
+      font-size: calc(1.5em + 0.8vw);
+      position: relative;
+      color: white;
+      max-width: 300px;
+      margin-bottom: 15px;
+      z-index: 1;
+      @include mediaMin(500px) {
+        font-size: calc(1.5em + 1vw);
+      }
+      @include mediaMin(800px) {
+        font-size: 31px;
+      }
+      @include mediaMin($tablet) {
+        font-size: 36px;
+        max-width: 9999px;
+        margin: 0 auto 15px;
+      }
+      @include mediaMin(1380px) {
+        font-size: 48px;
+      }
+    }
+    // - - - - - - -
+    // OVERVIEW
+    // - - - - - - -
+    .overview {
+      font-family: 'MaisonNeue', sans-serif;
+      font-size: 16px;
+      position: relative;
+      z-index: 1;
+      @include mediaMin($tablet) {
+        max-width: 380px;
+      }
+    }
+  }
 }

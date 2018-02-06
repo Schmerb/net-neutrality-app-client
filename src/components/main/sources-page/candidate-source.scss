@@ -5,136 +5,136 @@
 // // // // // // // // // //
 
 .candidate-source {
-    @include transition(0.9s);
-    position: relative;
-    min-height: 200px;
-    border-radius: 20px;
-    padding: 20px 0;
-    &.highlight {
-        background-color: rgba(grey, 0.4);
+  @include transition(0.9s);
+  position: relative;
+  min-height: 200px;
+  border-radius: 20px;
+  padding: 20px 0;
+  &.highlight {
+    background-color: rgba(grey, 0.4);
+  }
+  h3 {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+  }
+  &.hasIcon {
+    @include mediaMax($tablet - 1) {
+      h3 {
+        @include middle;
+      }
     }
-    h3 {
-        position: absolute;
-        left: 15px;
-        top: 15px;
+  }
+  &.hasQuote {
+    @include mediaMax(530px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 20px 0;
+      h3 {
+        position: static;
+        margin-left: 15px;
+      }
+      .quote,
+      .social-quote {
+        margin: 0;
+        margin-top: 20px;
+      }
     }
-    &.hasIcon {
-        @include mediaMax($tablet - 1) {
-            h3 {
-                @include middle;
-            }
-        }
+  }
+  // - - - - - -
+  // QUOTE
+  // - - - - - -
+  .quote {
+    max-width: 500px;
+    margin: 40px auto 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: justify;
+  }
+  // - - - - - - - - - - - -
+  // SOCIAL quote Fb etc.
+  // - - - - - - - - - - - -
+  .social-quote {
+    margin-top: 40px;
+    text-align: justify;
+    p {
+      max-width: 500px;
+      margin: 0 auto;
     }
-    &.hasQuote {
-        @include mediaMax(530px) {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            padding: 20px 0;
-            h3 {
-                position: static;
-                margin-left: 15px;
-            }
-            .quote, .social-quote {
-                margin: 0;
-                margin-top: 20px;
-            }
-        }
-    }
-    // - - - - - -
-    // QUOTE
-    // - - - - - -
-    .quote {
-        max-width: 500px;
-        margin: 40px auto 15px;
-        padding-left: 10px;
-        padding-right: 10px;
-        text-align: justify;
-    }
-    // - - - - - - - - - - - -
-    // SOCIAL quote Fb etc.
-    // - - - - - - - - - - - -
-    .social-quote {
-        margin-top: 40px;
-        text-align: justify;
-        p {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-    }
-    
+  }
 
-    // - - - - - - - -
-    // Social icons
-    // - - - - - - - -
-    .source-icon {
-        @extend %transition;
-        @include middleR(50px);
-        width: 50px;
-        height: 50px;
-        @include mediaMin(600px) {
-            @include middleR(25%);
-        }
-        @include mediaMin(800px) {
-            @include abs-middle;
-        }
-        &:hover {
-            &.fb, 
-            &.twitter .cls-2 {
-                fill: white;
-            }
-            &.link {
-                stroke: white;
-            }
-            &.imgur {
-                fill: grey;
-            }
-        }
-        // IMGUR icon
-        &.imgur {
-            width: 100px;
-            height: auto;
-            path {
-                @extend %transition;
-                fill: white;
-            }
-            > g {
-                > path {
-                    fill: #1bb76e; // brand color
-                }
-            }
-            &:hover {
-                path {
-                    fill: grey;
-                }
-                > g {
-                    > path {
-                        fill: white; // dot in letter "i"
-                    }
-                }
-            }
-        }
-        // TWITTER
-        &.twitter {
-            .cls-1 {
-                fill: none;
-            }
-            .cls-2 {
-                @extend %transition;
-                fill: #1da1f2; // brand color
-            }
-        }
-        // FACEBOOK
-        &.fb {
-            fill: $facebook;
-            width: 30px;
-            height: 30px;
-        }
-        // LINK ICON
-        &.link {
-            width: 40px;
-            height: 45px;
-            stroke: grey;
-        }
+  // - - - - - - - -
+  // Social icons
+  // - - - - - - - -
+  .source-icon {
+    @extend %transition;
+    @include middleR(50px);
+    width: 50px;
+    height: 50px;
+    @include mediaMin(600px) {
+      @include middleR(25%);
     }
+    @include mediaMin(800px) {
+      @include abs-middle;
+    }
+    &:hover {
+      &.fb,
+      &.twitter .cls-2 {
+        fill: white;
+      }
+      &.link {
+        stroke: white;
+      }
+      &.imgur {
+        fill: grey;
+      }
+    }
+    // IMGUR icon
+    &.imgur {
+      width: 100px;
+      height: auto;
+      path {
+        @extend %transition;
+        fill: white;
+      }
+      > g {
+        > path {
+          fill: #1bb76e; // brand color
+        }
+      }
+      &:hover {
+        path {
+          fill: grey;
+        }
+        > g {
+          > path {
+            fill: white; // dot in letter "i"
+          }
+        }
+      }
+    }
+    // TWITTER
+    &.twitter {
+      .cls-1 {
+        fill: none;
+      }
+      .cls-2 {
+        @extend %transition;
+        fill: #1da1f2; // brand color
+      }
+    }
+    // FACEBOOK
+    &.fb {
+      fill: $facebook;
+      width: 30px;
+      height: 30px;
+    }
+    // LINK ICON
+    &.link {
+      width: 40px;
+      height: 45px;
+      stroke: grey;
+    }
+  }
 }

@@ -5,35 +5,29 @@
 // // // // // // // // // //
 
 main {
-    background-color: black;
-    .container {
-        overflow: hidden;
-    }
+  background-color: black;
+  .container {
+    overflow: hidden;
+  }
 }
-// 
+//
 // Sources Page
 //
 .app.sources {
-    main {
-        @include mediaMin($tablet) {
-            margin-top: 150px;
-        }
+  main {
+    @include mediaMin($tablet) {
+      margin-top: 150px;
     }
+  }
 }
 
 //
 // Map Page
 //
 .app.map {
-    main {
-        .container {
-            overflow: visible;
-        }
+  main {
+    .container {
+      overflow: visible;
     }
+  }
 }
-
-
-
-
-
- 

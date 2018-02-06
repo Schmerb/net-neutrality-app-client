@@ -4,49 +4,48 @@
 //
 // // // // // // // //
 .usa-map-container {
-    @include transition(0.8s);
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    opacity: 0;
-    &.fadeIn {
-        opacity: 1;
+  @include transition(0.8s);
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  opacity: 0;
+  &.fadeIn {
+    opacity: 1;
+  }
+
+  .us-state-map {
+    @include transitions(top 0.3s ease-in-out);
+    width: 100vw;
+    height: 200px;
+    min-height: 200px;
+    @include mediaMin(400px) {
+      width: 100%;
+      height: 40vw;
     }
-    
-    .us-state-map {
-        @include transitions(top 0.3s ease-in-out);
-        width: 100vw;
-        height: 200px;
-        min-height: 200px;
-        @include mediaMin(400px) {
-            width: 100%;
-            height: 40vw;
-        }
-        @include mediaMax($tablet - 1) {
-            @include center;
-        }
-        @include mediaMin($tablet) {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 60vw;
-            height: 60vh;
-        }
+    @include mediaMax($tablet - 1) {
+      @include center;
     }
+    @include mediaMin($tablet) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60vw;
+      height: 60vh;
+    }
+  }
 }
 
 // - - - - - - - - - - - -
 // Map Page
 // - - - - - - - - - - - -
 .app.map {
-    @include mediaMin($tablet) {
-        .usa-map-container {
-            margin-top: 0;
-            overflow: visible;
-        }
-        .us-state-map {
-            position: relative;
-        }
+  @include mediaMin($tablet) {
+    .usa-map-container {
+      margin-top: 0;
+      overflow: visible;
     }
+    .us-state-map {
+      position: relative;
+    }
+  }
 }
-
