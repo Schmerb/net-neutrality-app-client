@@ -5,49 +5,49 @@
 // // // // // // // // // //
 
 .think-logo {
+  position: relative;
+  color: grey;
+  z-index: 20;
+  @include mediaMin($tablet) {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+  }
+  figure {
+    margin: 0;
+  }
+  svg {
+    fill: grey;
+  }
+  span {
+    font-family: 'MaisonNeue-Book';
+    font-size: smaller;
     position: relative;
-    color: grey;
-    z-index: 20;
-    @include mediaMin($tablet) {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-    }
-    figure {
-        margin: 0;
-    }
-    svg {
-        fill: grey;
-    }
-    span {
-        font-family: "MaisonNeue-Book";
-        font-size: smaller;
-        position: relative;
-        top: -10px;
-        margin-right: 10px;
-    }
-    svg {
-        fill: grey;
-    }
+    top: -10px;
+    margin-right: 10px;
+  }
+  svg {
+    fill: grey;
+  }
 }
 
 // - - - - - - - -
 // Sources Page
 // - - - - - - - -
 .app.sources {
-    @include mediaMin($tablet) {
-        .think-logo {
-            position: fixed;
-        }
+  @include mediaMin($tablet) {
+    .think-logo {
+      position: fixed;
     }
+  }
 }
 // - - - - - - - -
 // Map Page
 // - - - - - - - -
 .app.map {
-    @include mediaMin($tablet) {
-        .think-logo {
-            position: static;
-        }
+  @include mediaMin($tablet) {
+    .think-logo {
+      position: static;
     }
+  }
 }
