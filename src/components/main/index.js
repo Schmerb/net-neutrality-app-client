@@ -29,7 +29,10 @@ export class Main extends Component {
           <Route exact path={`${ROUTE_SLUG}/map`} component={StatesMap} />
           <Route path={`${ROUTE_SLUG}/sources`} component={SourcesPage} />
           {!this.props.loading ? (
-            <Route path="/about-project" component={AboutProjectPage} />
+            <Route
+              path={`${ROUTE_SLUG}/about-project`}
+              component={AboutProjectPage}
+            />
           ) : null}
         </div>
       </main>

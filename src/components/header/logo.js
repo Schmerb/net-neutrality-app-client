@@ -8,6 +8,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
 
+import { ROUTE_SLUG } from 'config';
+
 import SiteLogo from 'icons/site-logo';
 
 import { resetState } from 'actions/map';
@@ -29,7 +31,7 @@ export class Logo extends Component {
   render() {
     return (
       <div className="logo">
-        <Link to="/" onClick={this.handleClick}>
+        <Link to={`${ROUTE_SLUG}/`} onClick={this.handleClick}>
           <span className="aria-hidden" aria-hidden="false">
             Navigate Home
           </span>
