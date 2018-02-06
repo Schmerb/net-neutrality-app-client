@@ -8,6 +8,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
 
+import { ROUTE_SLUG } from 'config';
+
 import ThinkLogo from './think-logo';
 import SocialShareButtons from './social-share-buttons';
 
@@ -60,7 +62,11 @@ export class Footer extends Component {
     }
     if (map || sources) {
       aboutLink = (
-        <Link className="about-proj-link" to="/about-project" target="_blank">
+        <Link
+          className="about-proj-link"
+          to={`${ROUTE_SLUG}/about-project`}
+          target="_blank"
+        >
           About This Project
         </Link>
       );
