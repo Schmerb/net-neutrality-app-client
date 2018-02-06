@@ -22,7 +22,7 @@
 }
 .select-box {
   @include appearance(none);
-  font-family: 'MaisonNeue-Mono';
+  font-family: 'MaisonNeue-Mono', monospace;
   color: lightgrey;
   background-color: transparent;
   font-size: 36px;

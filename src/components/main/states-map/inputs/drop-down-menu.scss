@@ -6,7 +6,7 @@
 
 .select-form {
   @extend %transition;
-  font-family: 'MaisonNeue-Mono';
+  font-family: 'MaisonNeue-Mono', monospace;
   position: relative;
   max-width: 380px;
   margin: 0 auto;

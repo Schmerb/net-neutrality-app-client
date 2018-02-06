@@ -8,7 +8,7 @@
   // Search Input
   input {
     @include appearance(none);
-    font-family: 'MaisonNeue-Mono';
+    font-family: 'MaisonNeue-Mono', monospace;
     background-color: transparent;
     color: white;
     font-size: 26px;
