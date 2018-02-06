@@ -5,135 +5,135 @@
 // // // // // // // // // //
 
 .avatar-wrap {
-    position: relative;
-    width: 40px; // Base width needed for IE
-    height: 90px;
+  position: relative;
+  width: 40px; // Base width needed for IE
+  height: 90px;
+  @include mediaMin(500px) {
+    height: 100%;
+    width: 72px; // to account for absolutely positioned nested img
+  }
+  @include mediaMin($desktop) {
+    width: 80px; // to account for absolutely positioned nested img
+  }
+  // - - - - - - - -
+  // Loading Icon
+  // - - - - - - - -
+  .avatar-loading-icon {
+    @include transition(0.3s);
+    position: absolute;
+    top: 20px;
+    left: 0;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    padding-top: 10px;
+    padding-left: 5px;
+    border-radius: 50%;
+    opacity: 1;
     @include mediaMin(500px) {
-        height: 100%;
-        width: 72px; // to account for absolutely positioned nested img
+      width: 65px;
+      height: 65px;
+      top: 17px;
+      left: 3px;
+      padding-top: 24px;
+      padding-left: 8px;
     }
     @include mediaMin($desktop) {
-        width: 80px; // to account for absolutely positioned nested img
+      width: 75px;
+      height: 75px;
+      top: 12px;
+      padding-top: 26px;
     }
-    // - - - - - - - -
-    // Loading Icon
-    // - - - - - - - - 
-    .avatar-loading-icon {
-        @include transition(0.3s);
-        position: absolute;
-        top: 20px;
-        left: 0;
-        background-color: white;
-        width: 40px;
-        height: 40px;
-        padding-top: 10px;
-        padding-left: 5px;
-        border-radius: 50%;
-        opacity: 1;
-        @include mediaMin(500px) {
-            width: 65px;
-            height: 65px;
-            top: 17px;
-            left: 3px;
-            padding-top: 24px;
-            padding-left: 8px;
-        }
-        @include mediaMin($desktop) {
-            width: 75px;
-            height: 75px;
-            top: 12px;
-            padding-top: 26px;
-        }
-        &.fadeout {
-            opacity: 0;
-        }
-        > div {
-            background-color: rgb(56, 19, 19);
-            width: 6px;
-            height: 6px;
-            @include mediaMin(500px) {
-                width: 12px;
-                height: 12px;
-            }
-            @include mediaMin($desktop) {
-                width: 15px;
-                height: 15px;
-            }
-        }
+    &.fadeout {
+      opacity: 0;
     }
-    // - - - - - - -
-    // Avatar Img
-    // - - - - - - -
-    .avatar-img {
-        @extend %transition;
-        position: relative;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position-y: 10%;
-        background-position-x: 50%;
-        width: 37px;
-        height: 37px;
-        border-radius: 50%;
-        @include mediaMin(500px) {
-            @include abs-middle;
-            width: 60px;
-            height: 60px;
-        }
-        @include mediaMin($desktop) {
-            width: 70px;
-            height: 70px;
-        }
-        .prohibited-icon {
-            @extend %abs-middle;
-            width: 135%;
-            height: 135%;
-            fill: $red;
-            &.support {
-                fill: $gold;
-            }
-        }
+    > div {
+      background-color: rgb(56, 19, 19);
+      width: 6px;
+      height: 6px;
+      @include mediaMin(500px) {
+        width: 12px;
+        height: 12px;
+      }
+      @include mediaMin($desktop) {
+        width: 15px;
+        height: 15px;
+      }
     }
-    // - - - - - - -
-    // Party Icon
-    // - - - - - - -
-    .party-icon {
-        @extend %transition;
-        position: relative;
-        top: -5px;
-        left: -1px;
-        width: 36px;
-        height: 36px;
-        &.libertarian {
-            width: 32px;
-            height: 32px;
-            left: -2px;
-        }
-        @include mediaMin(500px) {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            top: 12px;
-            right: -5px;
-            left: auto;
-            &.libertarian {
-                height: 26px;
-                left: auto;
-            }
-        }
-        @include mediaMin($desktop) {
-            width: 36px;
-            height: 36px;
-            top: 5px;
-            right: -10px;
+  }
+  // - - - - - - -
+  // Avatar Img
+  // - - - - - - -
+  .avatar-img {
+    @extend %transition;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 10%;
+    background-position-x: 50%;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    @include mediaMin(500px) {
+      @include abs-middle;
+      width: 60px;
+      height: 60px;
+    }
+    @include mediaMin($desktop) {
+      width: 70px;
+      height: 70px;
+    }
+    .prohibited-icon {
+      @extend %abs-middle;
+      width: 135%;
+      height: 135%;
+      fill: $red;
+      &.support {
+        fill: $gold;
+      }
+    }
+  }
+  // - - - - - - -
+  // Party Icon
+  // - - - - - - -
+  .party-icon {
+    @extend %transition;
+    position: relative;
+    top: -5px;
+    left: -1px;
+    width: 36px;
+    height: 36px;
+    &.libertarian {
+      width: 32px;
+      height: 32px;
+      left: -2px;
+    }
+    @include mediaMin(500px) {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      top: 12px;
+      right: -5px;
+      left: auto;
+      &.libertarian {
+        height: 26px;
+        left: auto;
+      }
+    }
+    @include mediaMin($desktop) {
+      width: 36px;
+      height: 36px;
+      top: 5px;
+      right: -10px;
 
-            &.libertarian, 
-            &.independent {
-                width: 32px;
-                height: 32px;
-            }
-            &.independent {
-                top: 8px;
-            }
-        }
+      &.libertarian,
+      &.independent {
+        width: 32px;
+        height: 32px;
+      }
+      &.independent {
+        top: 8px;
+      }
     }
+  }
 }

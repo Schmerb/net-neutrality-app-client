@@ -5,46 +5,40 @@
 // // // // // // // // // //
 
 header {
-    position: relative;
-    width: 100%;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    z-index: 10;
-    @include mediaMin($tablet) {
-        height: 100px;
-    }
+  position: relative;
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  z-index: 10;
+  @include mediaMin($tablet) {
+    height: 100px;
+  }
 }
 // - - - - - - - - - - - -
 // Map Page
 // - - - - - - - - - - - -
 .app.map {
+  .header {
+    padding-bottom: 0;
+  }
+  @include mediaMin($tablet) {
     .header {
-        padding-bottom: 0;
+      height: 140px;
     }
-    @include mediaMin($tablet) {
-        .header {
-            height: 140px;
-        }
-    }
+  }
 }
 // - - - - - - - - - - - -
 // Sources Page
 // - - - - - - - - - - - -
 .app.sources {
-    @include mediaMin($tablet) {
-        .header {
-            background-color: black;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 150px;
-        }
+  @include mediaMin($tablet) {
+    .header {
+      background-color: black;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 150px;
     }
+  }
 }
-
-
-
-
-
- 

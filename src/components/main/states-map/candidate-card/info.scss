@@ -5,49 +5,50 @@
 // // // // // // // // // //
 
 .info-wrap {
-    @extend %transition;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  @extend %transition;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10px;
+  min-width: 120px;
+  height: 60px;
+  @include mediaMin(375px) {
+    margin-left: 25px;
+  }
+  @include mediaMinMax($tablet, $desktop - 1) {
     margin-left: 10px;
-    min-width: 120px;
-    height: 60px;
-    @include mediaMin(375px) {
-        margin-left: 25px;
-    }
-    @include mediaMinMax($tablet, $desktop - 1) {
-        margin-left: 10px;
-    }
+  }
 
-    h3 {
-        font-family: "MaisonNeue-Light";
-        font-size: 18px;
-        color: $offwhite;
-    }
-    .links-wrap {
-        position: absolute;
-        bottom: 10px;
-        display: inline-block;
-        font-family: "MaisonNeue-Book";
-        font-size: 12px;
+  h3 {
+    font-family: 'MaisonNeue-Thin';
+    font-size: 18px;
+    color: $offwhite;
+  }
+  .links-wrap {
+    position: absolute;
+    bottom: 10px;
+    display: inline-block;
+    font-family: 'MaisonNeue-Book';
+    font-size: 12px;
 
-        span {
-            &:nth-of-type(2) {
-                margin-left: 15px;
-            }
-        }
-        a {
-            @extend %transition;
-            font-size: 13px;
-            color: grey;
-            &.disabled {
-                pointer-events: none;
-                color: #444;
-            }
-            &:hover, &:focus {
-                color: lightgrey;
-            }
-        }
+    span {
+      &:nth-of-type(2) {
+        margin-left: 15px;
+      }
     }
+    a {
+      @extend %transition;
+      font-size: 13px;
+      color: grey;
+      &.disabled {
+        pointer-events: none;
+        color: #444;
+      }
+      &:hover,
+      &:focus {
+        color: lightgrey;
+      }
+    }
+  }
 }

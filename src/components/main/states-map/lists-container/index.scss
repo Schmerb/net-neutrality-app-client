@@ -5,49 +5,50 @@
 // // // // // // // // // //
 
 .lists-container {
-    @include transition(1s);
-    position: relative;
-    margin-top: 30px;
-    min-height: 300px;
-    opacity: 1;
-    &.hide {
-        height: 0;
-        min-height: 0;
-        margin-top: 0px;
-        opacity: 0;
-        pointer-events: none;
+  @include transition(1s);
+  position: relative;
+  margin-top: 30px;
+  min-height: 300px;
+  opacity: 1;
+  &.hide {
+    height: 0;
+    min-height: 0;
+    margin-top: 0px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .btn-wrap {
+    max-width: 440px;
+    margin: 0 auto;
+    @include mediaMin($tablet) {
+      margin-top: 20px;
     }
-    .btn-wrap {
-        max-width: 440px;
-        margin: 0 auto;
-        @include mediaMin($tablet) {
-            margin-top: 20px;
-        }
+  }
+  button {
+    @extend %transition;
+    font-family: 'MaisonNeue-Mono';
+    color: white;
+    font-size: 18px;
+    font-weight: lighter;
+    width: 50%;
+    height: 40px;
+    float: left;
+    border: 1px solid grey;
+    border-radius: 0px;
+    &:first-of-type {
+      border-right: none;
     }
-    button {
-        @extend %transition;
-        font-family: "MaisonNeue-Mono";
-        color: white;
-        font-size: 18px;
-        font-weight: lighter;
-        width: 50%;
-        height: 40px;
-        float: left;
-        border: 1px solid grey;
-        border-radius: 0px;
-        &:first-of-type {
-            border-right: none;
-        }
-        &:last-of-type {
-            border-left: none;
-        }
-        &.active {
-            background-color: white;
-            color: black;
-        }
-        &:hover, &:focus {
-            background-color: white;
-            color: black;
-        }
+    &:last-of-type {
+      border-left: none;
     }
+    &.active {
+      background-color: white;
+      color: black;
+    }
+    &:hover,
+    &:focus {
+      background-color: white;
+      color: black;
+    }
+  }
 }
