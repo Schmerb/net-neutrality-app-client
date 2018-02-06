@@ -70,7 +70,6 @@ export class CandidateCard extends Component {
         id={`source-${lastName}`}
         to={url}
         className={classes}
-        target="_blank"
       >
         Source
       </Link>
