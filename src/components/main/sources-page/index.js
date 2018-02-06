@@ -12,11 +12,13 @@ import StatesDropdown from './states-dropdown';
 
 import { updateState } from 'services/candidates';
 
+const STATE_REGEX = /[A-Z]{2}/;
+
 export class SourcesPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      state: this.props.location.pathname.slice(9),
+      state: STATE_REGEX.exec(this.props.location.pathname)[0],
       classes: ''
     };
   }
