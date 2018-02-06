@@ -53,9 +53,9 @@ export class Footer extends Component {
     let thinkLogo = null,
       aboutLink = null,
       small = this.props.width < 900,
-      landing = path === '/',
-      map = path === '/map',
-      about = path === '/about-project',
+      landing = path === `${ROUTE_SLUG}/`,
+      map = path === `${ROUTE_SLUG}/map`,
+      about = path === `${ROUTE_SLUG}/about-project`,
       sources = path.includes('sources');
     if (map || (sources && small) || (landing && small) || (about && small)) {
       thinkLogo = <ThinkLogo path={path} />;
@@ -71,9 +71,9 @@ export class Footer extends Component {
         </Link>
       );
     }
-    let classes = `${this.state.fadeIn} 
-                        ${landing ? 'landing' : ''} 
-                        ${sources ? 'sources' : ''} 
+    let classes = `${this.state.fadeIn}
+                        ${landing ? 'landing' : ''}
+                        ${sources ? 'sources' : ''}
                         ${about ? 'about' : ''}`;
     return (
       <footer role="contentinfo" className={classes}>
