@@ -24,7 +24,7 @@ export class Logo extends Component {
     e.preventDefault();
     this.props.dispatch(resetState());
     this.props.history.push({
-      pathname: ROUTE_SLUG + '/'
+      pathname: ROUTE_SLUG + '/map/'
     });
   };
 
