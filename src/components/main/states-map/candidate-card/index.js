@@ -47,7 +47,8 @@ export class CandidateCard extends Component {
   getSource = () => {
     const { source, lastName } = this.props.candidate;
     let url = '',
-      classes = '';
+      classes = '',
+      isExternal = false;
     if (source === '' || source === 'sent') {
       classes = 'disabled';
     } else if (
@@ -61,8 +62,10 @@ export class CandidateCard extends Component {
     } else {
       if (source.slice(0, 3) === 'www') {
         url = `https://${source}`;
+        isExternal = true;
       } else {
         url = source;
+        isExternal = true;
       }
     }
     return (
@@ -70,7 +73,7 @@ export class CandidateCard extends Component {
         id={`source-${lastName}`}
         to={url}
         className={classes}
-        target="_blank"
+        target={isExternal ? '_blank' : '_self'}
       >
         Source
       </Link>
