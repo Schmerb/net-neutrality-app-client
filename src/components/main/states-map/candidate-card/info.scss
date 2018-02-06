@@ -21,7 +21,7 @@
   }
 
   h3 {
-    font-family: 'MaisonNeue-Thin';
+    font-family: 'MaisonNeue-Thin', sans-serif;
     font-size: 18px;
     color: $offwhite;
   }
@@ -29,7 +29,7 @@
     position: absolute;
     bottom: 10px;
     display: inline-block;
-    font-family: 'MaisonNeue-Book';
+    font-family: 'MaisonNeue', sans-serif;
     font-size: 12px;
 
     span {
