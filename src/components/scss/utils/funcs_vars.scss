@@ -1,8 +1,8 @@
 // // // // // // // // // // // // // //
 //
-//      Variables / Functions / Constants 
+//      Variables / Functions / Constants
 //
-// // // // // // // // // // // // // // 
+// // // // // // // // // // // // // //
 
 // ==================================================
 //      numbers
@@ -11,55 +11,50 @@ $banner: 80px;
 $footer: 200px;
 $offset: $banner + $footer;
 
-
 // ==================================================
 //      colors
 // ==================================================
-$primary:   #5b9bd9;
-$secondary: #1C86D9;
-$third:     #283640;
-$green:     #26a69a;
-$brown:     #B16555;
-$offwhite:  #f8f8ff;
-$grey:      #555;
+$primary: #5b9bd9;
+$secondary: #1c86d9;
+$third: #283640;
+$green: #26a69a;
+$brown: #b16555;
+$offwhite: #f8f8ff;
+$grey: #555;
 
-$red:  #ff0004;
-$green:#50cd1f;
+$red: #ff0004;
+$green: #50cd1f;
 $gold: #ffb20d;
 
 // social brand colors
-$facebook:  #3B5898;
-$twitter:   #1da1f3;
-$linkedin:  #0077B5;
+$facebook: #3b5898;
+$twitter: #1da1f3;
+$linkedin: #0077b5;
 $instagram: #c32aa3;
 
 $error: rgb(228, 123, 123);
 
-
-
 $palettes: (
-    primary: (
-        base:  $primary,
-        light: lighten($primary, 5%),
-        dark:  darken($primary, 5%),
+  primary:
+    (
+      base: $primary,
+      light: lighten($primary, 5%),
+      dark: darken($primary, 5%)
     ),
-    third: (
-        base:   $third,
-        vlight: lighten($third, 20%),
-        light:  lighten($third, 5%),
-        dark:   darken($third, 5%),
-        vdark:  darken($third, 20%)
+  third:
+    (
+      base: $third,
+      vlight: lighten($third, 20%),
+      light: lighten($third, 5%),
+      dark: darken($third, 5%),
+      vdark: darken($third, 20%)
     )
 );
-
 
 // ==================================================
 //      functions
 // ==================================================
 
 @function palette($palette, $tone: 'base') {
-    @return map-get( map-get($palettes, $palette), $tone);
+  @return map-get( map-get($palettes, $palette), $tone);
 }
-
-
-
