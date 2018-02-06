@@ -5,68 +5,65 @@
 // // // // // // // // // //
 
 .candidates-container {
-    @extend %transition;
-    font-family: "MaisonNeue-Mono";
-    color: grey;
+  @extend %transition;
+  font-family: 'MaisonNeue-Mono', monospace;
+  color: grey;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 45%;
+  z-index: 20; // Needed for larger viewport to overlay header/logo
+
+  .directions {
+    color: #555;
+    font-size: 19px;
     width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 45%;
-    z-index: 20; // Needed for larger viewport to overlay header/logo
-    
-    .directions {
-        color: #555;
-        font-size: 19px;
-        width: 95%;
-        max-width: 330px;
-        margin: 15px auto 0;
+    max-width: 330px;
+    margin: 15px auto 0;
+  }
+  //
+  // Lists Wrap
+  //
+  .candidates-inner-wrap {
+    max-width: 600px;
+    margin: 0 auto;
+    @include mediaMin($tablet) {
+      max-width: 700px;
     }
-    //
-    // Lists Wrap
-    //
-    .candidates-inner-wrap {
-        max-width: 600px;
-        margin: 0 auto;
-        @include mediaMin($tablet) {
-            max-width: 700px;
-        }
-    }
+  }
 }
 
 // - - - - - - - - - - - -
 // Map Page
 // - - - - - - - - - - - -
 .app.map {
+  .candidates-container {
+    margin-top: 25vh;
+    @include mediaMin(600px) {
+      margin-top: 45%;
+    }
+  }
+  @include mediaMin($tablet) {
     .candidates-container {
-        margin-top: 25vh;
-        @include mediaMin(600px) {
-            margin-top: 45%;
-        }
+      position: absolute;
+      top: -100px;
+      right: 15px;
+      width: calc(100px + 25vw);
+      max-width: 440px;
+      margin: 0;
+      .directions {
+        max-width: 430px;
+      }
     }
-    @include mediaMin($tablet) {
-        .candidates-container {
-            position: absolute;
-            top: -100px;
-            right: 15px;
-            width: calc(100px + 25vw);
-            max-width: 440px;
-            margin: 0;
-            .directions {
-                max-width: 430px;
-            }
-        }
+  }
+  @include mediaMin($desktop + 300px) {
+    .candidates-container {
+      right: 5vw;
     }
-    @include mediaMin($desktop + 300px) {
-        .candidates-container {
-            right: 5vw;
-        } 
+  }
+  @include mediaMin($desktop + 500px) {
+    .candidates-container {
+      right: 8vw;
     }
-    @include mediaMin($desktop + 500px) {
-        .candidates-container {
-            right: 8vw;
-        } 
-    }
+  }
 }
-
-
-

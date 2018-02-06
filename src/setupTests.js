@@ -5,8 +5,7 @@
 //
 // // // // // // // // // // // // // // //
 
-
-require("jest-localstorage-mock");
+require('jest-localstorage-mock');
 
 import matchMediaPolyfill from 'mq-polyfill';
 matchMediaPolyfill(window);

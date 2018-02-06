@@ -5,44 +5,46 @@
 // // // // // // // // // //
 
 html {
-    box-sizing: border-box;
-    body {
-        .hidden {
-            display: none;
-        }
+  box-sizing: border-box;
+  body {
+    .hidden {
+      display: none;
     }
+  }
 }
 
-
-
-html, body {
-    //
-    // custom scroll bars
-    //
-    &::-webkit-scrollbar { // background of bar itself
-        background-color: #444;
-        background-color: black;
-        width: 7px;
-    }
-    &::-webkit-scrollbar-thumb { // addresses the draggable scrolling element that resizes depending on the size of the scrollable element
-        background-color: grey;
-        border-radius: 20px;
-    }
-    &::-webkit-scrollbar-corner { // addresses the (usually) bottom corner of the scrollable element, where two scrollbars might meet
-        background-color: transparent;
-    }
+html,
+body {
+  //
+  // custom scroll bars
+  //
+  &::-webkit-scrollbar {
+    // background of bar itself
+    background-color: #444;
+    background-color: black;
+    width: 7px;
+  }
+  &::-webkit-scrollbar-thumb {
+    // addresses the draggable scrolling element that resizes depending on the size of the scrollable element
+    background-color: grey;
+    border-radius: 20px;
+  }
+  &::-webkit-scrollbar-corner {
+    // addresses the (usually) bottom corner of the scrollable element, where two scrollbars might meet
+    background-color: transparent;
+  }
 }
 
 // IE custom scrollbar support
 body {
-    scrollbar-base-color: #000;
-    scrollbar-face-color: grey;
-    scrollbar-3dlight-color: #000;
-    scrollbar-highlight-color: #000;
-    scrollbar-track-color: #000;
-    scrollbar-arrow-color: grey;
-    scrollbar-shadow-color: #000;
-    scrollbar-dark-shadow-color: #000;
+  scrollbar-base-color: #000;
+  scrollbar-face-color: grey;
+  scrollbar-3dlight-color: #000;
+  scrollbar-highlight-color: #000;
+  scrollbar-track-color: #000;
+  scrollbar-arrow-color: grey;
+  scrollbar-shadow-color: #000;
+  scrollbar-dark-shadow-color: #000;
 }
 
 // @-moz-document url-prefix(http:),url-prefix(https:) {
@@ -54,106 +56,102 @@ body {
 //        -moz-appearance: none !important;
 //        background-color: rgb(0,0,255) !important;
 //     }
-     
+
 //     thumb:hover,scrollbarbutton:hover {
 //        -moz-appearance: none !important;
 //        background-color: rgb(255,0,0) !important;
 //     }
-     
+
 //     scrollbarbutton {
 //        display: none !important;
 //     }
-     
+
 //     scrollbar[orient="vertical"] {
 //       min-width: 15px !important;
 //     }
 // }
 
-*, 
-*:before, 
+*,
+*:before,
 *:after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
-    background-color: black; 
-    font-weight: lighter;
-    position: relative;
-    min-height: 98vh;
-    margin: 0; 
-    overflow-x: hidden;
-    
+  background-color: black;
+  font-weight: lighter;
+  position: relative;
+  min-height: 98vh;
+  margin: 0;
+  overflow-x: hidden;
+
+  @include mediaMin($tablet) {
+    padding-bottom: 50px;
+  }
+  &.map,
+  &.sources {
+    @include mediaMax($tablet - 1) {
+      padding-bottom: 200px;
+    }
     @include mediaMin($tablet) {
-        padding-bottom: 50px;
+      padding-bottom: 100px;
     }
-    &.map, &.sources {
-        @include mediaMax($tablet - 1) {
-            padding-bottom: 200px;
-        }
-        @include mediaMin($tablet) {
-            padding-bottom: 100px;
-            
-        }
+  }
+  &.map {
+    @media screen and (min-width: $tablet) and (min-height: 530px) {
+      overflow-y: hidden;
     }
-    &.map {
-        @media screen and (min-width: $tablet) and (min-height: 530px) {
-            overflow-y: hidden;
-        }
-        @media screen and (min-width: $tablet) and (max-height: 530px) {
-            padding-bottom: 140px; // prevents 'About this Project' from overlapping  
-                                   // candidates list on wide and short windows
-        }
+    @media screen and (min-width: $tablet) and (max-height: 530px) {
+      padding-bottom: 140px; // prevents 'About this Project' from overlapping
+      // candidates list on wide and short windows
     }
-    &.landing {
-        @include mediaMax(600px) {
-            padding-bottom: 50px;
-        }
+  }
+  &.landing {
+    @include mediaMax(600px) {
+      padding-bottom: 50px;
     }
-    &.about-page {
-        padding-bottom: 100px;
-        @include mediaMin($tablet) {
-            padding-bottom: 50px;
-        }
+  }
+  &.about-page {
+    padding-bottom: 100px;
+    @include mediaMin($tablet) {
+      padding-bottom: 50px;
     }
+  }
 }
 
 .app {
-    @include transition(1s);
-    opacity: 1;
-    &.loading {
-        opacity: 0;
-    }
+  @include transition(1s);
+  opacity: 1;
+  &.loading {
+    opacity: 0;
+  }
 }
-
-
 
 .no-scroll {
-    position: relative;
-    overflow: hidden;
-    height: 100%;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
 }
 .no-scroll-html {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .aria-hidden {
-    display: none;
+  display: none;
 }
-
-
 
 // * * * * * * * * * * * * * * * * * * * *
 // Form errors
 // * * * * * * * * * * * * * * * * * * * *
 .form-error {
-    background: lightgrey;
-    color: #E22626;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 20px;
+  background: lightgrey;
+  color: #e22626;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 20px;
 }
